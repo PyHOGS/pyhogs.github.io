@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UW Oceanography Python Users Group</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/meetings.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-07-28T14:52:31+07:00</updated><entry><title>28 July Group Meeting</title><link href="http://uwocnpyusers.github.io/28-july-group-meeting.html" rel="alternate"></link><updated>2014-07-28T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-07-28:28-july-group-meeting.html</id><summary type="html">&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
+different ways we can call a subset of an array. We were more or less following
+Jake's notes that can be viewed here.&lt;/p&gt;
+&lt;p&gt;Other things that we discussed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;iPython Notebook: The Notebook is a way to log a Python session and export it
+as document - see Jake's file. Text can be entered using plain text, markdown,
+html or LaTex Math syntax. You can also export the Notebook in a bunch of
+different formats including Latex and html. JPaul and I think it would be
+good way to share notes with the group.&lt;/li&gt;
+&lt;li&gt;Creating a Github repository for the group: Everyone seems to agree that it
+would be convenient to have a centralized place where we can share and access
+each other's code and notebooks. A github repository seems ideal. It's
+contents would be accessible to everyone and each of us can contribute to
+its content. I created a personal repository for my notes:
+&lt;a class="reference external" href="https://github.com/earlew/Python_demo"&gt;https://github.com/earlew/Python_demo&lt;/a&gt;. Someone could create a separate repo
+for the group in a similar way.&lt;/li&gt;
+&lt;/ul&gt;
+</summary><category term="broadcasting"></category><category term="reshape"></category><category term="indexing"></category></entry><entry><title>21 July Group Meeting</title><link href="http://uwocnpyusers.github.io/21-july-group-meeting.html" rel="alternate"></link><updated>2014-07-21T14:52:31+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-07-21:21-july-group-meeting.html</id><summary type="html">&lt;p&gt;Today, we talked about:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html"&gt;reshape&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html"&gt;Array broadcasting&lt;/a&gt; (Called &lt;a class="reference external" href="http://www.mathworks.com/help/matlab/ref/bsxfun.html"&gt;*binary scalar (or singleton) expansion*&lt;/a&gt; in MATLAB-speak)&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/arrays.indexing.html"&gt;Array Indexing&lt;/a&gt; (including &lt;code&gt;np.newaxis&lt;/code&gt;, vectors, arrays, views)&lt;/li&gt;
+&lt;li&gt;Loading (and &lt;a class="reference external" href="https://docs.python.org/2/library/functions.html#reload"&gt;reloading&lt;/a&gt; ) modules&lt;/li&gt;
+&lt;/ul&gt;
+</summary><category term="broadcasting"></category><category term="reshape"></category><category term="indexing"></category></entry></feed>

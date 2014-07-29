@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UW Oceanography Python Users Group</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 28 Jul 2014 14:52:31 +0700</lastBuildDate><item><title>28 July Group Meeting</title><link>http://uwocnpyusers.github.io/28-july-group-meeting.html</link><description>&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
+different ways we can call a subset of an array. We were more or less following
+Jake's notes that can be viewed here.&lt;/p&gt;
+&lt;p&gt;Other things that we discussed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;iPython Notebook: The Notebook is a way to log a Python session and export it
+as document - see Jake's file. Text can be entered using plain text, markdown,
+html or LaTex Math syntax. You can also export the Notebook in a bunch of
+different formats including Latex and html. JPaul and I think it would be
+good way to share notes with the group.&lt;/li&gt;
+&lt;li&gt;Creating a Github repository for the group: Everyone seems to agree that it
+would be convenient to have a centralized place where we can share and access
+each other's code and notebooks. A github repository seems ideal. It's
+contents would be accessible to everyone and each of us can contribute to
+its content. I created a personal repository for my notes:
+&lt;a class="reference external" href="https://github.com/earlew/Python_demo"&gt;https://github.com/earlew/Python_demo&lt;/a&gt;. Someone could create a separate repo
+for the group in a similar way.&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 28 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-28:28-july-group-meeting.html</guid><category>broadcasting</category><category>reshape</category><category>indexing</category></item><item><title>Python Basics Review</title><link>http://uwocnpyusers.github.io/python-basics-review.html</link><description>&lt;p&gt;{% notebook tutorials/Review_of_the_basics.ipynb %}&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Fri, 25 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-25:python-basics-review.html</guid></item></channel></rss>
