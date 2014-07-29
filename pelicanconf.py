@@ -24,9 +24,10 @@ LINKS = (('Python.org', 'http://python.org/'),
          ('Enthought Canopy', 'https://www.enthought.com/products/canopy/'),)
 
 # Social widget
-#SOCIAL = (('You can add links in your config file', '#'),
-#          ('Another social link', '#'),)
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
 FEEDS = True
+GITHUB_URL = "https://github.com/UWOcnPyUsers"
 
 DEFAULT_PAGINATION = False
 
