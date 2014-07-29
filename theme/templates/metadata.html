@@ -1,4 +1,4 @@
-Permalink: <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.date }}</a>
+{{ article.date|strftime('%d %b %Y') }}
 {% if article.author %}by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }} </a>{% endif %}
 
  in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
