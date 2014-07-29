@@ -1,11 +1,10 @@
-21 July Group Meeting
+21 July Python Hour
 =======================
 
-:slug: 21-july-group-meeting
+:slug: 21-july-python-hour
 :date: 2014-07-21 14:52:31 UTC-07:00
 :tags: broadcasting, reshape, indexing
 :authors: JP Rinehimer
-:summary: Topics discussed at 21 July 2014 Group meeting
 
 .. default-role:: code
 

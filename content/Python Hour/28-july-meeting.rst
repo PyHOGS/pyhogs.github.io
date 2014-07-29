@@ -1,11 +1,10 @@
-28 July Group Meeting
+28 July Python Hour
 =======================
 
-:slug: 28-july-group-meeting
+:slug: 28-july-python-hour
 :date: 2014-07-28 14:52:31 UTC-07:00
 :tags: broadcasting, reshape, indexing
 :authors: Earle Wilson
-:summary: Topics discussed at 28 July 2014 Group meeting
 
 .. default-role:: code
 
