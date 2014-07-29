@@ -1,0 +1,6 @@
+[submodule "pelican-plugins"]
+	path = pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins.git
+[submodule "uwocnpyusers"]
+	path = uwocnpyusers
+	url = https://github.com/UWOcnPyUsers/uwocnpyusers.git
