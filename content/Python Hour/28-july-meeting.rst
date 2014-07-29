@@ -1,7 +1,7 @@
-28 July Python Hour
+Python Hour - 28 July
 =======================
 
-:slug: 28-july-python-hour
+:slug: python-hour-28-july
 :date: 2014-07-28 14:52:31 UTC-07:00
 :tags: broadcasting, reshape, indexing
 :authors: Earle Wilson
