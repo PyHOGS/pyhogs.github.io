@@ -16,7 +16,7 @@ Getting the code
 Requirements:
 * Pelican
 * ipython
-* All other modules required by above (numpy, etc)
+* All other modules required by above (numpy, etc).
 
 
     git clone https://github.com/UWOcnPyUsers/UWOcnPyUsers.github.io.git
@@ -46,3 +46,13 @@ to github, all in one go.
 
 Alternatively, we could set up a post-commit hook to run `make github`
 after each successful commit.
+
+
+TODO List
+-------------
+* [ ] Add RSS feeds.
+* [ ] Add Disqus comments.
+* [ ] Update instructions for interacting with Github (clone, push, pull).
+* [ ] Fix summaries so they look nice.
+* [ ] Convert ipython notebook includes to css (in plugin repo).
+* [ ] Upgrade sidebar or get rid of it...
