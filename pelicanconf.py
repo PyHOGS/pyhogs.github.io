@@ -31,6 +31,27 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# Custom theme settings
+# Here we use just one set of theme files, and version that.  We copy the theme
+# from the pelican-theme repo once. Because the theme will be custom for the
+# site, it's not going to change often, and when it does those changes will
+# likely be less-than-useful for populating back to the master pelican-themes
+# repo.
+#
+# While the pelican project makes a well-meaning attempt to seperate style and
+# content, their themes define  and determine quite a bit of the content of the
+# site and how it's laid out.
+#
+# The only issue will be incorporating upstream changes.  Others methods for
+# this include submodules and subtrees, both of which are a pain in the arse.
+# Any changes we need could easily come from a patch file, or even done by
+# hand if need be, so this should not be a huge problem.
+#
+# Another issue may be changing themes.  Again, this should be easy to do just
+# by using git branches for a different theme.
+THEME = 'theme'
+
 # Plugins
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['summary', ]
