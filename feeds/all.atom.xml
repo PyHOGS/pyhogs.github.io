@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UW Oceanography Python Users Group</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-07-28T14:52:31+07:00</updated><entry><title>28 July Group Meeting</title><link href="http://uwocnpyusers.github.io/28-july-group-meeting.html" rel="alternate"></link><updated>2014-07-28T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-07-28:28-july-group-meeting.html</id><summary type="html">&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UW Oceanography Python Users Group</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-07-28T14:52:31+07:00</updated><entry><title>28 July Python Hour</title><link href="http://uwocnpyusers.github.io/28-july-python-hour.html" rel="alternate"></link><updated>2014-07-28T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-07-28:28-july-python-hour.html</id><summary type="html">&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
 different ways we can call a subset of an array. We were more or less following
 Jake's notes that can be viewed here.&lt;/p&gt;
 &lt;p&gt;Other things that we discussed:&lt;/p&gt;
@@ -2563,7 +2563,7 @@ In&amp;nbsp;[45]:
 &lt;p&gt;&lt;a href="#top"&gt;Back to Top&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>21 July Group Meeting</title><link href="http://uwocnpyusers.github.io/21-july-group-meeting.html" rel="alternate"></link><updated>2014-07-21T14:52:31+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-07-21:21-july-group-meeting.html</id><summary type="html">&lt;p&gt;Today, we talked about:&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>21 July Python Hour</title><link href="http://uwocnpyusers.github.io/21-july-python-hour.html" rel="alternate"></link><updated>2014-07-21T14:52:31+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-07-21:21-july-python-hour.html</id><summary type="html">&lt;p&gt;Today, we talked about:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html"&gt;reshape&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://docs.scipy.org/doc/numpy/user/basics.broadcasting.html"&gt;Array broadcasting&lt;/a&gt; (Called &lt;a class="reference external" href="http://www.mathworks.com/help/matlab/ref/bsxfun.html"&gt;*binary scalar (or singleton) expansion*&lt;/a&gt; in MATLAB-speak)&lt;/li&gt;
