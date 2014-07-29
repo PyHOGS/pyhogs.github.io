@@ -11,9 +11,23 @@ Branches
 Organization and user repos require the website to live in the master branch.
 We'll use a separate branch (`website`) for the source files.
 
+Getting the code
+-----------------
+Requirements:
+* Pelican
+* ipython
+* All other modules required by above (numpy, etc)
+
+    # Get the code & submodules
+    git clone https://github.com/UWOcnPyUsers/UWOcnPyUsers.github.io.git
+    cd UWOcnPyUsers.github.io
+    git checkout website
+    git submodule init  #Not sure if this is needed...
+    git submodule update
+
 Testing the site
 ------------------
-    git branch website
+    git checkout website
     make html
     make devserver
 
@@ -23,7 +37,7 @@ but the errors from `make html` are generally easier to spot.
 
 Updating the site
 -------------------
-    git branch website
+    git checkout website
     make github
 
 The github target generates the website content (using the `publishconf.py`),
