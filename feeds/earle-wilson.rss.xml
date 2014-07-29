@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UW Oceanography Python Users Group</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 28 Jul 2014 14:52:31 +0700</lastBuildDate><item><title>28 July Python Hour</title><link>http://uwocnpyusers.github.io/28-july-python-hour.html</link><description>&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UW Oceanography Python Users Group</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 28 Jul 2014 14:52:31 +0700</lastBuildDate><item><title>Python Hour - 28 July</title><link>http://uwocnpyusers.github.io/python-hour-28-july.html</link><description>&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
 different ways we can call a subset of an array. We were more or less following
-Jake's notes that can be viewed here.&lt;/p&gt;
+&lt;a class="reference external" href="http://uwocnpyusers.github.io/slicing-and-indexing.html"&gt;Jake's notebook&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;Other things that we discussed:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;iPython Notebook: The Notebook is a way to log a Python session and export it
+&lt;li&gt;&lt;a class="reference external" href="http://ipython.org/notebook.html"&gt;iPython Notebook&lt;/a&gt;: The Notebook is a way to log a Python session and export it
 as document - see Jake's file. Text can be entered using plain text, markdown,
 html or LaTex Math syntax. You can also export the Notebook in a bunch of
 different formats including Latex and html. JPaul and I think it would be
 good way to share notes with the group.&lt;/li&gt;
-&lt;li&gt;Creating a Github repository for the group: Everyone seems to agree that it
+&lt;li&gt;Creating a &lt;a class="reference external" href="https://github.com/"&gt;Github&lt;/a&gt; repository for the group: Everyone seems to agree that it
 would be convenient to have a centralized place where we can share and access
 each other's code and notebooks. A github repository seems ideal. It's
 contents would be accessible to everyone and each of us can contribute to
-its content. I created a personal repository for my notes:
-&lt;a class="reference external" href="https://github.com/earlew/Python_demo"&gt;https://github.com/earlew/Python_demo&lt;/a&gt;. Someone could create a separate repo
-for the group in a similar way.&lt;/li&gt;
+its content. I created a &lt;a class="reference external" href="https://github.com/earlew/Python_demo"&gt;personal repository for my notes.&lt;/a&gt;
+Someone could create a separate repo for the group in a similar way.&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 28 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-28:28-july-python-hour.html</guid><category>broadcasting</category><category>reshape</category><category>indexing</category></item><item><title>Python Basics Review</title><link>http://uwocnpyusers.github.io/python-basics-review.html</link><description>&lt;p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 28 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-28:python-hour-28-july.html</guid><category>slicing</category><category>indexing</category><category>notebooks</category></item><item><title>Python Basics Review</title><link>http://uwocnpyusers.github.io/python-basics-review.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
