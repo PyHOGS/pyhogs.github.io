@@ -48,10 +48,11 @@ Alternatively, we could set up a post-commit hook to run `make github`
 after each successful commit.
 
 
-TODO List
+TODO
 -------------
 * [ ] Add RSS feeds.
 * [ ] Add Disqus comments.
+* [ ] Add search bar.
 * [ ] Update instructions for interacting with Github (clone, push, pull).
 * [ ] Fix summaries so they look nice.
 * [ ] Convert ipython notebook includes to css (in plugin repo).
