@@ -18,7 +18,7 @@ Requirements:
 * ipython
 * All other modules required by above (numpy, etc)
 
-    # Get the code & submodules
+
     git clone https://github.com/UWOcnPyUsers/UWOcnPyUsers.github.io.git
     cd UWOcnPyUsers.github.io
     git checkout website
