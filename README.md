@@ -58,3 +58,4 @@ TODO
 * [ ] Convert ipython notebook includes to css (in plugin repo).
 * [ ] Upgrade sidebar or get rid of it...
 * [ ] Figure out how to get `README.md` to push with gph-import.
+* [ ] Add calendar

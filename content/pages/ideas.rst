@@ -48,3 +48,7 @@ IPython
 * Interactive `ipython` environment
 * Inline plotting
 * `ipython notebooks`
+
+Non-Python
+------------
+* git and github
