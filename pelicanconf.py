@@ -27,7 +27,11 @@ LINKS = (('Python.org', 'http://python.org/'),
          ("Rich Signel's Notebook","http://rsignell-usgs.github.io/blog/" ),
          ("EarthPy", "http://earthpy.org/"),
          ('pyAOS', 'http://pyaos.johnny-lin.com/'),
-         ('Python for Science Notes', 'http://physics.nmt.edu/~raymond/software/python_notes/'))
+         ('Python for Science Notes', 'http://physics.nmt.edu/~raymond/software/python_notes/'),
+         ('Ocean Python', 'http://oceanpython.org/'),
+         ('SEAPY', 'https://code.google.com/p/sea-py/wiki/SEAPY'),
+         ('Astropython', 'http://astropython.blogspot.com/'),
+         ('XKCD-style Plots', 'http://jakevdp.github.io/blog/2013/07/10/XKCD-plots-in-matplotlib/'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
