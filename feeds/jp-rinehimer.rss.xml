@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UW Oceanography Python Users Group</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/jp-rinehimer.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 04 Aug 2014 10:00:00 +0700</lastBuildDate><item><title>Reading complex .mat files</title><link>http://uwocnpyusers.github.io/reading-mat-files.html</link><description>&lt;p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UW Oceanography Python Users Group</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/jp-rinehimer.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 04 Aug 2014 12:00:00 +0700</lastBuildDate><item><title>Python Hour - 04 August 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-04.html</link><description>&lt;p&gt;Today we went over loading a complex &lt;code&gt;.mat&lt;/code&gt; file into Python.  The notebook can
+be found here:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://uwocnpyusers.github.io/reading-mat-files.html"&gt;Reading a Complex .mat File in Python&lt;/a&gt; .&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">JP Rinehimer</dc:creator><pubDate>Mon, 04 Aug 2014 12:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-04:python-hour-2014-08-04.html</guid><category>mat files</category><category>loops</category><category>data processing</category><category>io</category><category>notebooks</category></item><item><title>Reading complex .mat files</title><link>http://uwocnpyusers.github.io/reading-mat-files.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
