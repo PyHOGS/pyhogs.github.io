@@ -16,8 +16,9 @@ Getting the code
 Requirements:
 * Pelican
 * ipython
-* All other modules required by above (numpy, etc).
+* All other modules required by above (numpy, etc)
 
+<!-- comment allows code after list in md-->
 
     git clone https://github.com/UWOcnPyUsers/UWOcnPyUsers.github.io.git
     cd UWOcnPyUsers.github.io
