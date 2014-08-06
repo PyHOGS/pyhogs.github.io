@@ -14,7 +14,8 @@ We'll use a separate branch (`website`) for the source files.
 Getting the code
 -----------------
 Requirements:
-* Pelican
+* Pelican, webassets, requests, markdown
+    pip install pelican webassets requests markdown
 * ipython
 * All other modules required by above (numpy, etc)
 
