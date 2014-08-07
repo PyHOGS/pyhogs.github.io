@@ -7,6 +7,10 @@ AUTHOR = u'JP Rinehimer'
 SITENAME = u'UW Oceanography Python Users Group'
 SITEURL = '' # Set in publishconf.py
 
+# Content licensing: CC-BY
+CC_LICENSE = "CC-BY-SA"
+CC_ATTR_MARKUP = True
+
 PATH = 'content'
 
 TIMEZONE = 'US/Pacific'
