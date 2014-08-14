@@ -16,6 +16,8 @@ div.highlight pre {
   font-size: 11px;
 }
 
+.container-fluid>.content{margin-left:240px; max-width:46em;}
+
 .summary * { display: inline; }
 .summary pre { display: none; }
 
