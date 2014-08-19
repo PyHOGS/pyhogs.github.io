@@ -1,7 +1,7 @@
 Python Hour - 28 July
 =======================
 
-:slug: python-hour-28-july
+:slug: python-hour-2014-07-28
 :date: 2014-07-28 14:52:31 UTC-07:00
 :tags: slicing, indexing, notebooks
 :authors: Earle Wilson

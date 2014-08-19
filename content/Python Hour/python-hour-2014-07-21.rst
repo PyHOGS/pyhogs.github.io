@@ -1,7 +1,7 @@
 Python Hour - 21 July
 =======================
 
-:slug: python-hour-21-july
+:slug: python-hour-2014-07-21
 :date: 2014-07-21 14:52:31 UTC-07:00
 :tags: broadcasting, reshape, indexing
 :authors: JP Rinehimer
