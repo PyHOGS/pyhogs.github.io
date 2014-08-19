@@ -1732,7 +1732,7 @@ jQuery(document).ready(function($) {
 						<li><a href="http://uwocnpyusers.github.io/pages/about.html">About</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/meeting-ideas.html">Meeting Ideas</a></li>
 					<li ><a href="http://uwocnpyusers.github.io/category/examples.html">Examples</a></li>
-					<li ><a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a></li>
+					<li class="active"><a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a></li>
 					<li ><a href="http://uwocnpyusers.github.io/category/tutorials.html">Tutorials</a></li>
 			</ul>
 			<p class="pull-right"><a href="http://uwocnpyusers.github.io/archives.html">[archives]</a> <a href="http://uwocnpyusers.github.io/tags.html">[tags]</a></p>
@@ -1769,12 +1769,81 @@ jQuery(document).ready(function($) {
 		</div>
 	  </div>
 	  <div class="content">
-<div class="page-header"><h1>UW Oceanography Python Users Group - Authors</h1></div>    <h1>Authors on UW Oceanography Python Users Group</h1>        <li><a href="http://uwocnpyusers.github.io/author/earle-wilson.html">Earle Wilson</a> (4)</li>
-        <li><a href="http://uwocnpyusers.github.io/author/jake-steinberg.html">Jake Steinberg</a> (1)</li>
-        <li><a href="http://uwocnpyusers.github.io/author/jp-rinehimer.html">JP Rinehimer</a> (3)</li>
+	<div class='article'>
+		<div class="page-header"><h1>Python Hour - 18 August 2014</h1></div>
+		<div class="well small">18 Aug 2014
+ / <a class="url fn" href="http://uwocnpyusers.github.io/author/earle-wilson.html">Earle Wilson </a>/ <a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a>
+ / <a href="http://uwocnpyusers.github.io/tag/examples.html">examples</a>, <a href="http://uwocnpyusers.github.io/tag/notebooks.html">notebooks</a> </div>
+		<div><p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Python-Hour---August-18,-2014">Python Hour - August 18, 2014<a class="anchor-link" href="#Python-Hour---August-18,-2014">&#182;</a></h1>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Meeting-summary">Meeting summary<a class="anchor-link" href="#Meeting-summary">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p><strong>We spent the first 15 minutes or so talking about <code>git</code> and how it's different from other version control software, specifically Mercurial.</strong>* After the meeting, I found this short <a href="http://www.wikivs.com/wiki/Git_vs_Mercurial">wiki</a> that does a nice comparison of the two. One of the main differences is that git uses a two-step commit process, whereas Mercurial uses a single step. Using git, you first have to add new changes to what is called an &quot;index&quot; or &quot;staging area&quot; before you can commit those changes to your local repository. So, in git, your workflow might be like:</p>
+<p>--&gt;Make changes to file.</p>
+<p>--&gt;Add changes (all at once or piecemeal) to staging area using <a href="http://git-scm.com/docs/git-add">git add</a>.</p>
+<p>--&gt;Commit changes, stored in staging area, to local repository using <a href="http://git-scm.com/docs/git-commit">git commit</a>.</p>
+<p>Having this staging area gives you more control over the commit process. JPaul showed us that you can use '<code>git add</code>' to split new changes into what are known as &quot;hunks&quot; and commit those hunks individually - rather than all at once . This <a href="http://alblue.bandlem.com/2011/10/git-tip-of-week-interactive-adding.html">blog article</a> gives a nice example of how and why you would stage and commit hunks. Whether or not you find this feature useful will depend on your workflow. If you prefer to work for long stretches without committing and/or need to keep a detailed log the changes you're making to a file, you will probably find the '<code>git add</code>' feature useful. Otherwise, you might find it to be unneccesary and somewhat annoying.</p>
+<p>* <em>In case you're wondering why we keep talking about git, it's because we have a <a href="https://github.com/UWOcnPyUsers/uwocnpyusers">github repository</a> set up for the group. The hope is that we will one day use it to share and work on Python code among ourselves.</em></p></li>
+<li><p><strong>We also talked about <a href="http://www.sourcetreeapp.com/">SourceTree</a></strong>, which is a neat graphical user interface for managing Git and Mercurial. SoureTree is probably a lot more user friendly than the command line. Parker and JPaul seem to like it.</p></li>
+<li><p><strong>JPaul showed us how to install the Gibbs SeaWater toolbox into Canopy.</strong> In case you don't know, the <a href="http://www.teos-10.org/pubs/gsw/html/gsw_contents.html">Gibbs SeaWater Oceanographic Toolbox</a> is a library of routines for computing different thermodynamic properties of seawater, such as density, potential temperature and buoyancy frequency. The organization that maintains SeaWater also has similar libraries for computing ice and air properties. Canopy does not come with the Gibbs SeaWater Toolbox, but you can install it manually using <a href="https://pypi.python.org/pypi/pip">pip</a>.</p>
+<p><code>Pip</code> is the official python package manager and it is automatically installed when you install Canopy. <strong>To install a python package that is not included in Canopy, you first open up a Canopy terminal then type 'pip install name_of_package' at the prompt.</strong> You can open a Canopy terminal window by going to <code>Tools</code> in the Canopy menubar. If Canopy is your default Python environment, you can do '<code>pip install</code>' from a regular terminal window. <code>Pip</code> then searches the <a href="https://pypi.python.org/pypi/">PyPI</a> database for the package and installs it into Canopy. PyPI is the official Python Package Index.</p>
+<p>So, to install the Gibbs SeaWater toolbox all you need to do is <code>pip install gsw</code> from the terminal command line. To use it in python, you need to import it via <code>import gsw</code>.</p></li>
+<li><p><strong>Parker introduced us to the <code>np.choose</code> method.</strong> <code>np.choose</code> is another way of pulling values from an array. It's useful when trying to index a N-dimensional array; Parker used <code>np.choose</code> in a routine that maps sigma coordinates to z-level coordinates. It's usage is somewhat complicated - perhaps unnecessarily so. (You can tell that the person who wrote the help documentation is pretty frustrated with everyone's confusion.) A related numpy method is <code>np.take</code>.</p></li>
+<li><p><strong>We briefly talked about some different ways to set up a figure.</strong> Here are a few examples (use help for learn about more options):</p>
+<p><code>fig = plt.figure()</code> #makes a new figure and returns handle.</p>
+<p><code>fig = plt.figure(figsize = (10,8))</code> #same as above makes but fixes the figure window to be 10 inches by 8 inches</p>
+<p><code>ax = fig.add_axes()</code> #creates axes in figure and returns handle</p>
+<p><code>ax = fig.add_axes([0.1, 0.1, 0.8, 0.8])</code> #same as above but now specifying the location and size of the plot.</p>
+<p><code>ax = plt.subplot(111)</code> #makes a single subplot into current figure and returns axes handle.</p>
+<p><code>ax = plt.subplot(1,1,1)</code> #another way of doing the above.</p>
+<p><code>ax = plt.subplot(2,2,1)</code> #similar to the above but creates the first plot for a 2x2 subplot.</p>
+<p><code>fig,(ax1,ax2,ax3,ax4) = plt.subplots(2,2)</code> #creates a new figure with a 2x2 subplot. returns handles for each.</p>
+<p>For the simplest of plots, you can choose to do none of the above and just create the plot. For example, doing something like <code>plt.plot(x,y)</code> will create a figure and an axes by default. Also useful are the get current axes and figure methods:</p>
+<p><code>ax = plt.gca()</code> #gets handle for current axes</p>
+<p><code>fig = plt.gcf()</code> #gets handle for current figure</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>-E.W.</p>
+</div>
+</div>
+</div></p></div>
+		<div>
+			<h2>Comments</h2>
+		<div>
+	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW Oceanography Python Users Group</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW Oceanography Python Users Group</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Earle Wilson</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>
