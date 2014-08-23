@@ -17,6 +17,7 @@ Other things that we discussed:
   html or LaTex Math syntax. You can also export the Notebook in a bunch of
   different formats including Latex and html. JPaul and I think it would be
   good way to share notes with the group.
+  
 * Creating a `Github <https://github.com/>`_ repository for the group: Everyone seems to agree that it
   would be convenient to have a centralized place where we can share and access
   each other's code and notebooks. A github repository seems ideal. It's

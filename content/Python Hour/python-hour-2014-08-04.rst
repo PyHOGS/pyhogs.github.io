@@ -11,4 +11,4 @@ Python Hour - 04 August 2014
 Today we went over loading a complex `.mat` file into Python.  The notebook can
 be found here:
 
-`Reading a Complex .mat File in Python <{filename}/Examples/reading-mat-files.md>`_ .
+`Reading a Complex .mat File in Python <{filename}/Examples/reading-mat-files.md>`_.
