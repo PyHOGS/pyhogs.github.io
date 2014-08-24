@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import os
 
 AUTHOR = u'JP Rinehimer'
-SITENAME = u'UW Oceanography Python Users Group'
+SITENAME = u'PyHOGS'
 SITEURL = '' # Set in publishconf.py
 
 # Content licensing: CC-BY
