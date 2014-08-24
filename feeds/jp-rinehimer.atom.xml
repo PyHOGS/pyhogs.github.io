@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UW Oceanography Python Users Group</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/jp-rinehimer.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-08-04T12:00:00+07:00</updated><entry><title>Python Hour - 04 August 2014</title><link href="http://uwocnpyusers.github.io/python-hour-2014-08-04.html" rel="alternate"></link><updated>2014-08-04T12:00:00+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-08-04:python-hour-2014-08-04.html</id><summary type="html">&lt;p&gt;Today we went over loading a complex &lt;code&gt;.mat&lt;/code&gt; file into Python.  The notebook can
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/jp-rinehimer.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-08-04T12:00:00+07:00</updated><entry><title>Python Hour - 04 August 2014</title><link href="http://uwocnpyusers.github.io/python-hour-2014-08-04.html" rel="alternate"></link><updated>2014-08-04T12:00:00+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-08-04:python-hour-2014-08-04.html</id><summary type="html">&lt;p&gt;Today we went over loading a complex &lt;code&gt;.mat&lt;/code&gt; file into Python.  The notebook can
 be found here:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://uwocnpyusers.github.io/reading-mat-files.html"&gt;Reading a Complex .mat File in Python&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://uwocnpyusers.github.io/reading-mat-files.html"&gt;Reading a Complex .mat File in Python&lt;/a&gt;.&lt;/p&gt;
 </summary><category term="mat files"></category><category term="loops"></category><category term="data processing"></category><category term="io"></category><category term="notebooks"></category></entry><entry><title>Reading complex .mat files</title><link href="http://uwocnpyusers.github.io/reading-mat-files.html" rel="alternate"></link><updated>2014-08-04T10:00:00+07:00</updated><author><name>JP Rinehimer</name></author><id>tag:uwocnpyusers.github.io,2014-08-04:reading-mat-files.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Direct links to &lt;a href="https://github.com/UWOcnPyUsers/uwocnpyusers/blob/master/notebooks/examples/Reading_complex_mat_files.ipynb" title="Github"&gt;notebook&lt;/a&gt; and &lt;a href="https://github.com/UWOcnPyUsers/uwocnpyusers/blob/master/data/CA2009.mat" title="Github"&gt;data&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -9,18 +9,20 @@ be found here:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="reading-complex-.mat-files."&gt;Reading complex &lt;code&gt;.mat&lt;/code&gt; files.&lt;/h1&gt;
+&lt;h1 id="reading-complex-mat-files-"&gt;Reading complex &lt;code&gt;.mat&lt;/code&gt; files.&lt;/h1&gt;
 &lt;p&gt;This notebook shows an example of reading a Matlab &lt;code&gt;.mat&lt;/code&gt; file, converting the data into a usable dictionary with loops, a simple plot of the data.&lt;/p&gt;
-&lt;h2 id="reading-a-.mat-file"&gt;Reading a .mat file&lt;/h2&gt;
-&lt;p&gt;First, we open our &lt;code&gt;.mat&lt;/code&gt; file using &lt;code&gt;loadmat&lt;/code&gt; from &lt;code&gt;scipy.io&lt;/code&gt;. This function returns the variables in the &lt;code&gt;.mat&lt;/code&gt; file as keys in a dictionary. Note that this function can only open &lt;code&gt;.mat&lt;/code&gt; files less than version 7.3. If the version of your file is 7.3 or above, you have two options:&lt;/p&gt;
-&lt;ol style="list-style-type: decimal"&gt;
-&lt;li&gt;&lt;p&gt;Open the file in Matlab and save as a lower version:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;save filename.mat -v7&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;After v. 7.3, &lt;code&gt;.mat&lt;/code&gt; files are saved as &lt;code&gt;HDF5&lt;/code&gt; files. This format is a super-set of &lt;code&gt;netcdf&lt;/code&gt; (version 4) and can be read using the &lt;code&gt;h5py&lt;/code&gt; package.&lt;/p&gt;&lt;/li&gt;
+&lt;h2 id="reading-a-mat-file"&gt;Reading a .mat file&lt;/h2&gt;
+&lt;p&gt;First, we open our &lt;code&gt;.mat&lt;/code&gt; file using &lt;code&gt;loadmat&lt;/code&gt; from &lt;code&gt;scipy.io&lt;/code&gt;. This function returns the variables in the &lt;code&gt;.mat&lt;/code&gt; file as keys in a dictionary.  Note that this function can only open &lt;code&gt;.mat&lt;/code&gt; files less than version 7.3. If the version of your file is 7.3 or above, you have two options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open the file in Matlab and save as a lower version: &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; save filename.mat -v7
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;After v. 7.3, &lt;code&gt;.mat&lt;/code&gt; files are saved as &lt;code&gt;HDF5&lt;/code&gt; files. This format is a super-set of &lt;code&gt;netcdf&lt;/code&gt; (version 4) and can be read using the &lt;code&gt;h5py&lt;/code&gt; package.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The example file we are reading has a complex data structure. Originally the file contained many additional variables, corresponding to other mooring lines, but we have reduced it to only contain data for a single set of moorings. The same techniques could be used with a loop to read the entire file.&lt;/p&gt;
-&lt;p&gt;Python has two data types similar to Matlab's &lt;code&gt;struct&lt;/code&gt;: &lt;code&gt;dict&lt;/code&gt; from standard Python and &lt;code&gt;record arrays&lt;/code&gt; or &lt;code&gt;stuctured arrays&lt;/code&gt; from &lt;code&gt;numpy&lt;/code&gt;. I usually use &lt;code&gt;dict&lt;/code&gt; as it is in the basic libraries, lots of information about them can be found online, and they're relatively simple to access. &lt;code&gt;numpy&lt;/code&gt; also provides &lt;code&gt;record arrays&lt;/code&gt; which are more similar to Matlab's &lt;code&gt;struct&lt;/code&gt; arrays in that they can be any shape. Because of this, they are more powerful than &lt;code&gt;dict&lt;/code&gt; but also a bit more confusing to access and use.&lt;/p&gt;
-&lt;p&gt;To start, we'll read in the file and print the keys of the dictionary the file was saved to. These keys correspond to the variable stored in the original &lt;code&gt;.mat&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;The example file we are reading has a complex data structure.  Originally the file contained many additional variables, corresponding to other mooring lines, but we have reduced it to only contain data for a single set of moorings.  The same techniques could be used with a loop to read the entire file.&lt;/p&gt;
+&lt;p&gt;Python has two data types similar to Matlab&amp;#39;s &lt;code&gt;struct&lt;/code&gt;: &lt;code&gt;dict&lt;/code&gt; from standard Python and &lt;code&gt;record arrays&lt;/code&gt; or &lt;code&gt;stuctured arrays&lt;/code&gt; from &lt;code&gt;numpy&lt;/code&gt;. I usually use &lt;code&gt;dict&lt;/code&gt; as it is in the basic libraries, lots of information about them can be found online, and they&amp;#39;re relatively simple to access. &lt;code&gt;numpy&lt;/code&gt; also provides &lt;code&gt;record arrays&lt;/code&gt; which are more similar to Matlab&amp;#39;s &lt;code&gt;struct&lt;/code&gt; arrays in that they can be any shape.  Because of this, they are more powerful than &lt;code&gt;dict&lt;/code&gt; but also a bit more confusing to access and use.&lt;/p&gt;
+&lt;p&gt;To start, we&amp;#39;ll read in the file and print the keys of the dictionary the file was saved to.  These keys correspond to the variable stored in the original &lt;code&gt;.mat&lt;/code&gt; file.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -67,16 +69,17 @@ In&amp;nbsp;[1]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;For this data set, each variable is composed of four parts, with each part separated by underscores: &lt;strong&gt;INST_STA_DATE_DEPTH&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For this data set, each variable is composed of four parts, with each part separated by underscores:
+&lt;strong&gt;INST_STA_DATE_DEPTH&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;INST&lt;/strong&gt;: The instrument(s) located at this part of the mooring: &lt;strong&gt;T&lt;/strong&gt; is temperature; &lt;strong&gt;CTPO&lt;/strong&gt; is conductivity, temperature, pressure, and oxygen; etc..&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;STA&lt;/strong&gt;: The station location: mooring line and water depth. &lt;strong&gt;CA_042&lt;/strong&gt; is Cape Alava at 42 m depth.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;DATE&lt;/strong&gt;: Date the mooring instrument were recovered.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;DEPTH&lt;/strong&gt;: Nominal depth of the instruments along the the mooring.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Also, note that there are keys like &lt;em&gt;__globals__&lt;/em&gt;, &lt;em&gt;__version__&lt;/em&gt; and &lt;em&gt;__header__&lt;/em&gt;. These keys contain information about the &lt;code&gt;.mat&lt;/code&gt; file, but, in general, are not used. We'll have to come up with a way to ignore them later.&lt;/p&gt;
+&lt;p&gt;Also, note that there are keys like &lt;em&gt;__globals__&lt;/em&gt;, &lt;em&gt;__version__&lt;/em&gt; and &lt;em&gt;__header__&lt;/em&gt;.  These keys contain information about the &lt;code&gt;.mat&lt;/code&gt; file, but, in general, are not used.  We&amp;#39;ll have to come up with a way to ignore them later.&lt;/p&gt;
 &lt;h2 id="pretty-printing-the-data-in-the-file"&gt;Pretty-printing the data in the file&lt;/h2&gt;
-&lt;p&gt;To get a better look at the data, we're going to write a small function that recursively goes into every key of a dictionary or every field of a structured array and prints the data, indenting so that we know what level we're at.&lt;/p&gt;
+&lt;p&gt;To get a better look at the data, we&amp;#39;re going to write a small function that recursively goes into every key of a dictionary or every field of a structured array and prints the data, indenting so that we know what level we&amp;#39;re at.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -164,10 +167,10 @@ Key: F_CA042_090429_038
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;OK, so each key has two fields: &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;lpdata&lt;/code&gt;. That seems reasonable enough. The original file had the same format with each variable being a struct with these two fields. In addition, each of these fields was a nested struct containing fields like &lt;code&gt;time&lt;/code&gt;, &lt;code&gt;temp&lt;/code&gt;, etc.&lt;/p&gt;
-&lt;h2 id="importing-nested-structured-arrays-from-.mat-file"&gt;Importing nested structured arrays from &lt;code&gt;.mat&lt;/code&gt; file&lt;/h2&gt;
-&lt;p&gt;It's a bit odd that our function didn't drill down further. It should have kept going through each level of nesting if the data at each level was a structured array or a dict. Instead, it stopped before getting to the &lt;code&gt;time&lt;/code&gt; or &lt;code&gt;temp&lt;/code&gt; fields.&lt;/p&gt;
-&lt;p&gt;Let's take a look at the fields of those structure arrays.&lt;/p&gt;
+&lt;p&gt;OK, so each key has two fields: &lt;code&gt;data&lt;/code&gt; and &lt;code&gt;lpdata&lt;/code&gt;.  That seems reasonable enough.  The original file had the same format with each variable being a struct with these two fields.  In addition, each of these fields was a nested struct containing fields like &lt;code&gt;time&lt;/code&gt;, &lt;code&gt;temp&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;h2 id="importing-nested-structured-arrays-from-mat-file"&gt;Importing nested structured arrays from &lt;code&gt;.mat&lt;/code&gt; file&lt;/h2&gt;
+&lt;p&gt;It&amp;#39;s a bit odd that our function didn&amp;#39;t drill down further.  It should have kept going through each level of nesting if the data at each level was a structured array or a dict.  Instead, it stopped before getting to the &lt;code&gt;time&lt;/code&gt; or &lt;code&gt;temp&lt;/code&gt; fields.&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s take a look at the fields of those structure arrays.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -220,8 +223,8 @@ t[&amp;apos;data&amp;apos;][0,0][&amp;apos;time&amp;apos;][0,0] is a: float64 (3
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Turns out the &lt;code&gt;data&lt;/code&gt; field of our variable is of type &lt;code&gt;object&lt;/code&gt;. That's a bit odd... Looking closer, it is 2D with shape (1,1) so it's essentially a scalar. The actual data is nested even deeper inside the &lt;code&gt;time&lt;/code&gt; field which is also a (1,1) structure array.&lt;/p&gt;
-&lt;p&gt;Let's just do a quick plot of the data to see what we have:&lt;/p&gt;
+&lt;p&gt;Turns out the &lt;code&gt;data&lt;/code&gt; field of our variable is of type &lt;code&gt;object&lt;/code&gt;.  That&amp;#39;s a bit odd...  Looking closer, it is 2D with shape (1,1) so it&amp;#39;s essentially a scalar.  The actual data is nested even deeper inside the &lt;code&gt;time&lt;/code&gt; field which is also a (1,1) structure array. &lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s just do a quick plot of the data to see what we have:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -395,8 +398,8 @@ kiRJkiRJkiRJkiRJkiRJkiRJkiTlw/8Hcf9pDesng1IAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Great! That looks like temperature data. But why do we need all the extra indexing? This is the difference between &lt;em&gt;arrays of structs&lt;/em&gt; and &lt;em&gt;structs of arrays&lt;/em&gt;. A similar situation happens in Matlab, but if your struct is scalar, you don't need the extra [0,0] indices. &lt;em&gt;(NB: For the &lt;code&gt;scopy.io.loadmat&lt;/code&gt; function a &lt;code&gt;squeeze_me&lt;/code&gt; argument exists, which, in theory, should reduce these sub-components to scalars. It seemed to work- I got scalars- but for some reason I couldn't access the results)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;While arrays of structs can be powerful, it's often the case that datasets will just have nested scalar structures where the actual vector or array data is located at the base of the tree. In these cases, the extra &lt;code&gt;[0,0]&lt;/code&gt; indexing is annoying and confusing. Fortunately, someone has already put together a function that breaks up this complex nest of data structures into something manageable. The function below loads a &lt;code&gt;.mat&lt;/code&gt; file and converts the nested scalar structures into nested dictionaries. If you aren't using &lt;em&gt;arrays of structs&lt;/em&gt;, then this version should work just fine for you.&lt;/p&gt;
+&lt;p&gt;Great!  That looks like temperature data.  But why do we need all the extra indexing?  This is the difference between &lt;em&gt;arrays of structs&lt;/em&gt; and &lt;em&gt;structs of arrays&lt;/em&gt;. A similar situation happens in Matlab, but if your struct is scalar, you don&amp;#39;t need the extra [0,0] indices.  &lt;em&gt;(NB: For the &lt;code&gt;scopy.io.loadmat&lt;/code&gt; function a &lt;code&gt;squeeze_me&lt;/code&gt; argument exists, which, in theory, should reduce these sub-components to scalars.  It seemed to work- I got scalars- but for some reason I couldn&amp;#39;t access the results)&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;While arrays of structs can be powerful, it&amp;#39;s often the case that datasets will just have nested scalar structures where the actual vector or array data is located at the base of the tree.  In these cases,  the extra &lt;code&gt;[0,0]&lt;/code&gt; indexing is annoying and confusing. Fortunately, someone has already put together a function that breaks up this complex nest of data structures into something manageable.  The function below loads a &lt;code&gt;.mat&lt;/code&gt; file and converts the nested scalar structures into nested dictionaries.  If you aren&amp;#39;t using &lt;em&gt;arrays of structs&lt;/em&gt;, then this version should work just fine for you.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -508,11 +511,11 @@ Key: T_CA065_090603_010
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now that's more like it!&lt;/p&gt;
+&lt;p&gt;Now that&amp;#39;s more like it!&lt;/p&gt;
 &lt;h2 id="rearranging-the-data-hierarchy"&gt;Rearranging the data hierarchy&lt;/h2&gt;
-&lt;p&gt;The next step is to combine that data into useful structures. In the original &lt;code&gt;.mat&lt;/code&gt; file, the variable names (now keys in &lt;code&gt;matdata&lt;/code&gt;) correspond to data from a particular instrument on a particular mooring, as explained above. We can regroup this data using python dictionaries into a form that might be a bit more useful.&lt;/p&gt;
-&lt;p&gt;Looking at the output above, there are two keys for each variable: &lt;code&gt;lpdata&lt;/code&gt; and &lt;code&gt;data&lt;/code&gt;. &lt;code&gt;lpdata&lt;/code&gt; contains low-pass filtered data, but uses the same time array as &lt;code&gt;data&lt;/code&gt;. Let's combine these into one dictionary to reduce the level a nesting a bit.&lt;/p&gt;
-&lt;p&gt;The function below does this in-place, by altering the dictionary itself. Because it's not actually creating new data, it works quickly. Note that before we do it, we copy &lt;strong&gt;all&lt;/strong&gt; the original data by using the Python function &lt;code&gt;deepcopy&lt;/code&gt;. This function copies &lt;em&gt;everything&lt;/em&gt;. The normal &lt;code&gt;copy&lt;/code&gt; function only copies things at the top-level.&lt;/p&gt;
+&lt;p&gt;The next step is to combine that data into useful structures. In the original &lt;code&gt;.mat&lt;/code&gt; file, the variable names (now keys in &lt;code&gt;matdata&lt;/code&gt;) correspond to data from a particular instrument on a particular mooring, as explained above.  We can regroup this data using python dictionaries into a form that might be a bit more useful.&lt;/p&gt;
+&lt;p&gt;Looking at the output above, there are two keys for each variable: &lt;code&gt;lpdata&lt;/code&gt; and &lt;code&gt;data&lt;/code&gt;.  &lt;code&gt;lpdata&lt;/code&gt; contains low-pass filtered data, but uses the same time array as &lt;code&gt;data&lt;/code&gt;. Let&amp;#39;s combine these into one dictionary to reduce the level a nesting a bit. &lt;/p&gt;
+&lt;p&gt;The function below does this in-place, by altering the dictionary itself.  Because it&amp;#39;s not actually creating new data, it works quickly.  Note that before we do it, we copy &lt;strong&gt;all&lt;/strong&gt; the original data by using the Python function &lt;code&gt;deepcopy&lt;/code&gt;.  This function copies &lt;em&gt;everything&lt;/em&gt;.  The normal &lt;code&gt;copy&lt;/code&gt; function only copies things at the top-level.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -605,7 +608,7 @@ keys after: [&amp;apos;lptemp&amp;apos;, &amp;apos;temp&amp;apos;, &amp;apos;tim
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now let's look at the variables names, ie the mooring deployments, in a bit more detail. We want to know the unique station names/depths, the unique lists of parameters measured, and the unique depths. To do so, we'll use a Python technique called &lt;em&gt;list comprehension&lt;/em&gt; that generates a list using a loop in a single line. We'll also use the string method &lt;code&gt;split&lt;/code&gt; which generates a list of strings by splitting on a chosen character. Note that we're making lists within lists. Because each of the inner lists has the same dimension, we can wrap this in the &lt;code&gt;numpy&lt;/code&gt; function &lt;code&gt;array&lt;/code&gt; which generates a 2D &lt;code&gt;ndarray&lt;/code&gt; type from lists of lists.&lt;/p&gt;
+&lt;p&gt;Now let&amp;#39;s look at the variables names, ie the mooring deployments, in a bit more detail.  We want to know the unique station names/depths, the unique lists of parameters measured, and the unique depths.  To do so, we&amp;#39;ll use a Python technique called &lt;em&gt;list comprehension&lt;/em&gt; that generates a list using a loop in a single line.  We&amp;#39;ll also use the string method &lt;code&gt;split&lt;/code&gt; which generates a list of strings by splitting on a chosen character.  Note that we&amp;#39;re making lists within lists.  Because each of the inner lists has the same dimension, we can wrap this in the &lt;code&gt;numpy&lt;/code&gt; function &lt;code&gt;array&lt;/code&gt; which generates a 2D &lt;code&gt;ndarray&lt;/code&gt; type from lists of lists.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -661,8 +664,8 @@ Depths:  [&amp;apos;001&amp;apos; &amp;apos;005&amp;apos; &amp;apos;010&amp;apos
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="assigning-the-data-to-dictionaries."&gt;Assigning the data to dictionaries.&lt;/h2&gt;
-&lt;p&gt;We're now going to re-assign the data to nested dictionaries based on the variable (ie mooring deployment) names. While this isn't strictly necessary, it may help with looping later on and gives us a chance to demonstrate some Pythonic code.&lt;/p&gt;
+&lt;h2 id="assigning-the-data-to-dictionaries-"&gt;Assigning the data to dictionaries.&lt;/h2&gt;
+&lt;p&gt;We&amp;#39;re now going to re-assign the data to nested dictionaries based on the variable (ie mooring deployment) names.  While this isn&amp;#39;t strictly necessary, it may help with looping later on and gives us a chance to demonstrate some Pythonic code.&lt;/p&gt;
 &lt;p&gt;The new nested dictionaries will look like matdata2[station][param][depth][date][data] where each set of brackets is a new nested dictionary.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -707,9 +710,9 @@ In&amp;nbsp;[8]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;code&gt;matdata2&lt;/code&gt; now has the data sorted as nested dictionaries as opposed to a single, flat set of data. This (can) make looping over related data easier.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;matdata2&lt;/code&gt; now has the data sorted as nested dictionaries as opposed to a single, flat set of data.  This (can) make looping over related data easier.  &lt;/p&gt;
 &lt;h2 id="combining-dates-into-a-single-vector"&gt;Combining dates into a single vector&lt;/h2&gt;
-&lt;p&gt;First, we'll combine our data into a single vector by concatenating the different deployment dates. We'll add a &lt;code&gt;np.nan&lt;/code&gt; between each segment so that it's discontinuous when plotting. We'll generate a list of arrays and then use &lt;code&gt;np.hstack&lt;/code&gt; to concatenate all the lists into a single array.&lt;/p&gt;
+&lt;p&gt;First, we&amp;#39;ll combine our data into a single vector by concatenating the different deployment dates. We&amp;#39;ll add a &lt;code&gt;np.nan&lt;/code&gt; between each segment so that it&amp;#39;s discontinuous when plotting.  We&amp;#39;ll generate a list of arrays and then use &lt;code&gt;np.hstack&lt;/code&gt; to concatenate all the lists into a single array.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -750,8 +753,8 @@ In&amp;nbsp;[9]:
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="interpolating-the-depths-to-a-common-time"&gt;Interpolating the depths to a common time&lt;/h2&gt;
-&lt;p&gt;At this point we have dictionaries nested three-layers deep. Station-&amp;gt;Parameter Set -&amp;gt; Depth -&amp;gt; time, temp, lptemp, etc. Now we have to make some decisions based on what we actually want to do with the data. For this example, we're going to combine the data from the different depths in single 2-D arrays for each parameter set. We really only need to concern ourselves with the temperature data at this point, as it's the only instrument located at various points along the mooring.&lt;/p&gt;
-&lt;p&gt;Note the the times are different for each instrument located along a mooring line. To combine them into a single 2D-array, we'll need to do some interpolation. To do that, we need to know what our times look like. We'll print out the start and end dates of each station, along with the different time-intervals for measurements.&lt;/p&gt;
+&lt;p&gt;At this point we have dictionaries nested three-layers deep. Station-&amp;gt;Parameter Set -&amp;gt; Depth -&amp;gt; time, temp, lptemp, etc.  Now we have to make some decisions based on what we actually want to do with the data.  For this example, we&amp;#39;re going to combine the data from the different depths in single 2-D arrays for each parameter set.  We really only need to concern ourselves with the temperature data at this point, as it&amp;#39;s the only instrument located at various points along the mooring.&lt;/p&gt;
+&lt;p&gt;Note the the times are different for each instrument located along a mooring line.  To combine them into a single 2D-array, we&amp;#39;ll need to do some interpolation.  To do that, we need to know what our times look like.  We&amp;#39;ll print out the start and end dates of each station, along with the different time-intervals for measurements.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -835,8 +838,8 @@ CA015: 2010-04-30 to 2010-10-09
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="now-we-interpolate"&gt;Now we interpolate!&lt;/h2&gt;
-&lt;p&gt;Ok, it looks like our data falls between April 30 and Oct 10, 2010 with a roughly 2 min period. Lets' use this to create a new time variable and interpolate all our data to it.&lt;/p&gt;
+&lt;h2 id="now-we-interpolate-"&gt;Now we interpolate!&lt;/h2&gt;
+&lt;p&gt;Ok, it looks like our data falls between April 30 and Oct 10, 2010 with a roughly 2 min period.  Lets&amp;#39; use this to create a new time variable and interpolate all our data to it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -886,7 +889,7 @@ In&amp;nbsp;[11]:
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="creating-a-simple-plot"&gt;Creating a simple plot&lt;/h2&gt;
-&lt;p&gt;Finally, we'll create a simple plot to see what the results look like.&lt;/p&gt;
+&lt;p&gt;Finally, we&amp;#39;ll create a simple plot to see what the results look like.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

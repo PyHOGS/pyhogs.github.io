@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>UW Oceanography Python Users Group</title>
+	<title>PyHOGS</title>
 	<meta name="description" content="">
 	<meta name="author" content="JP Rinehimer">
 
@@ -1719,7 +1719,7 @@ jQuery(document).ready(function($) {
 	<link href="http://uwocnpyusers.github.io/theme/pygments.css" rel="stylesheet">
 
     <!-- Feeds -->
-    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="UW Oceanography Python Users Group Atom Feed" />
+    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PyHOGS Atom Feed" />
 
 </head>
 <body>
@@ -1727,9 +1727,10 @@ jQuery(document).ready(function($) {
 	<div class="topbar">
 	  <div class="topbar-inner">
 		<div class="container-fluid">
-		  <a class="brand" href="http://uwocnpyusers.github.io/">UW Oceanography Python Users Group</a>
+		  <a class="brand" href="http://uwocnpyusers.github.io/">PyHOGS</a>
 			<ul class="nav">
 						<li><a href="http://uwocnpyusers.github.io/pages/about.html">About</a></li>
+						<li><a href="http://uwocnpyusers.github.io/pages/getting-started.html">Getting Started</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/meeting-ideas.html">Meeting Ideas</a></li>
 					<li class="active"><a href="http://uwocnpyusers.github.io/category/examples.html">Examples</a></li>
 					<li ><a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a></li>
@@ -1750,14 +1751,11 @@ jQuery(document).ready(function($) {
 				<li><a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">Interesting notebooks</a></li>
 				<li><a href="https://www.enthought.com/products/canopy/">Enthought Canopy</a></li>
 				<li><a href="http://ocefpaf.github.io/python4oceanographers/">python4oceanographers</a></li>
-				<li><a href="http://rsignell-usgs.github.io/blog/">Rich Signel's Notebook</a></li>
 				<li><a href="http://earthpy.org/">EarthPy</a></li>
 				<li><a href="http://pyaos.johnny-lin.com/">pyAOS</a></li>
-				<li><a href="http://physics.nmt.edu/~raymond/software/python_notes/">Python for Science Notes</a></li>
 				<li><a href="http://oceanpython.org/">Ocean Python</a></li>
 				<li><a href="https://code.google.com/p/sea-py/wiki/SEAPY">SEAPY</a></li>
 				<li><a href="http://astropython.blogspot.com/">Astropython</a></li>
-				<li><a href="http://jakevdp.github.io/blog/2013/07/10/XKCD-plots-in-matplotlib/">XKCD-style Plots</a></li>
 			</ul>
 			<div class="social">
 			<h3>Social</h3>
@@ -1781,18 +1779,20 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="reading-complex-.mat-files.">Reading complex <code>.mat</code> files.</h1>
+<h1 id="reading-complex-mat-files-">Reading complex <code>.mat</code> files.</h1>
 <p>This notebook shows an example of reading a Matlab <code>.mat</code> file, converting the data into a usable dictionary with loops, a simple plot of the data.</p>
-<h2 id="reading-a-.mat-file">Reading a .mat file</h2>
-<p>First, we open our <code>.mat</code> file using <code>loadmat</code> from <code>scipy.io</code>. This function returns the variables in the <code>.mat</code> file as keys in a dictionary. Note that this function can only open <code>.mat</code> files less than version 7.3. If the version of your file is 7.3 or above, you have two options:</p>
-<ol style="list-style-type: decimal">
-<li><p>Open the file in Matlab and save as a lower version:</p>
-<pre><code>save filename.mat -v7</code></pre></li>
-<li><p>After v. 7.3, <code>.mat</code> files are saved as <code>HDF5</code> files. This format is a super-set of <code>netcdf</code> (version 4) and can be read using the <code>h5py</code> package.</p></li>
+<h2 id="reading-a-mat-file">Reading a .mat file</h2>
+<p>First, we open our <code>.mat</code> file using <code>loadmat</code> from <code>scipy.io</code>. This function returns the variables in the <code>.mat</code> file as keys in a dictionary.  Note that this function can only open <code>.mat</code> files less than version 7.3. If the version of your file is 7.3 or above, you have two options:</p>
+<ol>
+<li><p>Open the file in Matlab and save as a lower version: </p>
+<pre><code> save filename.mat -v7
+</code></pre></li>
+<li><p>After v. 7.3, <code>.mat</code> files are saved as <code>HDF5</code> files. This format is a super-set of <code>netcdf</code> (version 4) and can be read using the <code>h5py</code> package.</p>
+</li>
 </ol>
-<p>The example file we are reading has a complex data structure. Originally the file contained many additional variables, corresponding to other mooring lines, but we have reduced it to only contain data for a single set of moorings. The same techniques could be used with a loop to read the entire file.</p>
-<p>Python has two data types similar to Matlab's <code>struct</code>: <code>dict</code> from standard Python and <code>record arrays</code> or <code>stuctured arrays</code> from <code>numpy</code>. I usually use <code>dict</code> as it is in the basic libraries, lots of information about them can be found online, and they're relatively simple to access. <code>numpy</code> also provides <code>record arrays</code> which are more similar to Matlab's <code>struct</code> arrays in that they can be any shape. Because of this, they are more powerful than <code>dict</code> but also a bit more confusing to access and use.</p>
-<p>To start, we'll read in the file and print the keys of the dictionary the file was saved to. These keys correspond to the variable stored in the original <code>.mat</code> file.</p>
+<p>The example file we are reading has a complex data structure.  Originally the file contained many additional variables, corresponding to other mooring lines, but we have reduced it to only contain data for a single set of moorings.  The same techniques could be used with a loop to read the entire file.</p>
+<p>Python has two data types similar to Matlab&#39;s <code>struct</code>: <code>dict</code> from standard Python and <code>record arrays</code> or <code>stuctured arrays</code> from <code>numpy</code>. I usually use <code>dict</code> as it is in the basic libraries, lots of information about them can be found online, and they&#39;re relatively simple to access. <code>numpy</code> also provides <code>record arrays</code> which are more similar to Matlab&#39;s <code>struct</code> arrays in that they can be any shape.  Because of this, they are more powerful than <code>dict</code> but also a bit more confusing to access and use.</p>
+<p>To start, we&#39;ll read in the file and print the keys of the dictionary the file was saved to.  These keys correspond to the variable stored in the original <code>.mat</code> file.</p>
 </div>
 </div>
 </div>
@@ -1839,16 +1839,17 @@ In&nbsp;[1]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For this data set, each variable is composed of four parts, with each part separated by underscores: <strong>INST_STA_DATE_DEPTH</strong></p>
+<p>For this data set, each variable is composed of four parts, with each part separated by underscores:
+<strong>INST_STA_DATE_DEPTH</strong></p>
 <ul>
 <li><strong>INST</strong>: The instrument(s) located at this part of the mooring: <strong>T</strong> is temperature; <strong>CTPO</strong> is conductivity, temperature, pressure, and oxygen; etc..</li>
 <li><strong>STA</strong>: The station location: mooring line and water depth. <strong>CA_042</strong> is Cape Alava at 42 m depth.</li>
 <li><strong>DATE</strong>: Date the mooring instrument were recovered.</li>
 <li><strong>DEPTH</strong>: Nominal depth of the instruments along the the mooring.</li>
 </ul>
-<p>Also, note that there are keys like <em>__globals__</em>, <em>__version__</em> and <em>__header__</em>. These keys contain information about the <code>.mat</code> file, but, in general, are not used. We'll have to come up with a way to ignore them later.</p>
+<p>Also, note that there are keys like <em>__globals__</em>, <em>__version__</em> and <em>__header__</em>.  These keys contain information about the <code>.mat</code> file, but, in general, are not used.  We&#39;ll have to come up with a way to ignore them later.</p>
 <h2 id="pretty-printing-the-data-in-the-file">Pretty-printing the data in the file</h2>
-<p>To get a better look at the data, we're going to write a small function that recursively goes into every key of a dictionary or every field of a structured array and prints the data, indenting so that we know what level we're at.</p>
+<p>To get a better look at the data, we&#39;re going to write a small function that recursively goes into every key of a dictionary or every field of a structured array and prints the data, indenting so that we know what level we&#39;re at.</p>
 </div>
 </div>
 </div>
@@ -1936,10 +1937,10 @@ Key: F_CA042_090429_038
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>OK, so each key has two fields: <code>data</code> and <code>lpdata</code>. That seems reasonable enough. The original file had the same format with each variable being a struct with these two fields. In addition, each of these fields was a nested struct containing fields like <code>time</code>, <code>temp</code>, etc.</p>
-<h2 id="importing-nested-structured-arrays-from-.mat-file">Importing nested structured arrays from <code>.mat</code> file</h2>
-<p>It's a bit odd that our function didn't drill down further. It should have kept going through each level of nesting if the data at each level was a structured array or a dict. Instead, it stopped before getting to the <code>time</code> or <code>temp</code> fields.</p>
-<p>Let's take a look at the fields of those structure arrays.</p>
+<p>OK, so each key has two fields: <code>data</code> and <code>lpdata</code>.  That seems reasonable enough.  The original file had the same format with each variable being a struct with these two fields.  In addition, each of these fields was a nested struct containing fields like <code>time</code>, <code>temp</code>, etc.</p>
+<h2 id="importing-nested-structured-arrays-from-mat-file">Importing nested structured arrays from <code>.mat</code> file</h2>
+<p>It&#39;s a bit odd that our function didn&#39;t drill down further.  It should have kept going through each level of nesting if the data at each level was a structured array or a dict.  Instead, it stopped before getting to the <code>time</code> or <code>temp</code> fields.</p>
+<p>Let&#39;s take a look at the fields of those structure arrays.</p>
 </div>
 </div>
 </div>
@@ -1992,8 +1993,8 @@ t[&apos;data&apos;][0,0][&apos;time&apos;][0,0] is a: float64 (32344, 1)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Turns out the <code>data</code> field of our variable is of type <code>object</code>. That's a bit odd... Looking closer, it is 2D with shape (1,1) so it's essentially a scalar. The actual data is nested even deeper inside the <code>time</code> field which is also a (1,1) structure array.</p>
-<p>Let's just do a quick plot of the data to see what we have:</p>
+<p>Turns out the <code>data</code> field of our variable is of type <code>object</code>.  That&#39;s a bit odd...  Looking closer, it is 2D with shape (1,1) so it&#39;s essentially a scalar.  The actual data is nested even deeper inside the <code>time</code> field which is also a (1,1) structure array. </p>
+<p>Let&#39;s just do a quick plot of the data to see what we have:</p>
 </div>
 </div>
 </div>
@@ -2167,8 +2168,8 @@ kiRJkiRJkiRJkiRJkiRJkiRJkiTlw/8Hcf9pDesng1IAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Great! That looks like temperature data. But why do we need all the extra indexing? This is the difference between <em>arrays of structs</em> and <em>structs of arrays</em>. A similar situation happens in Matlab, but if your struct is scalar, you don't need the extra [0,0] indices. <em>(NB: For the <code>scopy.io.loadmat</code> function a <code>squeeze_me</code> argument exists, which, in theory, should reduce these sub-components to scalars. It seemed to work- I got scalars- but for some reason I couldn't access the results)</em></p>
-<p>While arrays of structs can be powerful, it's often the case that datasets will just have nested scalar structures where the actual vector or array data is located at the base of the tree. In these cases, the extra <code>[0,0]</code> indexing is annoying and confusing. Fortunately, someone has already put together a function that breaks up this complex nest of data structures into something manageable. The function below loads a <code>.mat</code> file and converts the nested scalar structures into nested dictionaries. If you aren't using <em>arrays of structs</em>, then this version should work just fine for you.</p>
+<p>Great!  That looks like temperature data.  But why do we need all the extra indexing?  This is the difference between <em>arrays of structs</em> and <em>structs of arrays</em>. A similar situation happens in Matlab, but if your struct is scalar, you don&#39;t need the extra [0,0] indices.  <em>(NB: For the <code>scopy.io.loadmat</code> function a <code>squeeze_me</code> argument exists, which, in theory, should reduce these sub-components to scalars.  It seemed to work- I got scalars- but for some reason I couldn&#39;t access the results)</em>  </p>
+<p>While arrays of structs can be powerful, it&#39;s often the case that datasets will just have nested scalar structures where the actual vector or array data is located at the base of the tree.  In these cases,  the extra <code>[0,0]</code> indexing is annoying and confusing. Fortunately, someone has already put together a function that breaks up this complex nest of data structures into something manageable.  The function below loads a <code>.mat</code> file and converts the nested scalar structures into nested dictionaries.  If you aren&#39;t using <em>arrays of structs</em>, then this version should work just fine for you.</p>
 </div>
 </div>
 </div>
@@ -2280,11 +2281,11 @@ Key: T_CA065_090603_010
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that's more like it!</p>
+<p>Now that&#39;s more like it!</p>
 <h2 id="rearranging-the-data-hierarchy">Rearranging the data hierarchy</h2>
-<p>The next step is to combine that data into useful structures. In the original <code>.mat</code> file, the variable names (now keys in <code>matdata</code>) correspond to data from a particular instrument on a particular mooring, as explained above. We can regroup this data using python dictionaries into a form that might be a bit more useful.</p>
-<p>Looking at the output above, there are two keys for each variable: <code>lpdata</code> and <code>data</code>. <code>lpdata</code> contains low-pass filtered data, but uses the same time array as <code>data</code>. Let's combine these into one dictionary to reduce the level a nesting a bit.</p>
-<p>The function below does this in-place, by altering the dictionary itself. Because it's not actually creating new data, it works quickly. Note that before we do it, we copy <strong>all</strong> the original data by using the Python function <code>deepcopy</code>. This function copies <em>everything</em>. The normal <code>copy</code> function only copies things at the top-level.</p>
+<p>The next step is to combine that data into useful structures. In the original <code>.mat</code> file, the variable names (now keys in <code>matdata</code>) correspond to data from a particular instrument on a particular mooring, as explained above.  We can regroup this data using python dictionaries into a form that might be a bit more useful.</p>
+<p>Looking at the output above, there are two keys for each variable: <code>lpdata</code> and <code>data</code>.  <code>lpdata</code> contains low-pass filtered data, but uses the same time array as <code>data</code>. Let&#39;s combine these into one dictionary to reduce the level a nesting a bit. </p>
+<p>The function below does this in-place, by altering the dictionary itself.  Because it&#39;s not actually creating new data, it works quickly.  Note that before we do it, we copy <strong>all</strong> the original data by using the Python function <code>deepcopy</code>.  This function copies <em>everything</em>.  The normal <code>copy</code> function only copies things at the top-level.</p>
 </div>
 </div>
 </div>
@@ -2377,7 +2378,7 @@ keys after: [&apos;lptemp&apos;, &apos;temp&apos;, &apos;time&apos;]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's look at the variables names, ie the mooring deployments, in a bit more detail. We want to know the unique station names/depths, the unique lists of parameters measured, and the unique depths. To do so, we'll use a Python technique called <em>list comprehension</em> that generates a list using a loop in a single line. We'll also use the string method <code>split</code> which generates a list of strings by splitting on a chosen character. Note that we're making lists within lists. Because each of the inner lists has the same dimension, we can wrap this in the <code>numpy</code> function <code>array</code> which generates a 2D <code>ndarray</code> type from lists of lists.</p>
+<p>Now let&#39;s look at the variables names, ie the mooring deployments, in a bit more detail.  We want to know the unique station names/depths, the unique lists of parameters measured, and the unique depths.  To do so, we&#39;ll use a Python technique called <em>list comprehension</em> that generates a list using a loop in a single line.  We&#39;ll also use the string method <code>split</code> which generates a list of strings by splitting on a chosen character.  Note that we&#39;re making lists within lists.  Because each of the inner lists has the same dimension, we can wrap this in the <code>numpy</code> function <code>array</code> which generates a 2D <code>ndarray</code> type from lists of lists.</p>
 </div>
 </div>
 </div>
@@ -2433,8 +2434,8 @@ Depths:  [&apos;001&apos; &apos;005&apos; &apos;010&apos; &apos;015&apos; &apos;
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="assigning-the-data-to-dictionaries.">Assigning the data to dictionaries.</h2>
-<p>We're now going to re-assign the data to nested dictionaries based on the variable (ie mooring deployment) names. While this isn't strictly necessary, it may help with looping later on and gives us a chance to demonstrate some Pythonic code.</p>
+<h2 id="assigning-the-data-to-dictionaries-">Assigning the data to dictionaries.</h2>
+<p>We&#39;re now going to re-assign the data to nested dictionaries based on the variable (ie mooring deployment) names.  While this isn&#39;t strictly necessary, it may help with looping later on and gives us a chance to demonstrate some Pythonic code.</p>
 <p>The new nested dictionaries will look like matdata2[station][param][depth][date][data] where each set of brackets is a new nested dictionary.</p>
 </div>
 </div>
@@ -2479,9 +2480,9 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>matdata2</code> now has the data sorted as nested dictionaries as opposed to a single, flat set of data. This (can) make looping over related data easier.</p>
+<p><code>matdata2</code> now has the data sorted as nested dictionaries as opposed to a single, flat set of data.  This (can) make looping over related data easier.  </p>
 <h2 id="combining-dates-into-a-single-vector">Combining dates into a single vector</h2>
-<p>First, we'll combine our data into a single vector by concatenating the different deployment dates. We'll add a <code>np.nan</code> between each segment so that it's discontinuous when plotting. We'll generate a list of arrays and then use <code>np.hstack</code> to concatenate all the lists into a single array.</p>
+<p>First, we&#39;ll combine our data into a single vector by concatenating the different deployment dates. We&#39;ll add a <code>np.nan</code> between each segment so that it&#39;s discontinuous when plotting.  We&#39;ll generate a list of arrays and then use <code>np.hstack</code> to concatenate all the lists into a single array.</p>
 </div>
 </div>
 </div>
@@ -2522,8 +2523,8 @@ In&nbsp;[9]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="interpolating-the-depths-to-a-common-time">Interpolating the depths to a common time</h2>
-<p>At this point we have dictionaries nested three-layers deep. Station-&gt;Parameter Set -&gt; Depth -&gt; time, temp, lptemp, etc. Now we have to make some decisions based on what we actually want to do with the data. For this example, we're going to combine the data from the different depths in single 2-D arrays for each parameter set. We really only need to concern ourselves with the temperature data at this point, as it's the only instrument located at various points along the mooring.</p>
-<p>Note the the times are different for each instrument located along a mooring line. To combine them into a single 2D-array, we'll need to do some interpolation. To do that, we need to know what our times look like. We'll print out the start and end dates of each station, along with the different time-intervals for measurements.</p>
+<p>At this point we have dictionaries nested three-layers deep. Station-&gt;Parameter Set -&gt; Depth -&gt; time, temp, lptemp, etc.  Now we have to make some decisions based on what we actually want to do with the data.  For this example, we&#39;re going to combine the data from the different depths in single 2-D arrays for each parameter set.  We really only need to concern ourselves with the temperature data at this point, as it&#39;s the only instrument located at various points along the mooring.</p>
+<p>Note the the times are different for each instrument located along a mooring line.  To combine them into a single 2D-array, we&#39;ll need to do some interpolation.  To do that, we need to know what our times look like.  We&#39;ll print out the start and end dates of each station, along with the different time-intervals for measurements.</p>
 </div>
 </div>
 </div>
@@ -2607,8 +2608,8 @@ CA015: 2010-04-30 to 2010-10-09
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="now-we-interpolate">Now we interpolate!</h2>
-<p>Ok, it looks like our data falls between April 30 and Oct 10, 2010 with a roughly 2 min period. Lets' use this to create a new time variable and interpolate all our data to it.</p>
+<h2 id="now-we-interpolate-">Now we interpolate!</h2>
+<p>Ok, it looks like our data falls between April 30 and Oct 10, 2010 with a roughly 2 min period.  Lets&#39; use this to create a new time variable and interpolate all our data to it.</p>
 </div>
 </div>
 </div>
@@ -2658,7 +2659,7 @@ In&nbsp;[11]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="creating-a-simple-plot">Creating a simple plot</h2>
-<p>Finally, we'll create a simple plot to see what the results look like.</p>
+<p>Finally, we&#39;ll create a simple plot to see what the results look like.</p>
 </div>
 </div>
 </div>
@@ -5279,7 +5280,7 @@ iIiIiIiIiIiIiIiIiIiIiIiISL3+H1H4LxD2EKmfAAAAAElFTkSuQmCC
 	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW Oceanography Python Users Group</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>
