@@ -3437,7 +3437,7 @@ LD1iFQAAAABJRU5ErkJggg==
 &lt;p&gt;Hopefully this demo makes sense. The trickiest part is probably choosing the right tick marks on the y-axis. It should be relatively easy to modify the code to create a broken x-axis.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="axes"></category><category term="plotting"></category></entry><entry><title>Fixing the plot aspect ratio</title><link href="http://uwocnpyusers.github.io/plot-aspect-ratio.html" rel="alternate"></link><updated>2014-08-11T10:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-11:plot-aspect-ratio.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="axes"></category><category term="plotting"></category></entry><entry><title>Setting the aspect ratio of a plot</title><link href="http://uwocnpyusers.github.io/plot-aspect-ratio.html" rel="alternate"></link><updated>2014-08-11T10:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-11:plot-aspect-ratio.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
