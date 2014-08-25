@@ -6,4 +6,4 @@ tags: netcdf, hdf, mat files, pickle
 summary: Short tutorial on how to read data into Python
 
 
-{% notebook tutorials/reading-and-writing-data/reading-and-writing-data.ipynb cells[1:]%}
+{% notebook tutorials/reading-and-writing-data/reading-and-writing-data.ipynb%}
