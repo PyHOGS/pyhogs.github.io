@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>UW PyHOGS</title>
+	<title>PyHOGS</title>
 	<meta name="description" content="">
 	<meta name="author" content="JP Rinehimer">
 
@@ -1719,7 +1719,7 @@ jQuery(document).ready(function($) {
 	<link href="http://uwocnpyusers.github.io/theme/pygments.css" rel="stylesheet">
 
     <!-- Feeds -->
-    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="UW PyHOGS Atom Feed" />
+    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PyHOGS Atom Feed" />
 
 </head>
 <body>
@@ -1727,7 +1727,7 @@ jQuery(document).ready(function($) {
 	<div class="topbar">
 	  <div class="topbar-inner">
 		<div class="container-fluid">
-		  <a class="brand" href="http://uwocnpyusers.github.io/">UW PyHOGS</a>
+		  <a class="brand" href="http://uwocnpyusers.github.io/">PyHOGS</a>
 			<ul class="nav">
 						<li><a href="http://uwocnpyusers.github.io/pages/about.html">About</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/getting-started.html">Getting Started</a></li>
@@ -1760,8 +1760,7 @@ jQuery(document).ready(function($) {
 			<div class="social">
 			<h3>Social</h3>
 			<ul>
-				<li><a href="#">You can add links in your config file</a></li>
-				<li><a href="#">Another social link</a></li>
+				<li><a href="https://github.com/UWOcnPyUsers/uwocnpyusers">Github</a></li>
 			</ul>
 			</div>
 		</div>
@@ -1794,26 +1793,39 @@ jQuery(document).ready(function($) {
 </li>
 <li>
 <p><strong>We briefly talked about some different ways to set up a figure.</strong> Here are a few examples (use help for learn about more options):</p>
-<p><code>fig = plt.figure()</code> #makes a new figure and returns handle.</p>
-<p><code>fig = plt.figure(figsize = (10,8))</code> #same as above but fixes the figure window to be 10 inches by 8 inches</p>
-<p><code>ax = fig.add_axes()</code> #creates axes in figure (named fig) and returns handle</p>
-<p><code>ax = fig.add_axes([0.1, 0.1, 0.8, 0.8])</code> #same as above but now specifying the location and size of the plot. </p>
-<p><code>ax = plt.subplot(111)</code> #makes a single subplot into current figure and returns axes handle.</p>
-<p><code>ax = plt.subplot(1,1,1)</code> #another way of doing the above.</p>
-<p><code>ax = plt.subplot(2,2,1)</code> #similar to the above but creates the first plot for a 2x2 subplot.</p>
-<p><code>fig,(ax1,ax2,ax3,ax4) = plt.subplots(2,2)</code> #creates a new figure with a 2x2 subplot. returns handles for each.</p>
-<p>For the simplest of plots, you can choose to do none of the above and just create the plot. For example, doing something like <code>plt.plot(x,y)</code> will create a figure and an axes by default. Also useful are the get current axes and figure methods:</p>
-<p><code>ax = plt.gca()</code> #gets handle for current axes</p>
-<p><code>fig = plt.gcf()</code> #gets handle for current figure</p>
 </li>
-</ul></div>
+</ul>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c">#makes a new figure and returns handle.</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span> <span class="c">#same as above but fixes the fig. window to be 10&#39;&#39; by 8&#39;&#39;</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">()</span> <span class="c">#creates axes in figure (named fig) and returns handle</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span> <span class="c">#same as above but now specifying the location and size. </span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span> <span class="c">#makes a single subplot into current figure and returns axes handle.</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">#another way of doing the above.</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">#similar to the above but creates the first plot for a 2x2 subplot.</span>
+
+<span class="n">fig</span><span class="p">,(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">,</span><span class="n">ax4</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">#creates a new figure with a 2x2 subplot. returns handles for each.   </span>
+
+<span class="c">#For the simplest of plots, you can choose to do none of the above and just create the plot. For example, doing something like plt.plot(x,y) will create a figure and an axes by default. Also useful are the get current axes and figure methods:</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span> <span class="c">#gets handle for current axes</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span> <span class="c">#gets handle for current figure</span>
+</pre></div></div>
 		<div>
 			<h2>Comments</h2>
 		<div>
 	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Earle Wilson</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Earle Wilson</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>

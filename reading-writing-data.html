@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>UW PyHOGS</title>
+	<title>PyHOGS</title>
 	<meta name="description" content="">
 	<meta name="author" content="JP Rinehimer">
 
@@ -1719,7 +1719,7 @@ jQuery(document).ready(function($) {
 	<link href="http://uwocnpyusers.github.io/theme/pygments.css" rel="stylesheet">
 
     <!-- Feeds -->
-    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="UW PyHOGS Atom Feed" />
+    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PyHOGS Atom Feed" />
 
 </head>
 <body>
@@ -1727,7 +1727,7 @@ jQuery(document).ready(function($) {
 	<div class="topbar">
 	  <div class="topbar-inner">
 		<div class="container-fluid">
-		  <a class="brand" href="http://uwocnpyusers.github.io/">UW PyHOGS</a>
+		  <a class="brand" href="http://uwocnpyusers.github.io/">PyHOGS</a>
 			<ul class="nav">
 						<li><a href="http://uwocnpyusers.github.io/pages/about.html">About</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/getting-started.html">Getting Started</a></li>
@@ -1760,8 +1760,7 @@ jQuery(document).ready(function($) {
 			<div class="social">
 			<h3>Social</h3>
 			<ul>
-				<li><a href="#">You can add links in your config file</a></li>
-				<li><a href="#">Another social link</a></li>
+				<li><a href="https://github.com/UWOcnPyUsers/uwocnpyusers">Github</a></li>
 			</ul>
 			</div>
 		</div>
@@ -1778,11 +1777,10 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Reading-and-writing-data">Reading and writing data<a class="anchor-link" href="#Reading-and-writing-data">&#182;</a></h1>
+<p><a id='top'></a></p>
 </div>
 </div>
 </div>
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2228,7 +2226,9 @@ array([[ 0.81472369,  0.90579194,  0.12698682,  0.91337586,  0.63235925],
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that the <code>[:]</code> at the end is necessary. To learn more about <code>h5py</code> module take a look through the <a href="http://docs.h5py.org/en/2.3/index.html">official documentation</a>.</p>
+<p>Note that the <code>[:]</code> at the end is necessary. </p>
+<p><strong>Warning about importing matlab arrays using h5py:</strong> The order of the dimensions of a matlab array will reverse after you import with h5py. This is because MATLAB stores data in <a href="http://en.wikipedia.org/wiki/Row-major_order">column-major order</a> while HDF (and Python) uses <a href="http://en.wikipedia.org/wiki/Row-major_order">row-major order</a>. So a matlab array with size 5x10x8 will be appear as a 8x10x5 numpy array in Python.</p>
+<p>To learn more about <code>h5py</code> module take a look through the <a href="http://docs.h5py.org/en/2.3/index.html">official documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -4010,8 +4010,9 @@ In&nbsp;[19]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the above example, we read in the coastline text file then save it as a pickle file using the dump command. The first argument of  pickle.dump is the name of the object/variable that is to be saved. The second argument uses the open command to create an empty file into which pickle &quot;dumps&quot;. The input &quot;wb&quot; means write-binary.
-To read in a previously saved pickle file, such as the fictional one we just created, you can use the following command:</p>
+<p>In the above example, we read in the coastline text file then save it as a pickle file using the dump command. The first argument of  pickle.dump is the name of the object/variable that is to be saved. The second argument uses the open command to create an empty file into which pickle &quot;dumps&quot;. The input &quot;wb&quot; means write-binary.</p>
+<p>The general syntax for <code>pickle.dump</code> is <code>pickle.dump(obj, file, protocol)</code>. The protocol parameter allows you to change the way in which pickle stores data.  Setting <code>protocol = pickle.HIGHEST_PROTOCOL</code> or <code>protocol = -1</code>, tells pickle to use the fastest, most memory efficient option available. By using the highest protocol, you can save files that take up as much space as a netcdf or .mat file containing the same data.</p>
+<p>To read in a previously saved pickle file, such as the fictional one we just created, you can use the following command:</p>
 </div>
 </div>
 </div>
@@ -4054,7 +4055,7 @@ In&nbsp;[20]:
 	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Earle Wilson</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Earle Wilson</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>

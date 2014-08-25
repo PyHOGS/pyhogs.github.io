@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UW PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/tutorials.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-08-23T14:52:31+07:00</updated><entry><title>Reading and writing data</title><link href="http://uwocnpyusers.github.io/reading-writing-data.html" rel="alternate"></link><updated>2014-08-23T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-23:reading-writing-data.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/tutorials.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-08-23T14:52:31+07:00</updated><entry><title>Reading and writing data</title><link href="http://uwocnpyusers.github.io/reading-writing-data.html" rel="alternate"></link><updated>2014-08-23T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-23:reading-writing-data.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Reading-and-writing-data"&gt;Reading and writing data&lt;a class="anchor-link" href="#Reading-and-writing-data"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a id='top'&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -455,7 +454,9 @@ array([[ 0.81472369,  0.90579194,  0.12698682,  0.91337586,  0.63235925],
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Note that the &lt;code&gt;[:]&lt;/code&gt; at the end is necessary. To learn more about &lt;code&gt;h5py&lt;/code&gt; module take a look through the &lt;a href="http://docs.h5py.org/en/2.3/index.html"&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Note that the &lt;code&gt;[:]&lt;/code&gt; at the end is necessary. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning about importing matlab arrays using h5py:&lt;/strong&gt; The order of the dimensions of a matlab array will reverse after you import with h5py. This is because MATLAB stores data in &lt;a href="http://en.wikipedia.org/wiki/Row-major_order"&gt;column-major order&lt;/a&gt; while HDF (and Python) uses &lt;a href="http://en.wikipedia.org/wiki/Row-major_order"&gt;row-major order&lt;/a&gt;. So a matlab array with size 5x10x8 will be appear as a 8x10x5 numpy array in Python.&lt;/p&gt;
+&lt;p&gt;To learn more about &lt;code&gt;h5py&lt;/code&gt; module take a look through the &lt;a href="http://docs.h5py.org/en/2.3/index.html"&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2237,8 +2238,9 @@ In&amp;nbsp;[19]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In the above example, we read in the coastline text file then save it as a pickle file using the dump command. The first argument of  pickle.dump is the name of the object/variable that is to be saved. The second argument uses the open command to create an empty file into which pickle &amp;quot;dumps&amp;quot;. The input &amp;quot;wb&amp;quot; means write-binary.
-To read in a previously saved pickle file, such as the fictional one we just created, you can use the following command:&lt;/p&gt;
+&lt;p&gt;In the above example, we read in the coastline text file then save it as a pickle file using the dump command. The first argument of  pickle.dump is the name of the object/variable that is to be saved. The second argument uses the open command to create an empty file into which pickle &amp;quot;dumps&amp;quot;. The input &amp;quot;wb&amp;quot; means write-binary.&lt;/p&gt;
+&lt;p&gt;The general syntax for &lt;code&gt;pickle.dump&lt;/code&gt; is &lt;code&gt;pickle.dump(obj, file, protocol)&lt;/code&gt;. The protocol parameter allows you to change the way in which pickle stores data.  Setting &lt;code&gt;protocol = pickle.HIGHEST_PROTOCOL&lt;/code&gt; or &lt;code&gt;protocol = -1&lt;/code&gt;, tells pickle to use the fastest, most memory efficient option available. By using the highest protocol, you can save files that take up as much space as a netcdf or .mat file containing the same data.&lt;/p&gt;
+&lt;p&gt;To read in a previously saved pickle file, such as the fictional one we just created, you can use the following command:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

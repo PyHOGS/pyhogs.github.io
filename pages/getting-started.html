@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>UW PyHOGS</title>
+	<title>PyHOGS</title>
 	<meta name="description" content="">
 	<meta name="author" content="JP Rinehimer">
 
@@ -1719,7 +1719,7 @@ jQuery(document).ready(function($) {
 	<link href="http://uwocnpyusers.github.io/theme/pygments.css" rel="stylesheet">
 
     <!-- Feeds -->
-    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="UW PyHOGS Atom Feed" />
+    <link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PyHOGS Atom Feed" />
 
 </head>
 <body>
@@ -1727,7 +1727,7 @@ jQuery(document).ready(function($) {
 	<div class="topbar">
 	  <div class="topbar-inner">
 		<div class="container-fluid">
-		  <a class="brand" href="http://uwocnpyusers.github.io/">UW PyHOGS</a>
+		  <a class="brand" href="http://uwocnpyusers.github.io/">PyHOGS</a>
 			<ul class="nav">
 						<li><a href="http://uwocnpyusers.github.io/pages/about.html">About</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/getting-started.html">Getting Started</a></li>
@@ -1760,8 +1760,7 @@ jQuery(document).ready(function($) {
 			<div class="social">
 			<h3>Social</h3>
 			<ul>
-				<li><a href="#">You can add links in your config file</a></li>
-				<li><a href="#">Another social link</a></li>
+				<li><a href="https://github.com/UWOcnPyUsers/uwocnpyusers">Github</a></li>
 			</ul>
 			</div>
 		</div>
@@ -1769,24 +1768,25 @@ jQuery(document).ready(function($) {
 	  <div class="content">
 	<div class='page'>
 		<div class="page-header"><h1>Getting Started</h1></div>
-		<div><p>If you are completely new to Python, this is a good place to start. Here you will find instructions for installing Python and all the important add-on packages for doing scientific research. If you don't want to read this entire post, just scroll to the bottom.</p>
+		<div><p>If you are completely new to Python, this is a good place to start. Here you will find instructions for installing Python and all the important add-on packages for doing scientific research.</p>
+<h3>Quick start</h3>
+<p>Want to start doing research using Python in 5 minutes or less? Install <a href="https://www.enthought.com/products/canopy/">Canopy</a>. If you want to learn more about the Python tools available for doing scientific research, continue reading.</p>
 <h3>Getting Python</h3>
-<p>The standard way to get Python is to download the source code from the main website: <a href="https://www.python.org/">https://www.python.org/</a>. The installation instructions are straight forward and should only take a few minutes. If you are using a Mac, you probably already have Python installed on your computer. To check, open up a Terminal window and type <code>Python</code>. If you have Python, doing this should bring up a Python welcome message and a new prompt denoted by <code>&gt;&gt;</code>. Note that this pre-installed version of Python may not be the most up to date. </p>
+<p>The standard way to get Python is to download the source code from the main website: <a href="https://www.python.org/">https://www.python.org/</a>. You will have a choice between Python 2 and Python 3. Choosing either should be fine but they have some <a href="https://docs.python.org/3/whatsnew/3.0.html">major differences</a>. Python 2 is legacy but probably has more support by virtue of being around longer. The installation instructions are straight forward and should only take a few minutes. </p>
+<p>If you are using a Mac, you probably already have Python installed on your computer. To check, open up a Terminal window and type <code>Python</code>. If you have Python, doing this should bring up a Python welcome message and a new prompt denoted by <code>&gt;&gt;</code>. Note that this pre-installed version of Python is (likely) verison 2.x. </p>
 <p>Once you have Python installed, all you need is a text editor and you are good to go. However, at this point, you will only have access to the Python Standard Library and not any of the important scientific computational packages. </p>
-<h3>Getting important scientific packages</h3>
+<h3>The SciPy Stack</h3>
 <p>The <a href="http://www.scipy.org/about.html">SciPy Stack</a> is a curated collection of the major scientific packages available for Python. The SciPy Stack includes <strong>NumPy, Scipy and Matplotlib</strong>, which are the fundamental Python packages for numerical computation and data visualization. Also included in the SciPy Stack is <a href="http://ipython.org/">Ipython</a>, which offers a powerful interactive shell and a browser based Notebook for sharing code. IPython is a <em>major</em> upgrade over the standard Python command line interface.</p>
 <p>There are a number of ways to install the SciPy Stack. Instructions for doing so are available on the <a href="http://www.scipy.org/install.html">SciPy Stack install page</a>. The site recommends that you install the SciPy Stack via one of several Python distributions. Most of these distributions come with their own version of Python, which will be installed separately from any pre-installed Python, the SciPy Stack and a well-equiped Integrated Development Environment (IDE). The <a href="https://www.enthought.com/products/canopy/">Enthought Canopy</a> distribution seems to be a favorite among users in our group. Be sure to request an <a href="https://store.enthought.com/#canopy-academic">academic license</a> when you download Canopy. </p>
 <h4>Getting the Seawater toolbox</h4>
 <p>This section is just for oceanographers. If you are coming from MATLAB, you are probably already familiar with the seawater toolbox. This toolbox is available in Python as well. Instructions for installing the <a href="http://www.teos-10.org/software.htm">Gibbs SeaWater</a> toolbox and the older <a href="http://www.cmar.csiro.au/datacentre/ext_docs/seawater.htm">CSIRO Seaweater</a> toolbox can be found in this <a href="../python-hour-2014-08-18">PyHOGs meeting summary</a> post.</p>
 <h3>Learning more</h3>
 <p>There are many excellent (free) Python tutorials available online. For simple explanations of basic Python features, <a href="http://www.learnpython.org/">http://www.learnpython.org/</a> and <a href="http://www.tutorialspoint.com/python/index.htm">http://www.tutorialspoint.com/python/index.htm</a> are good starting points. When you are ready to dive into Python's scientific computing capabilities, Enthought's Python <a href="https://training.enthought.com/#/courses">video lectures</a> are excellent learing tools. The videos are geared towards scientists and engineers and offer overviews of iPython, Numpy, SciPy and Matplotlib. </p>
-<p>For everything else there is google! Google queries about a Python-related question tend to bring up results from the <a href="http://stackoverflow.com/questions/tagged/python">Stack Overflow</a> forum. If you have are having difficulties trying to do something in Python, it's very likely that someone else had a similiar problem and had it resolved on that forum. </p>
-<h3>Too long; didn't read</h3>
-<p>Want to start doing research using Python in 5 minutes or less? Install <a href="https://www.enthought.com/products/canopy/">Canopy</a>.</p></div>
+<p>For everything else there is google! Google queries about a Python-related question tend to bring up results from the <a href="http://stackoverflow.com/questions/tagged/python">Stack Overflow</a> forum. If you have are having difficulties trying to do something in Python, it's very likely that someone else had a similiar problem and had it resolved on that forum. </p></div>
 	</div>
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">UW PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>
