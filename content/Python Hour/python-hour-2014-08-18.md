@@ -33,25 +33,31 @@ author: Earle Wilson
 
 
 + **We briefly talked about some different ways to set up a figure.** Here are a few examples (use help for learn about more options):
+	
+	
+``` python
 
-    `fig = plt.figure()` #makes a new figure and returns handle.
-    
-    `fig = plt.figure(figsize = (10,8))` #same as above but fixes the figure window to be 10 inches by 8 inches
-    
-    `ax = fig.add_axes()` #creates axes in figure (named fig) and returns handle
-    
-    `ax = fig.add_axes([0.1, 0.1, 0.8, 0.8])` #same as above but now specifying the location and size of the plot. 
-    
-    `ax = plt.subplot(111)` #makes a single subplot into current figure and returns axes handle.
-    
-    `ax = plt.subplot(1,1,1)` #another way of doing the above.
-    
-    `ax = plt.subplot(2,2,1)` #similar to the above but creates the first plot for a 2x2 subplot.
-    
-    `fig,(ax1,ax2,ax3,ax4) = plt.subplots(2,2)` #creates a new figure with a 2x2 subplot. returns handles for each.
-    
-    For the simplest of plots, you can choose to do none of the above and just create the plot. For example, doing something like `plt.plot(x,y)` will create a figure and an axes by default. Also useful are the get current axes and figure methods:
-    
-    `ax = plt.gca()` #gets handle for current axes
-    
-    `fig = plt.gcf()` #gets handle for current figure
+import matplotlib.pyplot as plt
+	
+fig = plt.figure() #makes a new figure and returns handle.
+	
+fig = plt.figure(figsize = (10,8)) #same as above but fixes the fig. window to be 10'' by 8''
+	
+ax = fig.add_axes() #creates axes in figure (named fig) and returns handle
+	
+ax = fig.add_axes([0.1, 0.1, 0.8, 0.8]) #same as above but now specifying the location and size. 
+
+ax = plt.subplot(111) #makes a single subplot into current figure and returns axes handle.
+	
+ax = plt.subplot(1,1,1) #another way of doing the above.
+	
+ax = plt.subplot(2,2,1) #similar to the above but creates the first plot for a 2x2 subplot.
+	
+fig,(ax1,ax2,ax3,ax4) = plt.subplots(2,2) #creates a new figure with a 2x2 subplot. returns handles for each.	
+
+#For the simplest of plots, you can choose to do none of the above and just create the plot. For example, doing something like plt.plot(x,y) will create a figure and an axes by default. Also useful are the get current axes and figure methods:
+
+ax = plt.gca() #gets handle for current axes
+	
+fig = plt.gcf() #gets handle for current figure
+```
