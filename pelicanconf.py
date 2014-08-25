@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import os
 
 AUTHOR = u'JP Rinehimer'
-SITENAME = u'UW PyHOGS'
+SITENAME = u'PyHOGS'
 SITEURL = '' # Set in publishconf.py
 
 # Content licensing: CC-BY
@@ -35,8 +35,7 @@ LINKS = (('Python.org', 'http://python.org/'),
          ('Astropython', 'http://astropython.blogspot.com/'))
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Github', 'https://github.com/UWOcnPyUsers/uwocnpyusers'),)
 FEEDS = True
 GITHUB_URL = "https://github.com/UWOcnPyUsers"
 
