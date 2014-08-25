@@ -10,4 +10,4 @@ PyHOGs stands for Python Hour for Oceanographers and Geoscientists. As the name 
 
 
 ###How do I join?
-For updates and meeting notices, please join our [mailing list](https://mailman1.u.washington.edu/mailman/listinfo/pyhogs). Click the navigation tabs on the top of this page to view past meeting summaries, short python demos and  tutorials. All information posted on this website is stored on our [Github repository](https://github.com/UWOcnPyUsers/uwocnpyusers). If you are new to Python and/or our group, please see the [Getting Started Page](getting-started).
+For updates and meeting notices, please join our [mailing list](https://mailman1.u.washington.edu/mailman/listinfo/pyhogs). For past meeting summaries and python demos, click on the navigation tabs on top of the page. All information posted on this website is stored on our [Github repository](https://github.com/UWOcnPyUsers/uwocnpyusers). If you are new to Python and/or our group, please see the [Getting Started Page](getting-started).
