@@ -5,49 +5,64 @@ tags: permutations, KDTree, debugging, functions
 summary: Summary of PyHOGs meeting on August 25, 2014
 author: Earle Wilson
 
-+ Parker introduced us to the [itertools.permutations](https://docs.python.org/2/library/itertools.html#itertools.permutations) function. You can use this function to return all possible permutations of an iterable object, such as a list. This apparently comes in handy when designing a python script to play tic-tac-toe. For example, the code snippet below returns a list of all possible permutations of `0,1,2,3`:
++ Parker introduced us to the [itertools.permutations](https://docs.python.org/2/library/itertools.html#itertools.permutations) function. You can use this function to return all possible permutations of an iterable object, such as a list. For example, the code snippet below returns a list of all the permutations of `0,1,2`:
 	
 		:::python
 	
 		import itertools
-		a = range(4)
+		a = range(3)
 		a_perm = list(itertools.permutations(a)) 
+		print a_perm
 
-
+	This will print:
+	
+		:::python
+		
+		[(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+		
  
-+ Parker also told us about the [`KDTree`](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html) class from the `scipy.spatial` module. KDTree provides efficient methods, e.g. `KDtree.query`, for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. This can be useful when trying to interpolate values on a grid where the x and y spacings are different. An example of its usage is provided [here](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query).
+	
+	This apparently comes in handy when designing a python script to play tic-tac-toe.
+	
+	
++ Parker also told us about the [`KDTree` class](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html) from the `scipy.spatial` module. KDTree provides efficient methods for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. In particular, `KDTree.query` is useful when trying to interpolate values on a grid where the spacings are uneven. An example of its usage is provided [here](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query).
 
-+ Earle showed us a couple ways to debug code in ipython. First, there is the magic command `%debug`, which launches a post-mortem debugging session after an exception is thrown. That is, if a script crashes, `%debug` activates the [python debugger (pbd)](https://docs.python.org/2/library/pdb.html) at the line *before* the error occurred. A pdb session is similar to the MATLAB debugger session. Another alternative is the [Tracer](http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes) object from the `IPython.core.debugger` module. The Tracer object can be used to activate a pdb session anywhere in your code. Once in pdb, you can use the command line to explore the code and set new breakpoints. Therefore, you can essentially use it as breakpoint. For example:
++ We discussed a few ways to debug code in ipython. First, there is the magic command `%debug`, which launches a post-mortem [debugging session](http://ipython.org/ipython-doc/1/interactive/tutorial.html#debugging) after an exception is thrown. That is, if a script crashes, running `%debug` activates the [python debugger (pbd)](https://docs.python.org/2/library/pdb.html) and brings you to the line in the script where the error happened. The pdb gives you a special command line interface to explore the namespace of the code, execute commands and [set breakpoints](https://docs.python.org/2/library/pdb.html#debugger-commands). Another alternative is the [Tracer](http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes) object from the `IPython.core.debugger` module. The Tracer object can be used to activate a pdb session from anywhere in a script, which means you can use it as a breakpoint. For example:
 
 		:::python	
 		
 		from IPython.core.debugger import Tracer
 		debug_here = Tracer()
-	
+		
+		
+		
 		#later in code
 		debug_here() #code stops here and pdb is launched.
-   	 	
 
-+ We briefly talked about keyword arguments and the different ways we can supply inputs to a function. Most of what we discussed is covered in [Section 4.7](https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments) on this python doc page. With keyword arguments, we can specify function arguments in any order, provided the right keyword is used. Keyword arguments are particularly useful for setting [default argument values](https://docs.python.org/2/tutorial/controlflow.html#default-argument-values). Here is an example:
+
+
++ We briefly talked about keyword arguments and the different ways we can supply inputs to a function. Most of what we discussed is covered in [Section 4.7](https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments) on this python doc page. With keyword arguments, we can specify function arguments in any order, provided that the right keyword is used. Keyword arguments are particularly useful for setting [default argument values](https://docs.python.org/2/tutorial/controlflow.html#default-argument-values). Here is an example:
 
 		:::python
 		
-		def fun(x,y, a=10, b=12)
-			#statements
-			#statements
+		def fun(x,y, col='r', lw=2):
+			import matplotlib.pyplot as plt
+			plt.figure()
+			plt.plot(x, y, color=col, linewidth=lw)
+			plt.show()
+		
 		
 		#some good ways to call the function
-		fun(2,3) 
-		fun(1, 5, a=20) 
-		fun(2, 5, 12, 5) #a=12, b=5
-		fun(x=2, y=10) #using x and y as keywords
-		fun(b=50, x=10, a=-20, y=0) #order of keyword arguments does not matter
+		a = arange(10)
+		b = a**2
 		
-		#bad ways to call the function
-		fun(2) #need at least two arguments
-		fun(5,10,c=10) #c is not a defined keyword
-		fun(2,4) #if you intend x=2 and y=4
+		fun(a,b) 
+		fun(a, b, color='violet') 
+		fun(a, b, 'orange', 3) 
+		fun(x=a, y=b) #using x and y as keywords
+		fun(col='crimson', x=a, lw=3, y=b) #order of keyword arguments does not matter
 
+	
 
 	
 
