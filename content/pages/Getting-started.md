@@ -28,7 +28,7 @@ This section is just for oceanographers. If you are coming from MATLAB, you are 
 
 
 ###Learning more
-There are many excellent (free) Python tutorials available online. For simple explanations of basic Python features, <http://www.learnpython.org/> and <http://www.tutorialspoint.com/python/index.htm> are good starting points. When you are ready to dive into Python's scientific computing capabilities, Enthought's Python [video lectures](https://training.enthought.com/#/courses) are excellent learing tools. The videos are geared towards scientists and engineers and offer overviews of iPython, Numpy, SciPy and Matplotlib. 
+There are many excellent (free) Python tutorials available online. For simple explanations of basic Python features, <http://www.learnpython.org/> and <http://www.tutorialspoint.com/python/index.htm> are good starting points. We also have a [Python basics review](python-basics-review) on our website. When you are ready to dive into Python's scientific computing capabilities, Enthought's Python [video lectures](https://training.enthought.com/#/courses) are excellent learing tools. The videos are geared towards scientists and engineers and offer overviews of iPython, Numpy, SciPy and Matplotlib. 
 
 For everything else there is google! Google queries about a Python-related question tend to bring up results from the [Stack Overflow](http://stackoverflow.com/questions/tagged/python) forum. If you have are having difficulties trying to do something in Python, it's very likely that someone else had a similiar problem and had it resolved on that forum. 
 
