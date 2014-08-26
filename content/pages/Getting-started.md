@@ -5,13 +5,13 @@ author: Earle Wilson
 tags: python
 
 
-If you are completely new to Python, this is a good place to start. Here you will find instructions for installing Python and all the important add-on packages for doing scientific research.
+If you are completely new to Python, this is a good place to start. Here you will find instructions for installing Python and all the important add-on packages for doing scientific analysis.
 
 ###Quick start
-Want to start doing research using Python in 5 minutes or less? Install [Canopy](https://www.enthought.com/products/canopy/). If you want to learn more about the Python tools available for doing scientific research, continue reading.
+If you want to get Python up and running on your computer with minimal effort, just install [Canopy](https://www.enthought.com/products/canopy/) and request an [academic license](https://store.enthought.com/#canopy-academic). To learn more about the tools you get with Canopy and other ways of setting up Python, continue reading.
 
 ###Getting Python
-The standard way to get Python is to download the source code from the main website: <https://www.python.org/>. You will have a choice between Python 2 and Python 3. Choosing either should be fine but they have some [major differences](https://docs.python.org/3/whatsnew/3.0.html). Python 2 is legacy but probably has more support by virtue of being around longer. The installation instructions are straight forward and should only take a few minutes. 
+The standard way to get Python is to download the source code from the main website: <https://www.python.org/>. You will have a choice between Python 2 and Python 3. Python 3 is billed as an improvement to Python 2, but the science community has been slow in adopting that upgrade.  The biggest issue is that Python 3 is not backwards compatible. Jake Vanderplas wrote a nice [essay](http://jakevdp.github.io/blog/2013/01/03/will-scientists-ever-move-to-python-3/) on this subject. For now, choosing either Python 2 or 3 should be fine, but be aware of their [differences](https://docs.python.org/3/whatsnew/3.0.html) and realize that you will likely have to switch to Python 3 in the future. The installation instructions for either are straight forward and should only take a few minutes. 
 
 If you are using a Mac, you probably already have Python installed on your computer. To check, open up a Terminal window and type `Python`. If you have Python, doing this should bring up a Python welcome message and a new prompt denoted by `>>`. Note that this pre-installed version of Python is (likely) verison 2.x. 
 
@@ -21,7 +21,7 @@ Once you have Python installed, all you need is a text editor and you are good t
 
 The [SciPy Stack](http://www.scipy.org/about.html) is a curated collection of the major scientific packages available for Python. The SciPy Stack includes **NumPy, Scipy and Matplotlib**, which are the fundamental Python packages for numerical computation and data visualization. Also included in the SciPy Stack is [Ipython](http://ipython.org/), which offers a powerful interactive shell and a browser based Notebook for sharing code. IPython is a *major* upgrade over the standard Python command line interface.
 
-There are a number of ways to install the SciPy Stack. Instructions for doing so are available on the [SciPy Stack install page](http://www.scipy.org/install.html). The site recommends that you install the SciPy Stack via one of several Python distributions. Most of these distributions come with their own version of Python, which will be installed separately from any pre-installed Python, the SciPy Stack and a well-equiped Integrated Development Environment (IDE). The [Enthought Canopy](https://www.enthought.com/products/canopy/) distribution seems to be a favorite among users in our group. Be sure to request an [academic license](https://store.enthought.com/#canopy-academic) when you download Canopy. 
+There are a number of ways to install the SciPy Stack. Instructions for doing so are available on the [SciPy Stack install page](http://www.scipy.org/install.html). The site recommends that you install the SciPy Stack via one of several Python distributions. Most of these distributions come with their own version of Python, which will be installed separately from any pre-installed Python, the SciPy Stack and a well-equiped Integrated Development Environment (IDE). The [Enthought Canopy](https://www.enthought.com/products/canopy/) distribution seems to be a favorite among users in our group.  
 
 ####Getting the Seawater toolbox
 This section is just for oceanographers. If you are coming from MATLAB, you are probably already familiar with the seawater toolbox. This toolbox is available in Python as well. Instructions for installing the [Gibbs SeaWater](http://www.teos-10.org/software.htm) toolbox and the older [CSIRO Seaweater](http://www.cmar.csiro.au/datacentre/ext_docs/seawater.htm) toolbox can be found in this [PyHOGs meeting summary](../python-hour-2014-08-18) post.
