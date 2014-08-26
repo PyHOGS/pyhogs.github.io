@@ -8365,7 +8365,7 @@ In&amp;nbsp;[55]:
 &lt;p&gt;Returns an array of the desired values. But does not include their indices (as does np.nonzero)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="indexing and slicing"></category><category term="arrays"></category></entry><entry><title>Python Basics Review</title><link href="http://uwocnpyusers.github.io/python-basics-review.html" rel="alternate"></link><updated>2014-07-25T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-07-25:python-basics-review.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="indexing and slicing"></category><category term="arrays"></category></entry><entry><title>Learn the basics</title><link href="http://uwocnpyusers.github.io/python-basics-review.html" rel="alternate"></link><updated>2014-07-25T14:52:31+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-07-25:python-basics-review.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
