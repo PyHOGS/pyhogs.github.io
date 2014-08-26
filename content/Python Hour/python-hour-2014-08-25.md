@@ -15,9 +15,9 @@ author: Earle Wilson
 
 
  
-+ Parker also told us about the [`KDTree`](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html) class from the `scipy.spatial` module. KDTree provides efficient methods, e.g. `KDtree.query`, for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. This can be useful when trying to interpolate values on a grid where the x and y spacings are different. An example of its usage [here](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query).
++ Parker also told us about the [`KDTree`](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html) class from the `scipy.spatial` module. KDTree provides efficient methods, e.g. `KDtree.query`, for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. This can be useful when trying to interpolate values on a grid where the x and y spacings are different. An example of its usage is provided [here](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query).
 
-+ Earle showed us some of the code debugging tools available in ipython. First, there is the magic command `%debug`, which launches a post-mortem debugging session after an exception is thrown. That is, if a script crashes, `%debug` launches a [python debugger (pbd)](https://docs.python.org/2/library/pdb.html) session at the line *before* the error occurred. Another alternative is the [Tracer](http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes) object from the `IPython.core.debugger` module. The Tracer object can be used to activate a pdb session anywhere in your code. Example:
++ Earle showed us a couple ways to debug code in ipython. First, there is the magic command `%debug`, which launches a post-mortem debugging session after an exception is thrown. That is, if a script crashes, `%debug` activates the [python debugger (pbd)](https://docs.python.org/2/library/pdb.html) at the line *before* the error occurred. A pdb session is similar to the MATLAB debugger session. Another alternative is the [Tracer](http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes) object from the `IPython.core.debugger` module. The Tracer object can be used to activate a pdb session anywhere in your code. Once in pdb, you can use the command line to explore the code and set new breakpoints. Therefore, you can essentially use it as breakpoint. For example:
 
 		:::python	
 		
@@ -28,7 +28,28 @@ author: Earle Wilson
 		debug_here() #code stops here and pdb is launched.
    	 	
 
-+ We briefly talked keyword arguments in functions and how they differ from positional arguments. With positional arguments, the order of the inputs is important. Keyword arguments, on the other hand, can be specified in any order, provided we use the right keyword. Keyword arguments are especially useful for setting [default argument values](https://docs.python.org/2/tutorial/controlflow.html#default-argument-values). For example, in `def fun(x, y=10)`, `y` is a keyword argument and has a default of 10. When calling the function, we have the option of changing this value. Most of what we discussed is covered in [Section 4.7](https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments) on the python doc page.
++ We briefly talked about keyword arguments and the different ways we can supply inputs to a function. Most of what we discussed is covered in [Section 4.7](https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments) on this python doc page. With keyword arguments, we can specify function arguments in any order, provided the right keyword is used. Keyword arguments are particularly useful for setting [default argument values](https://docs.python.org/2/tutorial/controlflow.html#default-argument-values). Here is an example:
+
+		:::python
+		
+		def fun(x,y, a=10, b=12)
+			#statements
+			#statements
+		
+		#some good ways to call the function
+		fun(2,3) 
+		fun(1, 5, a=20) 
+		fun(2, 5, 12, 5) #a=12, b=5
+		fun(x=2, y=10) #using x and y as keywords
+		fun(b=50, x=10, a=-20, y=0) #order of keyword arguments does not matter
+		
+		#bad ways to call the function
+		fun(2) #need at least two arguments
+		fun(5,10,c=10) #c is not a defined keyword
+		fun(2,4) #if you intend x=2 and y=4
+
+
+	
 
 
 
