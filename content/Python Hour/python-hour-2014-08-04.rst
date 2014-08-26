@@ -3,7 +3,7 @@ Python Hour - 04 August 2014
 
 :slug: python-hour-2014-08-04
 :date: 2014-08-04 12:00 UTC-07:00
-:tags: mat files, loops, data processing, io, notebooks
+:tags: mat files, loops, data processing, io
 :authors: JP Rinehimer
 
 .. default-role:: code
@@ -11,4 +11,4 @@ Python Hour - 04 August 2014
 Today we went over loading a complex `.mat` file into Python.  The notebook can
 be found here:
 
-`Reading a Complex .mat File in Python <{filename}/Examples/reading-mat-files.md>`_.
+`Reading a Complex .mat File in Python <{filename}/How%20to.../reading-mat-files.md>`_.

@@ -3,12 +3,12 @@ Python Hour - 28 July
 
 :slug: python-hour-2014-07-28
 :date: 2014-07-28 14:52:31 UTC-07:00
-:tags: slicing, indexing, notebooks
+:tags: indexing and slicing
 :authors: Earle Wilson
 
 We mainly talked about array indexing and slicing. Basically, we discussed the
 different ways we can call a subset of an array. We were more or less following
-`Jake's notebook <{filename}/Tutorials/slicing-and-indexing.md>`_ .
+`Jake's notebook <{filename}/How%20to.../slicing-and-indexing.md>`_ .
 
 Other things that we discussed:
 
