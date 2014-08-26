@@ -1781,10 +1781,10 @@ jQuery(document).ready(function($) {
 
 </li>
 <li>
-<p>Parker also told us about the <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html"><code>KDTree</code></a> class from the <code>scipy.spatial</code> module. KDTree provides efficient methods, e.g. <code>KDtree.query</code>, for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. This can be useful when trying to interpolate values on a grid where the x and y spacings are different. An example of its usage <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query">here</a>.</p>
+<p>Parker also told us about the <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.html"><code>KDTree</code></a> class from the <code>scipy.spatial</code> module. KDTree provides efficient methods, e.g. <code>KDtree.query</code>, for finding the nearest-neighbors of a point (or a set of points) in a grid of spatial points. This can be useful when trying to interpolate values on a grid where the x and y spacings are different. An example of its usage is provided <a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query">here</a>.</p>
 </li>
 <li>
-<p>Earle showed us some of the code debugging tools available in ipython. First, there is the magic command <code>%debug</code>, which launches a post-mortem debugging session after an exception is thrown. That is, if a script crashes, <code>%debug</code> launches a <a href="https://docs.python.org/2/library/pdb.html">python debugger (pbd)</a> session at the line <em>before</em> the error occurred. Another alternative is the <a href="http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes">Tracer</a> object from the <code>IPython.core.debugger</code> module. The Tracer object can be used to activate a pdb session anywhere in your code. Example:</p>
+<p>Earle showed us a couple ways to debug code in ipython. First, there is the magic command <code>%debug</code>, which launches a post-mortem debugging session after an exception is thrown. That is, if a script crashes, <code>%debug</code> activates the <a href="https://docs.python.org/2/library/pdb.html">python debugger (pbd)</a> at the line <em>before</em> the error occurred. A pdb session is similar to the MATLAB debugger session. Another alternative is the <a href="http://ipython.org/ipython-doc/dev/api/generated/IPython.core.debugger.html#classes">Tracer</a> object from the <code>IPython.core.debugger</code> module. The Tracer object can be used to activate a pdb session anywhere in your code. Once in pdb, you can use the command line to explore the code and set new breakpoints. Therefore, you can essentially use it as breakpoint. For example:</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.core.debugger</span> <span class="kn">import</span> <span class="n">Tracer</span>
 <span class="n">debug_here</span> <span class="o">=</span> <span class="n">Tracer</span><span class="p">()</span>
 
@@ -1795,7 +1795,25 @@ jQuery(document).ready(function($) {
 
 </li>
 <li>
-<p>We briefly talked keyword arguments in functions and how they differ from positional arguments. With positional arguments, the order of the inputs is important. Keyword arguments, on the other hand, can be specified in any order, provided we use the right keyword. Keyword arguments are especially useful for setting <a href="https://docs.python.org/2/tutorial/controlflow.html#default-argument-values">default argument values</a>. For example, in <code>def fun(x, y=10)</code>, <code>y</code> is a keyword argument and has a default of 10. When calling the function, we have the option of changing this value. Most of what we discussed is covered in <a href="https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments">Section 4.7</a> on the python doc page.</p>
+<p>We briefly talked about keyword arguments and the different ways we can supply inputs to a function. Most of what we discussed is covered in <a href="https://docs.python.org/2/tutorial/controlflow.html#keyword-arguments">Section 4.7</a> on this python doc page. With keyword arguments, we can specify function arguments in any order, provided the right keyword is used. Keyword arguments are particularly useful for setting <a href="https://docs.python.org/2/tutorial/controlflow.html#default-argument-values">default argument values</a>. Here is an example:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="c">#statements</span>
+    <span class="c">#statements</span>
+
+<span class="c">#some good ways to call the function</span>
+<span class="n">fun</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">fun</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> 
+<span class="n">fun</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c">#a=12, b=5</span>
+<span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c">#using x and y as keywords</span>
+<span class="n">fun</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">a</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c">#order of keyword arguments does not matter</span>
+
+<span class="c">#bad ways to call the function</span>
+<span class="n">fun</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c">#need at least two arguments</span>
+<span class="n">fun</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c">#c is not a defined keyword</span>
+<span class="n">fun</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c">#if you intend x=2 and y=4</span>
+</pre></div>
+
+
 </li>
 </ul></div>
 		<div>
