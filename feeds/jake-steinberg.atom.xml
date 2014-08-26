@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/jake-steinberg.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-07-28T14:52:31+07:00</updated><entry><title>Slicing and Indexing Notebook</title><link href="http://uwocnpyusers.github.io/slicing-and-indexing.html" rel="alternate"></link><updated>2014-07-28T14:52:31+07:00</updated><author><name>Jake Steinberg</name></author><id>tag:uwocnpyusers.github.io,2014-07-28:slicing-and-indexing.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/jake-steinberg.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-07-28T14:52:31+07:00</updated><entry><title>Slice and index Python objects</title><link href="http://uwocnpyusers.github.io/slicing-and-indexing.html" rel="alternate"></link><updated>2014-07-28T14:52:31+07:00</updated><author><name>Jake Steinberg</name></author><id>tag:uwocnpyusers.github.io,2014-07-28:slicing-and-indexing.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -436,4 +436,4 @@ In&amp;nbsp;[55]:
 &lt;p&gt;Returns an array of the desired values. But does not include their indices (as does np.nonzero)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry></feed>
+&lt;/div&gt;&lt;/p&gt;</summary><category term="indexing and slicing"></category><category term="arrays"></category></entry></feed>

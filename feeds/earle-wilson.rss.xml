@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PyHOGS</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 23 Aug 2014 14:52:31 +0700</lastBuildDate><item><title>Reading and writing data</title><link>http://uwocnpyusers.github.io/reading-writing-data.html</link><description>&lt;p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PyHOGS</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 23 Aug 2014 14:52:31 +0700</lastBuildDate><item><title>Read and write data</title><link>http://uwocnpyusers.github.io/reading-writing-data.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -2276,7 +2276,7 @@ In&amp;nbsp;[20]:
 &lt;p&gt;&lt;a href="#top"&gt;Back to Top&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Sat, 23 Aug 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-23:reading-writing-data.html</guid><category>netcdf</category><category>hdf</category><category>mat files</category><category>pickle</category></item><item><title>Python Hour - 18 August 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-18.html</link><description>&lt;ul&gt;
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Sat, 23 Aug 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-23:reading-writing-data.html</guid><category>netcdf</category><category>hdf</category><category>mat files</category><category>pickle</category><category>io</category></item><item><title>Python Hour - 18 August 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-18.html</link><description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;We spent the first 15 minutes or so talking about &lt;code&gt;git&lt;/code&gt; and how it's different from other version control software, specifically Mercurial.&lt;/strong&gt;* After the meeting, I found this short &lt;a href="http://www.wikivs.com/wiki/Git_vs_Mercurial"&gt;wiki&lt;/a&gt; that does a nice comparison of the two. One of the main differences is that git uses a two-step commit process, whereas Mercurial uses a single step. Using git, you first have to add new changes to what is called an "index" or "staging area" before you can commit those changes to your local repository. So, in git, your workflow might be like:&lt;/p&gt;
 &lt;p&gt;--&amp;gt;Make changes to file.&lt;/p&gt;
@@ -2342,7 +2342,7 @@ In&amp;nbsp;[20]:
 &lt;li&gt;
 &lt;p&gt;Jake says that PyHOG (PYthon Hour for Oceanographers and Geoscientists) sounds a lot better than GeoPUG (Geoscience Python User Group). So, PyHOG it is...&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 12:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:python-hour-2014-08-11.html</guid><category>x-ray</category><category>pickle</category><category>axes</category><category>git</category></item><item><title>Creating a plot with broken axis</title><link>http://uwocnpyusers.github.io/broken-axes.html</link><description>&lt;p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 12:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:python-hour-2014-08-11.html</guid><category>x-ray</category><category>pickle</category><category>axes</category><category>git</category></item><item><title>Create a plot with broken axis</title><link>http://uwocnpyusers.github.io/broken-axes.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -3452,7 +3452,7 @@ LD1iFQAAAABJRU5ErkJggg==
 &lt;p&gt;Hopefully this demo makes sense. The trickiest part is probably choosing the right tick marks on the y-axis. It should be relatively easy to modify the code to create a broken x-axis.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 10:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:broken-axes.html</guid><category>axes</category><category>plotting</category></item><item><title>Setting the aspect ratio of a plot</title><link>http://uwocnpyusers.github.io/plot-aspect-ratio.html</link><description>&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 10:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:broken-axes.html</guid><category>axes</category><category>plotting</category></item><item><title>Set the aspect ratio of a plot</title><link>http://uwocnpyusers.github.io/plot-aspect-ratio.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -4493,7 +4493,7 @@ IBiFuLcAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 10:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:plot-aspect-ratio.html</guid><category>axes</category><category>plotting</category><category>aspect ratio</category><category>example</category></item><item><title>Python Hour - 28 July</title><link>http://uwocnpyusers.github.io/python-hour-2014-07-28.html</link><description>&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
+&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 11 Aug 2014 10:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-08-11:plot-aspect-ratio.html</guid><category>axes</category><category>plotting</category><category>aspect ratio</category></item><item><title>Python Hour - 28 July</title><link>http://uwocnpyusers.github.io/python-hour-2014-07-28.html</link><description>&lt;p&gt;We mainly talked about array indexing and slicing. Basically, we discussed the
 different ways we can call a subset of an array. We were more or less following
 &lt;a class="reference external" href="http://uwocnpyusers.github.io/slicing-and-indexing.html"&gt;Jake's notebook&lt;/a&gt; .&lt;/p&gt;
 &lt;p&gt;Other things that we discussed:&lt;/p&gt;
@@ -4510,7 +4510,7 @@ contents would be accessible to everyone and each of us can contribute to
 its content. I created a &lt;a class="reference external" href="https://github.com/earlew/Python_demo"&gt;personal repository for my notes.&lt;/a&gt;
 Someone could create a separate repo for the group in a similar way.&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 28 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-28:python-hour-2014-07-28.html</guid><category>slicing</category><category>indexing</category><category>notebooks</category></item><item><title>Python Basics Review</title><link>http://uwocnpyusers.github.io/python-basics-review.html</link><description>&lt;p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 28 Jul 2014 14:52:31 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-07-28:python-hour-2014-07-28.html</guid><category>indexing and slicing</category></item><item><title>Python Basics Review</title><link>http://uwocnpyusers.github.io/python-basics-review.html</link><description>&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
