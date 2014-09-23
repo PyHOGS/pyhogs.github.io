@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-08-25T12:00:00+07:00</updated><entry><title>Python Hour - 25 August 2014</title><link href="http://uwocnpyusers.github.io/python-hour-2014-08-25.html" rel="alternate"></link><updated>2014-08-25T12:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-25:python-hour-2014-08-25.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://uwocnpyusers.github.io/" rel="alternate"></link><link href="http://uwocnpyusers.github.io/feeds/all.atom.xml" rel="self"></link><id>http://uwocnpyusers.github.io/</id><updated>2014-09-22T12:00:00+07:00</updated><entry><title>Python Hour - 22 September 2014</title><link href="http://uwocnpyusers.github.io/python-hour-2014-08-22.html" rel="alternate"></link><updated>2014-09-22T12:00:00+07:00</updated><author><name>Jesse Anderson</name></author><id>tag:uwocnpyusers.github.io,2014-09-22:python-hour-2014-08-22.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other things that came up while discussing objective mapping:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;kriging and its similarities to optimal interpolation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nearest value assignment as opposed to interpolation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Raw strings. These are strings that are interpreted literally, so they don't require extra backslashes to escape special characters. They come in handy when plotting text labels with LaTeX symbols. To create a raw string, you simply add &lt;code&gt;r&lt;/code&gt; before the first quote. E.g. &lt;code&gt;units = r'Temperature ($^{\circ}$C)'&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;curve_fit&lt;/code&gt; function. &lt;code&gt;curve_fit&lt;/code&gt;, which is a function from the &lt;code&gt;scipy.optimize&lt;/code&gt; module. &lt;code&gt;curve_fit&lt;/code&gt; uses non-linear least squares to fit a function to data. You need to supply good first guesses to ensure that &lt;code&gt;curve_fit&lt;/code&gt; converges on reasonable solutions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;np.linalg.lstsq&lt;/code&gt; and &lt;code&gt;np.linalg.solve&lt;/code&gt;. These are a couple options for solving a system of equations in Python. This brought up the &lt;a href="http://www.netlib.org/lapack/#_presentation"&gt;LAPACK&lt;/a&gt; and BLAS software libraries. These are old FORTRAN codes, which form the basis of most linear algebra algorithms in use today. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Different ways to close figures:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;all&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c"&gt;#h is figure handle or instance&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="optimal interpolation"></category><category term="strings"></category></entry><entry><title>Python Hour - 25 August 2014</title><link href="http://uwocnpyusers.github.io/python-hour-2014-08-25.html" rel="alternate"></link><updated>2014-08-25T12:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:uwocnpyusers.github.io,2014-08-25:python-hour-2014-08-25.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Parker introduced us to the &lt;a href="https://docs.python.org/2/library/itertools.html#itertools.permutations"&gt;itertools.permutations&lt;/a&gt; function. You can use this function to return all possible permutations of an iterable object, such as a list. For example, the code snippet below returns a list of all the permutations of &lt;code&gt;0,1,2&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt;
