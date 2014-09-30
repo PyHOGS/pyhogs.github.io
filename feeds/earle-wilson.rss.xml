@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PyHOGS</title><link>http://uwocnpyusers.github.io/</link><description></description><atom:link href="http://uwocnpyusers.github.io/feeds/earle-wilson.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 29 Sep 2014 12:00:00 +0700</lastBuildDate><item><title>Python Hour - 29 September 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-29.html</link><description>&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Parker brought our attention to a programming book called &lt;a href="http://mitpress.mit.edu/books/introduction-computation-and-programming-using-python"&gt;Introduction to Computation and Programming Using Python&lt;/a&gt;, by John Guttag. The book is based on a course offered on MIT's OpenCourseWare.&lt;/p&gt;
+&lt;p&gt;Parker brought our attention to a Python programming book called &lt;a href="http://mitpress.mit.edu/books/introduction-computation-and-programming-using-python"&gt;Introduction to Computation and Programming Using Python&lt;/a&gt;, by John Guttag. The book is based on a course offered on MIT's OpenCourseWare.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;We spent the some time talking about what happens when you try to create a netcdf file that already exists. By default, when you open a netcdf dataset with &lt;code&gt;mode='w'&lt;/code&gt; (i.e., in writing mode) it should over-write any existing file. You can change this behavior with the "clobber" keyword option, which can raise an exception if the file already exists:&lt;/p&gt;
+&lt;p&gt;We spent some time discussing how netCDF4 writes files to disk. By default, when you open a netcdf dataset with &lt;code&gt;mode='w'&lt;/code&gt; (i.e., in writing mode), any pre-existing file with the same name will be over-written. You can change this behavior with the "clobber" keyword option, which can raise an exception if the file already exists:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;netCDF4&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;nc&lt;/span&gt;
 
 &lt;span class="c"&gt;#create new netcdf file and over-write any pre-existing file with same name&lt;/span&gt;
@@ -17,10 +17,10 @@
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;We also learned that it is possible extract a subset of a netcdf file stored on a remote &lt;a href="http://www.unidata.ucar.edu/software/thredds/current/tds/TDS.html"&gt;THREDDS&lt;/a&gt; data server WITHOUT downloading the entire file. You simply supply the url path to the netcdf file and extract data as you would normally.&lt;/p&gt;
+&lt;p&gt;We also learned that it is possible extract a subset of a netcdf file stored on a remote &lt;a href="http://www.unidata.ucar.edu/software/thredds/current/tds/TDS.html"&gt;THREDDS&lt;/a&gt; server WITHOUT having to download the entire file. You simply supply the url path to the netcdf file and extract data as you would normally.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Jim spoke about some of the advantages and disadvantages of using a Python set. A Python &lt;a href="https://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset"&gt;set&lt;/a&gt; is an unordered collection of unique objects. This is in contrast to a Python list, which is an ordered sequence of objects that may contain duplicates. One advantage of using a set over a list is that a set is substantially faster at determining if an object is in it. For example, performing &lt;code&gt;if x in set&lt;/code&gt; is generally faster than doing &lt;code&gt;if x in list&lt;/code&gt;. One disadvantage of using sets is that they have no intrinsic order:&lt;/p&gt;
+&lt;p&gt;Jim spoke about some of the advantages and disadvantages of using a Python set. A Python &lt;a href="https://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset"&gt;set&lt;/a&gt; is an unordered collection of unique objects. This is in contrast to a Python list, which is an ordered sequence of objects that may contain duplicates. One advantage of using a set over a list is that a set is substantially faster at determining if an object is in it. For example, performing &lt;code&gt;if x in set&lt;/code&gt; is generally faster than doing &lt;code&gt;if x in list&lt;/code&gt;. One disadvantage of using sets is that they have no intrinsic order. This will cause problems if you are iterating over a set and expecting the items to appear in a specific order. Example:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;aoihf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;    
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; 
@@ -30,8 +30,7 @@
 
 
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 29 Sep 2014 12:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-09-29:python-hour-2014-08-29.html</guid><category>netcdf</category></item><item><title>Python Hour - 22 September 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-22.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 29 Sep 2014 12:00:00 +0700</pubDate><guid>tag:uwocnpyusers.github.io,2014-09-29:python-hour-2014-08-29.html</guid><category>netcdf</category></item><item><title>Python Hour - 22 September 2014</title><link>http://uwocnpyusers.github.io/python-hour-2014-08-22.html</link><description>&lt;ul&gt;
 &lt;li&gt;Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Other things that came up while discussing objective mapping:&lt;/p&gt;
