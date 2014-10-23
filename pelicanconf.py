@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import os
 
-AUTHOR = u'JP Rinehimer'
+AUTHOR = u'JP Rinehimer, Earle Wilson, and PyHOGS'
 SITENAME = u'PyHOGS'
 SITEURL = '' # Set in publishconf.py
 
