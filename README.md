@@ -1,4 +1,3 @@
-uwocnpyusers
-============
+# pyhogs-code
 
-Repository of data, code, and notebooks for the UW Oceanography Python Users
+Repository of data, code, and notebooks for the UW Python Hour for Oceanography and GeoSciences
