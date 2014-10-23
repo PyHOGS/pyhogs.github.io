@@ -35,9 +35,9 @@ LINKS = (('Python.org', 'http://python.org/'),
          ('Astropython', 'http://astropython.blogspot.com/'))
 
 # Social widget
-SOCIAL = (('Github', 'https://github.com/UWOcnPyUsers/uwocnpyusers'),)
+SOCIAL = (('Github', 'https://github.com/PyHOGS/pyhogs-code'),)
 FEEDS = True
-GITHUB_URL = "https://github.com/UWOcnPyUsers"
+GITHUB_URL = "https://github.com/PyHOGS"
 
 DEFAULT_PAGINATION = False
 
@@ -77,4 +77,4 @@ else:
     EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
 
 PLUGINS += ['liquid_tags.notebook']
-NOTEBOOK_DIR = '../uwocnpyusers/notebooks/'
+NOTEBOOK_DIR = '../pyhogs-code/notebooks/'

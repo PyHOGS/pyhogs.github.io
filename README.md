@@ -1,7 +1,7 @@
-UWOcnPyUsers.github.io
+PyHOGS.github.io
 ======================
 
-Website for University of Washington Oceanography Python Users Group.
+Website for University of Washington Python Hour for Oceanography and GeoSciences.
 
 Branches
 ----------
@@ -21,8 +21,8 @@ Requirements:
 
 <!-- comment allows code after list in md-->
 
-    git clone https://github.com/UWOcnPyUsers/UWOcnPyUsers.github.io.git
-    cd UWOcnPyUsers.github.io
+    git clone https://github.com/PyHOGS/pyhogs.github.io.git
+    cd pyhogs.github.io
     git checkout website
     git submodule init  #Not sure if this is needed...
     git submodule update

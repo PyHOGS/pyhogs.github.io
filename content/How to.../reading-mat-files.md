@@ -7,7 +7,7 @@ tags: mat files, loops, data processing, io
 
 *Direct links to [notebook][nblink] and [data][datalink].*
 
-[nblink]: https://github.com/UWOcnPyUsers/uwocnpyusers/blob/master/notebooks/examples/Reading_complex_mat_files.ipynb "Github"
-[datalink]: https://github.com/UWOcnPyUsers/uwocnpyusers/blob/master/data/CA2009.mat "Github"
+[nblink]: https://github.com/PyHOGS/pyhogs-code/blob/master/notebooks/examples/Reading_complex_mat_files.ipynb "Github"
+[datalink]: https://github.com/PyHOGS/pyhogs-code/blob/master/data/CA2009.mat "Github"
 
 {% notebook examples/Reading_complex_mat_files.ipynb %}
