@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>PyHOGS</title>
 	<meta name="description" content="">
-	<meta name="author" content="JP Rinehimer">
+	<meta name="author" content="JP Rinehimer, Earle Wilson, and PyHOGS">
 
 	<!-- Enables ipython notebook support -->
         
@@ -1797,32 +1797,32 @@ jQuery(document).ready(function($) {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="#Code-Formatting">Code Formatting</a><ul>
+<li><a href="#Code-Formatting">Code Formatting</a>
+<ul>
 <li><a href="#sec11">New statements, comments and blank lines</a></li>
 <li><a href="#Indentation">Indentation</a></li>
-</ul>
-</li>
-<li><a href="#Standard-Data-Types">Standard Data Types</a> <ul>
+</ul></li>
+<li><a href="#Standard-Data-Types">Standard Data Types</a>
+<ul>
 <li><a href="#Numbers">Numbers</a></li>
-<li><a href="#Strings">Strings</a><ul>
+<li><a href="#Strings">Strings</a>
+<ul>
 <li><a href="#String-slicing">String slicing</a></li>
-</ul>
-</li>
+</ul></li>
 <li><a href="#Lists">Lists</a></li>
 <li><a href="#Dictionaries">Dictionaries</a></li>
 <li><a href="#Tuples">Tuples</a></li>
 <li><a href="#Other-standard/important-data-types">Other important data types</a></li>
-</ul>
-</li>
-<li><a href="#Functions,-modules-and-packages">Functions, Modules and Packages</a><ul>
+</ul></li>
+<li><a href="#Functions,-modules-and-packages">Functions, Modules and Packages</a>
+<ul>
 <li><a href="#Functions">Functions</a></li>
-<li><a href="#Modules">Modules</a><ul>
+<li><a href="#Modules">Modules</a>
+<ul>
 <li><a href="#Different-ways-to-import-modules">Different ways to import modules</a></li>
-</ul>
-</li>
-<li><a href="#Packages">Packages</a>    </li>
-</ul>
-</li>
+</ul></li>
+<li><a href="#Packages">Packages</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -2008,7 +2008,7 @@ In&nbsp;[3]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Python uses indentation to indicate blocks of code, such as <code>if</code> statements, <code>for</code> loops and functions. For example, a simple but syntactically correct <code>if</code> statement  would be:</p>
+<p>Python uses indentation to indicate blocks of code, such as <code>if</code> statements, <code>for</code> loops and functions. For example, a simple but syntactically correct <code>if</code> statement would be:</p>
 </div>
 </div>
 </div>
@@ -2097,7 +2097,7 @@ In&nbsp;[5]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By convention, a new block of code is indented by four spaces. Any number of spaces are allowable as long as all statements within the block are indented by the same amount. This is Python&#39;s way of forcing users to write more reader friendly code. </p>
+<p>By convention, a new block of code is indented by four spaces. Any number of spaces are allowable as long as all statements within the block are indented by the same amount. This is Python's way of forcing users to write more reader friendly code.</p>
 <p>Also note there is no <code>end</code> statement in the first code snippet. To end an <code>if</code> statement, or any nested block of code, you simply return to the previous indentation:</p>
 </div>
 </div>
@@ -2145,7 +2145,7 @@ In&nbsp;[]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The python standard library supports many data types. Here, we introduce the five primary built-in data types: <strong>Numbers, strings, lists, tuples and dictionaries</strong>. Bear in mind that there are many other data types outside the standard library. These are only accessible after importing a specific module. For example, the numerical python module (NumPy) supports numerical array and masked array data types. These are important for data analysis and will be discussed in a later section. </p>
+<p>The python standard library supports many data types. Here, we introduce the five primary built-in data types: <strong>Numbers, strings, lists, tuples and dictionaries</strong>. Bear in mind that there are many other data types outside the standard library. These are only accessible after importing a specific module. For example, the numerical python module (NumPy) supports numerical array and masked array data types. These are important for data analysis and will be discussed in a later section.</p>
 </div>
 </div>
 </div>
@@ -2395,7 +2395,7 @@ In&nbsp;[11]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before we move one, we need to mention that <strong>numbers are immutable objects</strong>. This means that you cannot alter a numerical object after it is defined. For example, if you type <code>a = 1230</code>, you cannot change <code>a</code> to <code>1234</code> by doing: <code>a[3] = 4</code>. Your only option is to do reassign <code>a</code> to a new number:  <code>a = 1234</code>. If you are a MATLAB user, this might seem trivial since numbers in MATLAB have the same characteristics. However, immutability is a more central concept in Python and applies to other data types.</p>
+<p>Before we move one, we need to mention that <strong>numbers are immutable objects</strong>. This means that you cannot alter a numerical object after it is defined. For example, if you type <code>a = 1230</code>, you cannot change <code>a</code> to <code>1234</code> by doing: <code>a[3] = 4</code>. Your only option is to do reassign <code>a</code> to a new number: <code>a = 1234</code>. If you are a MATLAB user, this might seem trivial since numbers in MATLAB have the same characteristics. However, immutability is a more central concept in Python and applies to other data types.</p>
 </div>
 </div>
 </div>
@@ -2414,7 +2414,7 @@ In&nbsp;[11]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Strings are defined by quotation marks. Both single and double quotations may be used to define a string literal. The only rule is that you can&#39;t mix single quotes with double quotes in a single definition. For example:</p>
+<p>Strings are defined by quotation marks. Both single and double quotations may be used to define a string literal. The only rule is that you can't mix single quotes with double quotes in a single definition. For example:</p>
 </div>
 </div>
 </div>
@@ -2764,8 +2764,8 @@ In&nbsp;[20]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a space after the apostrophe, so there are in fact 5 characters. </p>
-<p>To summarize, the first element of any python sequence is indexed by 0.  <code>str[n:]</code> selects for <code>str[n]</code> and all the characters that follow, while <code>str[:n]</code> selects for all the characters that come <em>before</em> <code>str[n]</code>.</p>
+<p>There is a space after the apostrophe, so there are in fact 5 characters.</p>
+<p>To summarize, the first element of any python sequence is indexed by 0. <code>str[n:]</code> selects for <code>str[n]</code> and all the characters that follow, while <code>str[:n]</code> selects for all the characters that come <em>before</em> <code>str[n]</code>.</p>
 </div>
 </div>
 </div>
@@ -3284,8 +3284,7 @@ In&nbsp;[33]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Without the trailing comma, Python interprets <code>tup1</code> as an integer. One common
-application of tuples is string formatting. For example:</p>
+<p>Without the trailing comma, Python interprets <code>tup1</code> as an integer. One common application of tuples is string formatting. For example:</p>
 </div>
 </div>
 </div>
@@ -3427,8 +3426,8 @@ Plotting SSH data for Jan 2010.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Other standard data types not discussed here are <a href="http://en.wikibooks.org/wiki/Python_Programming/Sets">sets</a>, frozen sets and booleans. </p>
-<p>For matrix and array manipulation, there is also the <strong>Numpy <a href="http://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">array</a> and <a href="http://docs.scipy.org/doc/numpy/reference/maskedarray.html">masked array</a></strong> data types. These are the data types that you would use to store and manipulate data. A description of Numpy arrays will be provided later. </p>
+<p>Other standard data types not discussed here are <a href="http://en.wikibooks.org/wiki/Python_Programming/Sets">sets</a>, frozen sets and booleans.</p>
+<p>For matrix and array manipulation, there is also the <strong>Numpy <a href="http://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">array</a> and <a href="http://docs.scipy.org/doc/numpy/reference/maskedarray.html">masked array</a></strong> data types. These are the data types that you would use to store and manipulate data. A description of Numpy arrays will be provided later.</p>
 </div>
 </div>
 </div>
@@ -3475,9 +3474,8 @@ Plotting SSH data for Jan 2010.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>￼def my_function (): </p>
-<pre><code>&lt;statement(s)&gt;
-</code></pre>
+<p>￼def my_function ():</p>
+<pre><code>&lt;statement(s)&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3486,8 +3484,7 @@ Plotting SSH data for Jan 2010.0
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The necessary syntax involves a <code>def</code> statement followed by the function name, open and close parentheses, and a colon (:). The code block that is to be executed when the function is called is indented. The code block can include any valid Python statement. To call this function you would type <code>my_function()</code> - the parentheses are always necessary.
-A function may have any number of inputs or outputs. To get output from a function, you must use the <code>return</code> statement:</p>
+<p>The necessary syntax involves a <code>def</code> statement followed by the function name, open and close parentheses, and a colon (:). The code block that is to be executed when the function is called is indented. The code block can include any valid Python statement. To call this function you would type <code>my_function()</code> - the parentheses are always necessary. A function may have any number of inputs or outputs. To get output from a function, you must use the <code>return</code> statement:</p>
 </div>
 </div>
 </div>
@@ -3496,11 +3493,10 @@ A function may have any number of inputs or outputs. To get output from a functi
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>￼def my_function(arg1, arg2): </p>
+<p>￼def my_function(arg1, arg2):</p>
 <pre><code>&lt;statement(s)&gt;
 
-return output
-</code></pre>
+return output</code></pre>
 </div>
 </div>
 </div>

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>PyHOGS</title>
 	<meta name="description" content="">
-	<meta name="author" content="JP Rinehimer">
+	<meta name="author" content="JP Rinehimer, Earle Wilson, and PyHOGS">
 
 	<!-- Enables ipython notebook support -->
         
@@ -1773,10 +1773,10 @@ jQuery(document).ready(function($) {
  / <a href="http://uwocnpyusers.github.io/tag/netcdf.html">netcdf</a> </div>
 		<div><ul>
 <li>
-<p>Parker brought our attention to a Python programming book called <a href="http://mitpress.mit.edu/books/introduction-computation-and-programming-using-python">Introduction to Computation and Programming Using Python</a>, by John Guttag. The book is based on a course offered on MIT's OpenCourseWare.</p>
+<p>Parker brought our attention to a programming book called <a href="http://mitpress.mit.edu/books/introduction-computation-and-programming-using-python">Introduction to Computation and Programming Using Python</a>, by John Guttag. The book is based on a course offered on MIT's OpenCourseWare.</p>
 </li>
 <li>
-<p>We spent some time discussing how netCDF4 writes files to disk. By default, when you open a netcdf dataset with <code>mode='w'</code> (i.e., in writing mode), any pre-existing file with the same name will be over-written. You can change this behavior with the "clobber" keyword option, which can raise an exception if the file already exists:</p>
+<p>We spent the some time talking about what happens when you try to create a netcdf file that already exists. By default, when you open a netcdf dataset with <code>mode='w'</code> (i.e., in writing mode) it should over-write any existing file. You can change this behavior with the "clobber" keyword option, which can raise an exception if the file already exists:</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="kn">as</span> <span class="nn">nc</span>
 
 <span class="c">#create new netcdf file and over-write any pre-existing file with same name</span>
@@ -1789,10 +1789,10 @@ jQuery(document).ready(function($) {
 
 </li>
 <li>
-<p>We also learned that it is possible extract a subset of a netcdf file stored on a remote <a href="http://www.unidata.ucar.edu/software/thredds/current/tds/TDS.html">THREDDS</a> server WITHOUT having to download the entire file. You simply supply the url path to the netcdf file and extract data as you would normally.</p>
+<p>We also learned that it is possible extract a subset of a netcdf file stored on a remote <a href="http://www.unidata.ucar.edu/software/thredds/current/tds/TDS.html">THREDDS</a> data server WITHOUT downloading the entire file. You simply supply the url path to the netcdf file and extract data as you would normally.</p>
 </li>
 <li>
-<p>Jim spoke about some of the advantages and disadvantages of using a Python set. A Python <a href="https://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset">set</a> is an unordered collection of unique objects. This is in contrast to a Python list, which is an ordered sequence of objects that may contain duplicates. One advantage of using a set over a list is that a set is substantially faster at determining if it contains an object. For example, performing <code>if x in set</code> is generally faster than doing <code>if x in list</code>. One disadvantage of using sets is that they have no intrinsic order. This will cause problems if you are iterating over a set and expecting the items to appear in a specific order. Example:</p>
+<p>Jim spoke about some of the advantages and disadvantages of using a Python set. A Python <a href="https://docs.python.org/2/library/stdtypes.html#set-types-set-frozenset">set</a> is an unordered collection of unique objects. This is in contrast to a Python list, which is an ordered sequence of objects that may contain duplicates. One advantage of using a set over a list is that a set is substantially faster at determining if an object is in it. For example, performing <code>if x in set</code> is generally faster than doing <code>if x in list</code>. One disadvantage of using sets is that they have no intrinsic order:</p>
 <div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s">&quot;aoihf&quot;</span><span class="p">)</span>    
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="k">print</span> <span class="n">n</span> 
@@ -1802,7 +1802,8 @@ jQuery(document).ready(function($) {
 
 
 </li>
-</ul></div>
+</ul>
+<p>This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.</p></div>
 		<div>
 			<h2>Comments</h2>
 		<div>

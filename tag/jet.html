@@ -1734,7 +1734,7 @@ jQuery(document).ready(function($) {
 						<li><a href="http://uwocnpyusers.github.io/pages/getting-started.html">Getting Started</a></li>
 						<li><a href="http://uwocnpyusers.github.io/pages/meeting-ideas.html">Meeting Ideas</a></li>
 					<li ><a href="http://uwocnpyusers.github.io/category/how-to.html">How to...</a></li>
-					<li class="active"><a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a></li>
+					<li ><a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a></li>
 			</ul>
 			<p class="pull-right"><a href="http://uwocnpyusers.github.io/archives.html">[archives]</a> <a href="http://uwocnpyusers.github.io/tags.html">[tags]</a></p>
 		</div>
@@ -1766,47 +1766,26 @@ jQuery(document).ready(function($) {
 		</div>
 	  </div>
 	  <div class="content">
-	<div class='article'>
-		<div class="page-header"><h1>Python Hour - 22 September 2014</h1></div>
-		<div class="well small">22 Sep 2014
- / <a class="url fn" href="http://uwocnpyusers.github.io/author/jesse-anderson.html">Jesse Anderson </a>/ <a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a>
- / <a href="http://uwocnpyusers.github.io/tag/optimal-interpolation.html">optimal interpolation</a>, <a href="http://uwocnpyusers.github.io/tag/strings.html">strings</a> </div>
-		<div><ul>
-<li>Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.</li>
-</ul>
-<p>Other things that came up while discussing objective mapping:</p>
-<ul>
-<li>
-<p>kriging and its similarities to optimal interpolation.</p>
-</li>
-<li>
-<p>Nearest value assignment as opposed to interpolation.</p>
-</li>
-<li>
-<p>Raw strings. These are strings that are interpreted literally, so they don't require extra backslashes to escape special characters. They come in handy when plotting text labels with LaTeX symbols. To create a raw string, you simply add <code>r</code> before the first quote. E.g. <code>units = r'Temperature ($^{\circ}$C)'</code>.</p>
-</li>
-<li>
-<p>The <code>curve_fit</code> function. <code>curve_fit</code>, which is a function from the <code>scipy.optimize</code> module. <code>curve_fit</code> uses non-linear least squares to fit a function to data. You need to supply good first guesses to ensure that <code>curve_fit</code> converges on reasonable solutions.</p>
-</li>
-<li>
-<p><code>np.linalg.lstsq</code> and <code>np.linalg.solve</code>. These are a couple options for solving a system of equations in Python. This brought up the <a href="http://www.netlib.org/lapack/#_presentation">LAPACK</a> and BLAS software libraries. These are old FORTRAN codes, which form the basis of most linear algebra algorithms in use today. </p>
-</li>
-<li>
-<p>Different ways to close figures:</p>
-<div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s">&#39;all&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="c">#h is figure handle or instance</span>
-</pre></div>
+<div class="page-header"><h1>PyHOGS <small>jet</small></h1></div>
+<div class='article'>
+	<h2><a href="http://uwocnpyusers.github.io/colormap-examples.html">Colormap Examples</a></h2>
+	<div class="well small">22 Oct 2014
+ / <a class="url fn" href="http://uwocnpyusers.github.io/author/jp-rinehimer.html">JP Rinehimer </a>/ <a href="http://uwocnpyusers.github.io/category/how-to.html">How to...</a>
+ / <a href="http://uwocnpyusers.github.io/tag/color.html">color</a>, <a href="http://uwocnpyusers.github.io/tag/colormap.html">colormap</a>, <a href="http://uwocnpyusers.github.io/tag/jet.html">jet</a> </div>
+	<div class="summary"><p>How to work with colors and colormaps, create your own colormap, and color lines using a colormap in matplotlib.</p></div>
+</div>	
+<div class='article'>
+	<h2><a href="http://uwocnpyusers.github.io/python-hour-2014-10-20.html">Python Hour - 20 October 2014</a></h2>
+	<div class="well small">20 Oct 2014
+ / <a class="url fn" href="http://uwocnpyusers.github.io/author/jpaul-rinehimer.html">J.Paul Rinehimer </a>/ <a href="http://uwocnpyusers.github.io/category/python-hour.html">Python Hour</a>
+ / <a href="http://uwocnpyusers.github.io/tag/colors.html">colors</a>, <a href="http://uwocnpyusers.github.io/tag/colormaps.html">colormaps</a>, <a href="http://uwocnpyusers.github.io/tag/jet.html">jet</a> </div>
+	<div class="summary"><p>Summary of PyHOGs meeting on October 20, 2014</p></div>
+</div>	
 
 
-</li>
-</ul></div>
-		<div>
-			<h2>Comments</h2>
-		<div>
-	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">Jesse Anderson</a> is
+    &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyHOGS</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="http://uwocnpyusers.github.io" property="cc:attributionName" rel="cc:attributionURL">JP Rinehimer, Earle Wilson, and PyHOGS</a> is
   licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
 </small></p>
 		</footer>

@@ -33,7 +33,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;To begin let&amp;#39;s create an array for manipulation&lt;/p&gt;
+&lt;p&gt;To begin let's create an array for manipulation&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -217,7 +217,7 @@ In&amp;nbsp;[61]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let&amp;#39;s create a 1-D array&lt;/p&gt;
+&lt;p&gt;Let's create a 1-D array&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -347,7 +347,7 @@ In&amp;nbsp;[35]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The output of the numpy command nonzero is a tuple of arrays providing pairs of coordinates within A where the input argument is true (i.e. position (0,0) contains a value greater than 10 and less than 30). &lt;/p&gt;
+&lt;p&gt;The output of the numpy command nonzero is a tuple of arrays providing pairs of coordinates within A where the input argument is true (i.e. position (0,0) contains a value greater than 10 and less than 30).&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
