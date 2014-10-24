@@ -1,5 +1,16 @@
 {{ article.date|strftime('%d %b %Y') }}
-{% if article.author %} / <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }} </a>{% endif %}
+{% if article.authors %} / 
+    {%for author in article.authors[:-1] %}
+        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }} </a>, 
+    {% endfor %}
+    <a href="{{ SITEURL }}/{{ article.authors[-1].url }}">{{ article.authors[-1] }}</a>
+{% elif article.author %} /
+    <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }} </a>
+{% endif %}
 / <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-{% if article.tags %} / {% for tag in article.tags[:-1] %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>, {% endfor %}
-<a href="{{ SITEURL }}/{{ article.tags[-1].url }}">{{ article.tags[-1] }}</a> {% endif %}
+{% if article.tags %} /
+    {% for tag in article.tags[:-1] %}
+        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>,
+    {% endfor %}
+    <a href="{{ SITEURL }}/{{ article.tags[-1].url }}">{{ article.tags[-1] }}</a>
+{% endif %}
