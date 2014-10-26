@@ -62,7 +62,10 @@ DEFAULT_PAGINATION = False
 #
 # Another issue may be changing themes.  Again, this should be easy to do just
 # by using git branches for a different theme.
-THEME = 'theme'
+
+THEME = 'pelican-bootstrap3'
+BOOTSTRAP_THEME='flatly'
+
 # Add README.md to output dir - mainly for Github repo.
 STATIC_PATHS = ['README.md', 'images', 'static']
 

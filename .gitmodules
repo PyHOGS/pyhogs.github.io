@@ -2,3 +2,6 @@
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
 	branch = master
+[submodule "pelican-bootstrap3"]
+	path = pelican-bootstrap3
+	url = https://github.com/PyHOGS/pelican-bootstrap3.git
