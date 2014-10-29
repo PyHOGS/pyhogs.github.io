@@ -64,6 +64,7 @@ DEFAULT_PAGINATION = False
 # by using git branches for a different theme.
 
 THEME = 'pelican-bootstrap3'
+CUSTOM_CSS = 'static/custom.css'
 BOOTSTRAP_THEME='flatly'
 
 # Add README.md to output dir - mainly for Github repo.
