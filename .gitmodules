@@ -1,6 +1,8 @@
 [submodule "pelican-plugins"]
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
+	branch = master
 [submodule "pyhogs-code"]
 	path = pyhogs-code
 	url = https://github.com/PyHOGS/pyhogs-code.git
+    branch = master
