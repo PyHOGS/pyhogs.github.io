@@ -1,16 +1,22 @@
 Title: Python Hour - 24 November 2014
 Slug: python-hour-2014-11-24
 Date: 2014-11-24 11:00 UTC-07:00
-Tags: teaching python
+Tags: teaching python, 2-D interpolation
 Summary: Summary of PyHOGs meeting on November 24, 2014
 Author: Earle Wilson
 
 ### Meeting Summary
 
-Today we talked about using Python in the classroom. Parker is planning to teach his Puget Sound oceanography course next quarter and hopes to give his students the chance to explore data and model output using Python. The challenge is that most students will have little to no prior programming experience and Parker cannot afford to spend too much class time teaching the language.
+Attendance: Parker M., Michelle W. and Earle W.
+
+For most of the meeting, the group discussed some strategies for introducing Python in the classroom. Parker motivated the discussion by sharing his plans for using Python in his Puget Sound oceanography course, which he will offer next quarter. The challenge he outlined is getting students to use Python to explore data and model output without letting that experience detract from the main objectives of the course.
 
 
-Michelle advised that a few instructional sessions will be necessary. She described these sessions as an opportunity for students to interact with some simple, pre-written code as the instructor guides them through the important concepts. I supported this idea and suggested borrowing some ideas from the [Software Carpentry](http://software-carpentry.org/) teaching lab. Their teaching philosphy is to empower learners by introducing them to interesting yet instructive examples that they will find immediately useful. We all seemed to agree that teaching the fundamentals of the language, without providing interesting applications, will likely disengage students.
+Michelle advised that a few hands-on instructional sessions will be necessary. Earle supported this idea and suggested borrowing some ideas from the [Software Carpentry](http://software-carpentry.org/) teaching lab, in particular the strategy of introducing instructive yet interesting examples that students will find immediately useful. Everyone seemed to agree that teaching the fundamentals of the language, without providing interesting applications, will not be the best use of time and will likely disengage students. In other words, 
 
-Parker asked about how to interpolate from one 2-D plaid grid to another. I suggested using the [scipy.interpolate.interp2d](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.interpolate.interp2d.html) function.
+	:::python
+	def foobar():
+		print "Hello World. We promise to come up with a better example."
+
+Parker asked about how to interpolate from one 2-D plaid grid to another. Earle suggested using the [scipy.interpolate.interp2d](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.interpolate.interp2d.html) function.
 
