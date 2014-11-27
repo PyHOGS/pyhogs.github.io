@@ -57,3 +57,6 @@ output/
 cache/
 pelican.pid
 srv.pid
+
+# Ipython notebook-specific
+.ipynb_checkpoints
