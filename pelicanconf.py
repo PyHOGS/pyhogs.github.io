@@ -64,7 +64,7 @@ DEFAULT_PAGINATION = False
 # by using git branches for a different theme.
 THEME = 'theme'
 # Add README.md to output dir - mainly for Github repo.
-STATIC_PATHS = ['README.md']
+STATIC_PATHS = ['README.md', 'images']
 
 # Plugins
 PLUGIN_PATHS = ['pelican-plugins']
