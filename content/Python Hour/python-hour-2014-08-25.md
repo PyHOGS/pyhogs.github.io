@@ -2,7 +2,7 @@ Title: Python Hour - 25 August 2014
 slug: python-hour-2014-08-25
 date: 2014-08-25 12:00 UTC-07:00
 tags: permutations, KDTree, debugging, functions
-summary: Summary of PyHOGs meeting on August 25, 2014
+summary: We discussed the itertool and KDTree modules, ways to debug code, and keyword arguments.
 author: Earle Wilson
 
 + Parker introduced us to the [itertools.permutations](https://docs.python.org/2/library/itertools.html#itertools.permutations) function. You can use this function to return all possible permutations of an iterable object, such as a list. For example, the code snippet below returns a list of all the permutations of `0,1,2`:

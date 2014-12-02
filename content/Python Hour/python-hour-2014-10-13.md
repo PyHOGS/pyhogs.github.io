@@ -2,7 +2,7 @@ Title: Python Hour - 13 October 2014
 slug: python-hour-2014-10-13
 date: 2014-10-13 11:00 UTC-07:00
 tags: MacBook Pro
-summary: Summary of PyHOGs meeting on October 13, 2014
+summary: No meeting but JPaul discovered a cheap way to replace his Macbook Pro battery.
 authors: J.Paul Rinehimer
 
 There was no meeting today as only Jim and JPaul showed up.

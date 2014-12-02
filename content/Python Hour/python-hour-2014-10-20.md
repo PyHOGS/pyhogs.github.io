@@ -2,7 +2,7 @@ Title: Python Hour - 20 October 2014
 Slug: python-hour-2014-10-20
 Date: 2014-10-20 11:00 UTC-07:00
 Tags: colors, colormaps, jet
-Summary: Summary of PyHOGs meeting on October 20, 2014
+Summary: Colormaps, colormaps, colormaps!!!
 Author: J.Paul Rinehimer
 
 ## Meeting Summary

@@ -2,6 +2,7 @@ Title: Python Hour - 11 August 2014
 slug: python-hour-2014-08-11
 date: 2014-08-11 12:00 UTC-07:00
 tags: x-ray, pickle, axes, git
+summary: Setting plot aspect ratios, saving data to your hard drive and much more...
 author: Earle Wilson
 
 + **Cim mentioned there is a Python toolbox called [x-ray](https://pypi.python.org/pypi/xray/0.1.0) (short for eXtended arRAYs) that is designed to make working with multi-dimensional datasets a lot easier.** `xray` allows you to add dimension names and coordinate values to numpy ndarrays. You can then use those dimension names and coordinate values to perform operations over the array. For example, with `xray`, you can find the time mean of an array by doing something like `x.sum('time')` - rather than `x.sum(axis=0)`, if time was on the first dimension.

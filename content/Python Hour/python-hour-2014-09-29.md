@@ -1,8 +1,8 @@
 Title: Python Hour - 29 September 2014
 slug: python-hour-2014-08-29
 date: 2014-09-29 12:00 UTC-07:00
-tags: netcdf
-summary: Summary of PyHOGs meeting on September 29, 2014
+tags: netcdf, sets
+summary: We discussed issues with creating netcdf files and some nuances of using sets.
 authors: Earle Wilson
 
 

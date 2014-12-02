@@ -2,7 +2,7 @@ Title: Python Hour - 22 September 2014
 slug: python-hour-2014-08-22
 date: 2014-09-22 12:00 UTC-07:00
 tags: optimal interpolation, strings
-summary: Summary of PyHOGs meeting on September 22, 2014
+summary: Earle discussed his attempt at making an objective mapping routine.
 authors: Jesse Anderson, Earle Wilson
 
 + Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.
