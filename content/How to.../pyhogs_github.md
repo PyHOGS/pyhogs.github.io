@@ -9,7 +9,7 @@ Summary: A tutorial of how to use GitHub for contributing to the PyHOGS reposito
 # How to post to PyHOGS
 
 This is a basic tutorial describing how to setup up PyHOGS on GitHub and perform basic maintenance of your personal repositories.  The general flow of GitHub is shown by this analog graphic:
-![Connectivity of PyHOGS repositories](pyhogs_github_connectivity2_mod.gif "Connectivity of PyHOGS repositories"), where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).
+![Connectivity of PyHOGS repositories](/images/pyhogs_github_connectivity2_mod.gif "Connectivity of PyHOGS repositories") where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).
 
 JPaul and Earle created [a repository for PyHOGS](https://github.com/PyHOGS/pyhogs.github.io "PyHOGS on GitHub") on GitHub (upper right) as a convenient way to archive and share our discussions.  As the maintainers of this repository, they have the necessary privileges (and expertise) to keep everything working smoothly.  For contributors like me, we proceed by forking this repository to create our own version (top left).  Your personal version of PyHOGS, however, lives on the web.  To copy the files to your computer, you clone your personal version to your computer (bottom left).
 
@@ -36,7 +36,7 @@ Your local changes need to be propagated (pushed) to your private repository and
 The steps are
 
 1. add the file to the local repository, `git add [FILENAME]`
-1. record the change to the local repository, `git commit -m "[DESCRIPTION] [FILENAME]" (filename is optional, and otherwise will apply to all files added since the latest commit)
+1. record the change to the local repository, `git commit -m "[DESCRIPTION] [FILENAME]"` (filename is optional, and otherwise will apply to all files added since the latest commit)
 1. push the changes to your GitHub personal repository, `git push`
 1. generate a pull request from your personal GitHub repository to merge your changes into the main repository
 
