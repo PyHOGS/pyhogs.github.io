@@ -9612,7 +9612,7 @@ SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkfWr/H0I+iEE6A/fMAAAAAElFTkSuQmCC
 
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 29 Sep 2014 12:00:00 +0700</pubDate><guid>tag:pyhogs.github.io,2014-09-29:python-hour-2014-08-29.html</guid><category>netcdf</category></item><item><title>Python Hour - 22 September 2014</title><link>http://pyhogs.github.io/python-hour-2014-08-22.html</link><description>&lt;ul&gt;
+&lt;p&gt;This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Earle Wilson</dc:creator><pubDate>Mon, 29 Sep 2014 12:00:00 +0700</pubDate><guid>tag:pyhogs.github.io,2014-09-29:python-hour-2014-08-29.html</guid><category>netcdf</category><category>sets</category></item><item><title>Python Hour - 22 September 2014</title><link>http://pyhogs.github.io/python-hour-2014-08-22.html</link><description>&lt;ul&gt;
 &lt;li&gt;Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Other things that came up while discussing objective mapping:&lt;/p&gt;

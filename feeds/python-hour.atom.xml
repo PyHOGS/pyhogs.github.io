@@ -102,7 +102,7 @@
 
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.&lt;/p&gt;</summary><category term="netcdf"></category></entry><entry><title>Python Hour - 22 September 2014</title><link href="http://pyhogs.github.io/python-hour-2014-08-22.html" rel="alternate"></link><updated>2014-09-22T12:00:00+07:00</updated><author><name>Jesse Anderson</name></author><id>tag:pyhogs.github.io,2014-09-22:python-hour-2014-08-22.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;This will cause problems if you are iterating over a set and the order in which the set's items are accessed is important.&lt;/p&gt;</summary><category term="netcdf"></category><category term="sets"></category></entry><entry><title>Python Hour - 22 September 2014</title><link href="http://pyhogs.github.io/python-hour-2014-08-22.html" rel="alternate"></link><updated>2014-09-22T12:00:00+07:00</updated><author><name>Jesse Anderson</name></author><id>tag:pyhogs.github.io,2014-09-22:python-hour-2014-08-22.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Earle gave a demo on objective mapping. He plans to clean up the code and share it with the group.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Other things that came up while discussing objective mapping:&lt;/p&gt;
