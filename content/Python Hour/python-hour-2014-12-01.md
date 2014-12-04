@@ -9,7 +9,7 @@ Author: JP Rinehimer
 Parker showed his results of bilinear interpolation to interpolate data from
 one plaid grid to another. Here's the resulting code:
 
-*(from the comments to [last weeks meeting](|filename|/python-hour-2014-11-24)):*
+*(from the comments to [last weeks meeting](python-hour-2014-11-24)):*
 
     :::python
         # add velocity vectors
