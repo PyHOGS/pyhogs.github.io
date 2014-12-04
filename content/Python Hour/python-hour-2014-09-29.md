@@ -2,7 +2,7 @@ Title: Python Hour - 29 September 2014
 slug: python-hour-2014-08-29
 date: 2014-09-29 12:00 UTC-07:00
 tags: netcdf, sets
-summary: We discussed issues with creating netcdf files and some nuances of using sets.
+summary: We discussed issues that can arise when creating netcdf files and some nuances of using Python sets.
 authors: Earle Wilson
 
 

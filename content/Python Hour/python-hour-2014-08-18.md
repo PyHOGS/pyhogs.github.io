@@ -2,7 +2,7 @@ Title: Python Hour - 18 August 2014
 slug: python-hour-2014-08-18
 date: 2014-08-18 12:00 UTC-07:00
 tags: github, Mercurial, SeaWater toolbox, figures
-summary: We discussed ways to commit changes to git and how to install the seawater module
+summary: We discussed ways to commit changes to git, how to install the seawater module and more...
 author: Earle Wilson
 
 

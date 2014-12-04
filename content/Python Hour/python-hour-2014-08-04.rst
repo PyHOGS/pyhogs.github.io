@@ -5,6 +5,7 @@ Python Hour - 04 August 2014
 :date: 2014-08-04 12:00 UTC-07:00
 :tags: mat files, loops, data processing, io
 :authors: JP Rinehimer
+:summary: How to load complex .mat files like a pro.
 
 .. default-role:: code
 
