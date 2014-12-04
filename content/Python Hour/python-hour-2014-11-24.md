@@ -2,7 +2,7 @@ Title: Python Hour - 24 November 2014
 Slug: python-hour-2014-11-24
 Date: 2014-11-24 11:00 UTC-07:00
 Tags: teaching python, 2-D interpolation
-Summary: We talked about strategies for python in the classroom and how to do 2-D interpolation.
+Summary: We discussed strategies for teaching python in the classroom and how to do 2-D interpolation.
 Author: Earle Wilson
 
 ### Meeting Summary

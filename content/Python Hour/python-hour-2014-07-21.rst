@@ -5,6 +5,7 @@ Python Hour - 21 July
 :date: 2014-07-21 14:52:31 UTC-07:00
 :tags: broadcasting, reshape, indexing
 :authors: JP Rinehimer
+:summary: We talked about indexing, numpy array broadcasting rules and reloading modules.
 
 .. default-role:: code
 
