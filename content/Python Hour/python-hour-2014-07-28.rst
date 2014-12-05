@@ -5,6 +5,7 @@ Python Hour - 28 July
 :date: 2014-07-28 14:52:31 UTC-07:00
 :tags: indexing and slicing
 :authors: Earle Wilson
+:summary: We talked about indexing, slicing and the awesomeness of the iPython Notebook
 
 We mainly talked about array indexing and slicing. Basically, we discussed the
 different ways we can call a subset of an array. We were more or less following

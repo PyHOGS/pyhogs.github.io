@@ -1,4 +1,4 @@
-Title: Using GitHub for PyHOGS
+Title: Contribute to PYHOGS
 Slug: pyhogs_github
 Date: 2014-12-01 12:25 UTC-07:00
 Authors: ZB Szuts

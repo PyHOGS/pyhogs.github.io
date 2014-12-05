@@ -24,6 +24,9 @@ https://try.github.io (Code School)
 
 ## Rebase & others
 https://github.com/edx/edx-platform/wiki/How-to-Rebase-a-Pull-Request
+
 https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github
+
 http://nvie.com/posts/a-successful-git-branching-model
+
 http://stackoverflow.com/questions/17182624/contributing-to-project-on-github-how-to-rebase-my-pull-request-on-top-of-mast
