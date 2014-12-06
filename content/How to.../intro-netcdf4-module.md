@@ -3,7 +3,7 @@ Slug: into_netcdf4
 Date: 2014-12-04 12:25 UTC-07:00
 Authors: Earle Wilson
 Tags: netCDF, netCDF4
-Summary: A brief introduction to netCDF and the netCDF4 python module. 
+Summary: An introduction to netCDF and the netCDF4 python module. 
 
 
 ## What is netCDF?
