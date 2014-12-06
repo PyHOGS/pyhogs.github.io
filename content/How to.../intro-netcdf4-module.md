@@ -1,15 +1,22 @@
 Title: Create and read netCDF files
-Slug: into_netcdf4
+Slug: intro_netcdf4
 Date: 2014-12-04 12:25 UTC-07:00
 Authors: Earle Wilson
 Tags: netCDF, netCDF4
 Summary: An introduction to netCDF and the netCDF4 python module. 
 
+## Motivation
+
+NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just want to learn the syntax of particular interface. 
+
+Here, I hope to make the intial steps towards learning using netCDF a less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.
+
 
 ## What is netCDF?
 
-[NetCDF](http://www.unidata.ucar.edu/software/netcdf/) is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"[^0]. NetCDF is a database as much as it is a data format as it provides a built-in hierarchical structure to better organize and document data. Moreover, it is especially suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. The software is maintained by developers at [Unidata](http://www.unidata.ucar.edu/software/netcdf/), which is a subsidary of [UCAR](http://www2.ucar.edu/). 
+[NetCDF](http://www.unidata.ucar.edu/software/netcdf/) is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"[^0].The software is maintained by developers at [Unidata](http://www.unidata.ucar.edu/software/netcdf/), which is a subsidary of [UCAR](http://www2.ucar.edu/). 
 
+**One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data**. Moreover, it is well suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. 
 
 ## Versions of netCDF 
 
@@ -44,7 +51,7 @@ Each step is discussed below. But first, let's make up some data:
 	noise = np.random.rand(len(lon), len(lat), len(z))
 	temp_data = x+noise
 
-Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this represents data for one snapshot in time.
+Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this data represents one snapshot in time.
 
 
 #### Creating a dataset
@@ -71,7 +78,7 @@ The next step is to specify the **dimensions** of the data. If you plan to save 
 	tempgrp.createDimension('z', len(z))
 	tempgrp.createDimension('time', None)
 
-The first and second arguments of the `createDimension` method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using `None` in the second argument, I have made `time` an *unlimited* dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF-4 format permits multiple unlimited dimensions, but older versions allow only one.
+The first and second arguments of the `createDimension` method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using `None` as the second argument, I have made `time` an *unlimited* dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF4 format permits multiple unlimited dimensions, but older formats allow only one.
 
 #### Building variables
 This step essentially pre-allocates NetCDF **variables** for data storage. NetCDF variables are very similar to numpy arrays. To construct them, you use the `createVariable` method:
@@ -84,7 +91,7 @@ This step essentially pre-allocates NetCDF **variables** for data storage. NetCD
 	temp = tempgrp.createVariable('Temperature', 'f4', ('time', 'lon', 'lat', 'z'))
 	time = tempgrp.createVariable('Time', 'i4', 'time')
 	
-The first argument is the name of the variable, the second argument sets the [datatype](http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html) and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer[^1]. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.
+The first argument supplies the name of the variable, the second argument sets the [datatype](http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html) and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer[^1]. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.
 
 Let's look at what we have done so far[^2],
 
@@ -110,7 +117,7 @@ This step is easy:
 	time_num = today.toordinal()
 	time[0] = time_num
 
-The important thing here is to use proper indexing when assigning values into the variables - just like you would a numpy array.
+The important thing here is to use proper indexing when passing values into the variables - just like you would a numpy array.
 
 #### Adding attributes
 
@@ -154,7 +161,15 @@ Alternatively, you can query for a list of the variables:
 
 {% notebook examples/intro-netcdf4-module.ipynb cells[24:25]%}	
 
-As evidenced by the use of the `keys()` method, netCDF variables are stored in a dictionary. Here is how you would read the data stored in 'levels' into a new numpy array:
+As evidenced by the use of the `keys()` method, netCDF variables are stored in a dictionary. If inquire the attributes of a variable, you can do:
+
+{% notebook examples/intro-netcdf4-module.ipynb cells[25:26]%}	
+
+If a variable has many attributes, you can use a simple loop to display all its metadata:
+
+{% notebook examples/intro-netcdf4-module.ipynb cells[26:27]%}
+
+Accessing data from a variable is simple. Below, I read in the data stored in 'levels' into a new numpy array:
 
 	:::python
 	zlvls = tempgrp.variables['Levels'][:]
@@ -175,7 +190,7 @@ NetCDF4 provides easy methods to compress data. Back when I created the variable
 
 The `complevel` keyword argument toggles the compression ratio and speed. Options range from 1 to 9 (1 being the fastest with least compression and 9 being the slowest with most compression. Default is 4). Additionally, you may also specify the precision of your data using the `least_significant_digit` keyword argument. Floats are generally stored with much higher precision than the data it represents. Let's look at a value from the temperature data array:
 
-{% notebook examples/intro-netcdf4-module.ipynb cells[27:28]%}	
+{% notebook examples/intro-netcdf4-module.ipynb cells[29:30]%}	
 
 Those trailing digits take up a lot of space and in most cases serve no practical value. By specifying the least significant digit, you can further enhance the data compression. This just gives netCDF more freedom when it packs the data into your harddrive. Knowing that temperature is only accurate to about 0.005 degrees K, it makes sense to just preserve the first 4 digits:
 
