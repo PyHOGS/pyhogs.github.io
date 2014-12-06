@@ -1723,7 +1723,7 @@ jQuery(document).ready(function($) {
 
 <script>var _gaq=[['_setAccount','UA-53191537-2'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <script type="text/javascript">
-	var disqus_identifier = "into_netcdf4.html";
+	var disqus_identifier = "intro_netcdf4.html";
 	(function() {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://pyhogs.disqus.com/embed.js';
@@ -1784,8 +1784,12 @@ jQuery(document).ready(function($) {
         <a href="http://pyhogs.github.io/tag/netcdf.html">netCDF</a>,
     <a href="http://pyhogs.github.io/tag/netcdf4.html">netCDF4</a>
 </div>
-		<div><h2>What is netCDF?</h2>
-<p><a href="http://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"<sup id="fnref:0"><a class="footnote-ref" href="#fn:0" rel="footnote">1</a></sup>. NetCDF is a database as much as it is a data format as it provides a built-in hierarchical structure to better organize and document data. Moreover, it is especially suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. The software is maintained by developers at <a href="http://www.unidata.ucar.edu/software/netcdf/">Unidata</a>, which is a subsidary of <a href="http://www2.ucar.edu/">UCAR</a>. </p>
+		<div><h2>Motivation</h2>
+<p>NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using <em>dimensions</em>, <em>attributes</em> and <em>variables</em> to construct a <em>dataset</em> to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just want to learn the syntax of particular interface. </p>
+<p>Here, I hope to make the intial steps towards learning using netCDF a less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.</p>
+<h2>What is netCDF?</h2>
+<p><a href="http://www.unidata.ucar.edu/software/netcdf/">NetCDF</a> is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"<sup id="fnref:0"><a class="footnote-ref" href="#fn:0" rel="footnote">1</a></sup>.The software is maintained by developers at <a href="http://www.unidata.ucar.edu/software/netcdf/">Unidata</a>, which is a subsidary of <a href="http://www2.ucar.edu/">UCAR</a>. </p>
+<p><strong>One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data</strong>. Moreover, it is well suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. </p>
 <h2>Versions of netCDF</h2>
 <p>There are several versions of NetCDF currently in use: <em>netCDF3_classic</em>, <em>netCDF3_64-bit</em> and <em>netCDF4_classic</em> and <em>netCDF4</em>. NetCDF3_classic uses the original format and is probably still the most commonly used version. Its main limitation is that it can only store up 2GB of data. NetCDF3_64-bit is basically netCDF3_classic without the 2GB storage limitation. NetCDF4 is the most recent version. It is built on top of the <a href="http://docs.h5py.org/en/2.3/">HDF5</a> data model, and introduces new features such as groups and zlib data compression. You can learn more about each version <a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html">here</a>.  </p>
 <h2>Using netCDF in Python</h2>
@@ -1813,7 +1817,7 @@ jQuery(document).ready(function($) {
 </pre></div>
 
 
-<p>Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this represents data for one snapshot in time.</p>
+<p>Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this data represents one snapshot in time.</p>
 <h4>Creating a dataset</h4>
 <p>To create a <strong>netCDF dataset</strong>, you use the <code>Dataset</code> method:</p>
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">netCDF4</span> <span class="kn">as</span> <span class="nn">nc4</span>
@@ -1836,7 +1840,7 @@ jQuery(document).ready(function($) {
 </pre></div>
 
 
-<p>The first and second arguments of the <code>createDimension</code> method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using <code>None</code> in the second argument, I have made <code>time</code> an <em>unlimited</em> dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF-4 format permits multiple unlimited dimensions, but older versions allow only one.</p>
+<p>The first and second arguments of the <code>createDimension</code> method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using <code>None</code> as the second argument, I have made <code>time</code> an <em>unlimited</em> dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF4 format permits multiple unlimited dimensions, but older formats allow only one.</p>
 <h4>Building variables</h4>
 <p>This step essentially pre-allocates NetCDF <strong>variables</strong> for data storage. NetCDF variables are very similar to numpy arrays. To construct them, you use the <code>createVariable</code> method:</p>
 <div class="highlight"><pre><span class="n">longitude</span> <span class="o">=</span> <span class="n">tempgrp</span><span class="o">.</span><span class="n">createVariable</span><span class="p">(</span><span class="s">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s">&#39;f4&#39;</span><span class="p">,</span> <span class="s">&#39;lon&#39;</span><span class="p">)</span>
@@ -1847,13 +1851,13 @@ jQuery(document).ready(function($) {
 </pre></div>
 
 
-<p>The first argument is the name of the variable, the second argument sets the <a href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">datatype</a> and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">2</a></sup>. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.</p>
+<p>The first argument supplies the name of the variable, the second argument sets the <a href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html">datatype</a> and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">2</a></sup>. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.</p>
 <p>Let's look at what we have done so far<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">3</a></sup>,</p>
 <p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[5]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1889,7 +1893,7 @@ root group (NETCDF4 data model, file format UNDEFINED):
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[9]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1938,7 +1942,7 @@ group /Temp_data:
 </pre></div>
 
 
-<p>The important thing here is to use proper indexing when assigning values into the variables - just like you would a numpy array.</p>
+<p>The important thing here is to use proper indexing when passing values into the variables - just like you would a numpy array.</p>
 <h4>Adding attributes</h4>
 <p>NetCDF attributes can be used to provide additional information about the dataset (i.e. metadata). You can add attributes to variables, groups and the dataset itself. This is optional but considered good practice:</p>
 <div class="highlight"><pre><span class="c">#Add global attributes</span>
@@ -1973,7 +1977,7 @@ group /Temp_data:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[16]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2000,7 +2004,7 @@ meta data for the dataset:
 &lt;type &apos;netCDF4.Dataset&apos;&gt;
 root group (NETCDF4 data model, file format UNDEFINED):
     description: Example dataset containing one group
-    history: Created 04/12/14
+    history: Created 06/12/14
     dimensions(sizes): 
     variables(dimensions): 
     groups: Temp_data
@@ -2067,7 +2071,79 @@ In&nbsp;[22]:
 </div>
 
 </div>  </p>
-<p>As evidenced by the use of the <code>keys()</code> method, netCDF variables are stored in a dictionary. Here is how you would read the data stored in 'levels' into a new numpy array:</p>
+<p>As evidenced by the use of the <code>keys()</code> method, netCDF variables are stored in a dictionary. If inquire the attributes of a variable, you can do:</p>
+<p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[24]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">time_vble</span> <span class="o">=</span> <span class="n">tempgrp</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s">&#39;Time&#39;</span><span class="p">]</span>
+<span class="k">print</span> <span class="n">time_vble</span><span class="o">.</span><span class="n">ncattrs</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">time_vble</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+[u&apos;units&apos;]
+days since Jan 01, 0001
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>  </p>
+<p>If a variable has many attributes, you can use a simple loop to display all its metadata:</p>
+<p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[29]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">temp_vble</span> <span class="o">=</span> <span class="n">tempgrp</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s">&#39;Temperature&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">temp_vble</span><span class="o">.</span><span class="n">ncattrs</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">attr</span> <span class="o">+</span> <span class="s">&#39;: &#39;</span> <span class="o">+</span> <span class="n">temp_vble</span><span class="o">.</span><span class="n">getncattr</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+units: degrees K
+warning: This data is not real!
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></p>
+<p>Accessing data from a variable is simple. Below, I read in the data stored in 'levels' into a new numpy array:</p>
 <div class="highlight"><pre><span class="n">zlvls</span> <span class="o">=</span> <span class="n">tempgrp</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s">&#39;Levels&#39;</span><span class="p">][:]</span>
 </pre></div>
 
@@ -2090,7 +2166,7 @@ In&nbsp;[22]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[33]:
+In&nbsp;[27]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2108,7 +2184,7 @@ In&nbsp;[33]:
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-10.46504592895507812500
+10.75250816345214843750
 
 </pre>
 </div>

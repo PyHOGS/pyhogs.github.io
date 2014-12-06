@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/earle-wilson.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-04T12:25:00+07:00</updated><entry><title>Create and read netCDF files</title><link href="http://pyhogs.github.io/into_netcdf4.html" rel="alternate"></link><updated>2014-12-04T12:25:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2014-12-04:into_netcdf4.html</id><summary type="html">&lt;h2&gt;What is netCDF?&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;NetCDF&lt;/a&gt; is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"&lt;sup id="fnref:0"&gt;&lt;a class="footnote-ref" href="#fn:0" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;. NetCDF is a database as much as it is a data format as it provides a built-in hierarchical structure to better organize and document data. Moreover, it is especially suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. The software is maintained by developers at &lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;Unidata&lt;/a&gt;, which is a subsidary of &lt;a href="http://www2.ucar.edu/"&gt;UCAR&lt;/a&gt;. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/earle-wilson.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-04T12:25:00+07:00</updated><entry><title>Create and read netCDF files</title><link href="http://pyhogs.github.io/intro_netcdf4.html" rel="alternate"></link><updated>2014-12-04T12:25:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2014-12-04:intro_netcdf4.html</id><summary type="html">&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using &lt;em&gt;dimensions&lt;/em&gt;, &lt;em&gt;attributes&lt;/em&gt; and &lt;em&gt;variables&lt;/em&gt; to construct a &lt;em&gt;dataset&lt;/em&gt; to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just want to learn the syntax of particular interface. &lt;/p&gt;
+&lt;p&gt;Here, I hope to make the intial steps towards learning using netCDF a less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.&lt;/p&gt;
+&lt;h2&gt;What is netCDF?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;NetCDF&lt;/a&gt; is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"&lt;sup id="fnref:0"&gt;&lt;a class="footnote-ref" href="#fn:0" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;.The software is maintained by developers at &lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;Unidata&lt;/a&gt;, which is a subsidary of &lt;a href="http://www2.ucar.edu/"&gt;UCAR&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data&lt;/strong&gt;. Moreover, it is well suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. &lt;/p&gt;
 &lt;h2&gt;Versions of netCDF&lt;/h2&gt;
 &lt;p&gt;There are several versions of NetCDF currently in use: &lt;em&gt;netCDF3_classic&lt;/em&gt;, &lt;em&gt;netCDF3_64-bit&lt;/em&gt; and &lt;em&gt;netCDF4_classic&lt;/em&gt; and &lt;em&gt;netCDF4&lt;/em&gt;. NetCDF3_classic uses the original format and is probably still the most commonly used version. Its main limitation is that it can only store up 2GB of data. NetCDF3_64-bit is basically netCDF3_classic without the 2GB storage limitation. NetCDF4 is the most recent version. It is built on top of the &lt;a href="http://docs.h5py.org/en/2.3/"&gt;HDF5&lt;/a&gt; data model, and introduces new features such as groups and zlib data compression. You can learn more about each version &lt;a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html"&gt;here&lt;/a&gt;.  &lt;/p&gt;
 &lt;h2&gt;Using netCDF in Python&lt;/h2&gt;
@@ -28,7 +32,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this represents data for one snapshot in time.&lt;/p&gt;
+&lt;p&gt;Here, I create a numpy array representing fake temperature data for some latitude, longitude at several depth levels. The shape of the data array is (28,22,20) representing (lon, lat, z). For concreteness, let's assume that this data represents one snapshot in time.&lt;/p&gt;
 &lt;h4&gt;Creating a dataset&lt;/h4&gt;
 &lt;p&gt;To create a &lt;strong&gt;netCDF dataset&lt;/strong&gt;, you use the &lt;code&gt;Dataset&lt;/code&gt; method:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;netCDF4&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;nc4&lt;/span&gt;
@@ -51,7 +55,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The first and second arguments of the &lt;code&gt;createDimension&lt;/code&gt; method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using &lt;code&gt;None&lt;/code&gt; in the second argument, I have made &lt;code&gt;time&lt;/code&gt; an &lt;em&gt;unlimited&lt;/em&gt; dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF-4 format permits multiple unlimited dimensions, but older versions allow only one.&lt;/p&gt;
+&lt;p&gt;The first and second arguments of the &lt;code&gt;createDimension&lt;/code&gt; method are the dimension's name and length, respectively. In the last line, I added created time a dimension. This gives me the option of constructing a four dimensional array with time as the extra dimension. By using &lt;code&gt;None&lt;/code&gt; as the second argument, I have made &lt;code&gt;time&lt;/code&gt; an &lt;em&gt;unlimited&lt;/em&gt; dimension. An unlimited dimension is one that can grow indefinitely; the other dimensions, with their specified lengths, are locked into their current size. The netCDF4 format permits multiple unlimited dimensions, but older formats allow only one.&lt;/p&gt;
 &lt;h4&gt;Building variables&lt;/h4&gt;
 &lt;p&gt;This step essentially pre-allocates NetCDF &lt;strong&gt;variables&lt;/strong&gt; for data storage. NetCDF variables are very similar to numpy arrays. To construct them, you use the &lt;code&gt;createVariable&lt;/code&gt; method:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;longitude&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;createVariable&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Longitude&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;f4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;lon&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -62,13 +66,13 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The first argument is the name of the variable, the second argument sets the &lt;a href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html"&gt;datatype&lt;/a&gt; and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.&lt;/p&gt;
+&lt;p&gt;The first argument supplies the name of the variable, the second argument sets the &lt;a href="http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html"&gt;datatype&lt;/a&gt; and the third argument sets the shape. "f4" specifies a 32 bit float and "i4" represents a 32 bit integer&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;. The shapes of the variables are specified using the dimension names.  To create a scalar variable, one would omit the third argument.&lt;/p&gt;
 &lt;p&gt;Let's look at what we have done so far&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;,&lt;/p&gt;
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[5]:
+In&amp;nbsp;[8]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
@@ -104,7 +108,7 @@ root group (NETCDF4 data model, file format UNDEFINED):
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[6]:
+In&amp;nbsp;[9]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
@@ -153,7 +157,7 @@ group /Temp_data:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The important thing here is to use proper indexing when assigning values into the variables - just like you would a numpy array.&lt;/p&gt;
+&lt;p&gt;The important thing here is to use proper indexing when passing values into the variables - just like you would a numpy array.&lt;/p&gt;
 &lt;h4&gt;Adding attributes&lt;/h4&gt;
 &lt;p&gt;NetCDF attributes can be used to provide additional information about the dataset (i.e. metadata). You can add attributes to variables, groups and the dataset itself. This is optional but considered good practice:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#Add global attributes&lt;/span&gt;
@@ -188,7 +192,7 @@ group /Temp_data:
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[21]:
+In&amp;nbsp;[16]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
@@ -215,7 +219,7 @@ meta data for the dataset:
 &amp;lt;type &amp;apos;netCDF4.Dataset&amp;apos;&amp;gt;
 root group (NETCDF4 data model, file format UNDEFINED):
     description: Example dataset containing one group
-    history: Created 04/12/14
+    history: Created 06/12/14
     dimensions(sizes): 
     variables(dimensions): 
     groups: Temp_data
@@ -282,7 +286,79 @@ In&amp;nbsp;[22]:
 &lt;/div&gt;
 
 &lt;/div&gt;  &lt;/p&gt;
-&lt;p&gt;As evidenced by the use of the &lt;code&gt;keys()&lt;/code&gt; method, netCDF variables are stored in a dictionary. Here is how you would read the data stored in 'levels' into a new numpy array:&lt;/p&gt;
+&lt;p&gt;As evidenced by the use of the &lt;code&gt;keys()&lt;/code&gt; method, netCDF variables are stored in a dictionary. If inquire the attributes of a variable, you can do:&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[24]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;time_vble&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Time&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;time_vble&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ncattrs&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;time_vble&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getncattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;units&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+[u&amp;apos;units&amp;apos;]
+days since Jan 01, 0001
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;  &lt;/p&gt;
+&lt;p&gt;If a variable has many attributes, you can use a simple loop to display all its metadata:&lt;/p&gt;
+&lt;p&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;
+In&amp;nbsp;[29]:
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;temp_vble&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Temperature&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;attr&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;temp_vble&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ncattrs&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;attr&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;: &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;temp_vble&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getncattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attr&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+units: degrees K
+warning: This data is not real!
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Accessing data from a variable is simple. Below, I read in the data stored in 'levels' into a new numpy array:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;zlvls&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Levels&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;][:]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -305,7 +381,7 @@ In&amp;nbsp;[22]:
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[33]:
+In&amp;nbsp;[27]:
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
@@ -323,7 +399,7 @@ In&amp;nbsp;[33]:
 &lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
-10.46504592895507812500
+10.75250816345214843750
 
 &lt;/pre&gt;
 &lt;/div&gt;
