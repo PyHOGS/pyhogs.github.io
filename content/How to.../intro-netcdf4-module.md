@@ -7,7 +7,7 @@ Summary: An introduction to netCDF and the netCDF4 python module.
 
 ## Motivation
 
-NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just want to learn the syntax of particular interface. 
+NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just wanted to learn the syntax of particular interface. 
 
 Here, I hope to make the intial steps towards learning using netCDF a less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.
 
