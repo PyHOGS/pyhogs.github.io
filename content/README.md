@@ -1,6 +1,6 @@
 # PyHOGS.github.io
 
-## Website for University of Washington Python Hour for Oceanography and GeoSciences.
+## Website for Python Hour for Oceanography and GeoSciences.
 
 This repository hosts the PyHOGS Organization webpage. If you're reading this 
 file, you're on the `master` branch of the repository.  This branch hosts the 
