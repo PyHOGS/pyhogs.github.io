@@ -1722,6 +1722,14 @@ jQuery(document).ready(function($) {
     <link href="http://pyhogs.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="PyHOGS Atom Feed" />
 
 <script>var _gaq=[['_setAccount','UA-53191537-2'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<script type="text/javascript">
+	var disqus_identifier = "pyhogs_posting.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://pyhogs.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
 </head>
 <body>
 <a href="https://github.com/PyHOGS"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
@@ -1733,7 +1741,7 @@ jQuery(document).ready(function($) {
 						<li><a href="http://pyhogs.github.io/">About</a></li>
 						<li><a href="http://pyhogs.github.io/pages/getting-started.html">Getting Started</a></li>
 						<li><a href="http://pyhogs.github.io/pages/meeting-ideas.html">Meeting Ideas</a></li>
-					<li ><a href="http://pyhogs.github.io/category/how-to.html">How to...</a></li>
+					<li class="active"><a href="http://pyhogs.github.io/category/how-to.html">How to...</a></li>
 					<li ><a href="http://pyhogs.github.io/category/python-hour.html">Python Hour</a></li>
 			</ul>
 			<p class="pull-right"><a href="http://pyhogs.github.io/archives.html">[archives]</a> <a href="http://pyhogs.github.io/tags.html">[tags]</a></p>
@@ -1766,24 +1774,9 @@ jQuery(document).ready(function($) {
 		</div>
 	  </div>
 	  <div class="content">
-<div class="page-header"><h1>PyHOGS <small>website</small></h1></div>
-<div class='article'>
-	<h2><a href="http://pyhogs.github.io/pyhogs_github.html">Using GitHub for PyHOGS</a></h2>
-	<div class="well small">01 Dec 2014
- / 
-    <a href="http://pyhogs.github.io/author/zb-szuts.html">ZB Szuts</a>
-/ <a href="http://pyhogs.github.io/category/how-to.html">How to...</a>
- /
-        <a href="http://pyhogs.github.io/tag/pyhogs.html">pyhogs</a>,
-        <a href="http://pyhogs.github.io/tag/website.html">website</a>,
-        <a href="http://pyhogs.github.io/tag/posting.html">posting</a>,
-    <a href="http://pyhogs.github.io/tag/github.html">github</a>
-</div>
-	<div class="summary"><p>A tutorial of how to use GitHub for contributing to the PyHOGS repository.</p></div>
-</div>	
-<div class='article'>
-	<h2><a href="http://pyhogs.github.io/pyhogs_posting.html">How to post to PyHOGS</a></h2>
-	<div class="well small">01 Dec 2014
+	<div class='article'>
+		<div class="page-header"><h1>How to post to PyHOGS</h1></div>
+		<div class="well small">01 Dec 2014
  / 
     <a href="http://pyhogs.github.io/author/zb-szuts.html">ZB Szuts</a>
 / <a href="http://pyhogs.github.io/category/how-to.html">How to...</a>
@@ -1794,10 +1787,83 @@ jQuery(document).ready(function($) {
         <a href="http://pyhogs.github.io/tag/notebook.html">notebook</a>,
     <a href="http://pyhogs.github.io/tag/ipython.html">ipython</a>
 </div>
-	<div class="summary"><p>A tutorial of how to post to the PyHOGS website: making an iPython Notebook and supporting files and adding them to the PyHOGS GitHub repository.</p></div>
-</div>	
+		<div><h1>How to post to PyHOGS</h1>
+<p>This is a basic tutorial describing how to create iPython Notebooks and uploading them to the PyHOGS GitHub repository for sharing with the group.  There is a recent <a href="http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261" title="Nature Toolbox: interactive notebooks sharing the code">Nature Toolbox article</a> on iPython Notebooks that may be of interest.  See the companion post "Using GitHub for PyHOGS" for more details on setting up and using GitHub.</p>
+<p>The easiest way to add content is to email it directly to JPaul or Earle, who maintain the PyHOGS GitHub repository.  They'll still ask you to provide two files (a notebook file and a markdown wrapper).  This is the easiest way to post.</p>
+<p>Alternatively, if you want to learn new software or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:</p>
+<ul>
+<li>Write the notebook in iPython Notebook.</li>
+<li>Add the notebook to your local personal repository.</li>
+<li>Push your local changes to your PyHOGS GitHub repository.</li>
+<li>Create a pull request to the PyHOGS main repository to ask the maintainers to add your additions.</li>
+</ul>
+<h2>Making an iPython Notebook</h2>
+<p>Having installed the Enthought Canopy version of python on my computer (OS 10.8), I simply run</p>
+<div class="highlight"><pre><span class="n">ipython</span> <span class="n">notebook</span> <span class="o">&amp;</span>
+</pre></div>
 
 
+<p>to open the notebook editor in the active browser window.  Create a new notebook to start editing.</p>
+<p>Notebooks are arranged as cells, where each cell is either a comment in markdown format or a series of input commands for ipython.  You can create new cells (under the menu item Insert), and the pull-down menu lets you change between code or markdown.  By running a cell (the play button, or press shift+enter), the commands are processed: either for markdown formatting or to run the python code and display the output (if any) at the end of the cell.</p>
+<p>To get started with markdown, here are a few commands:
+- <code>#</code> generates a header, and using two <code>##</code> (or three, ...) makes subheaders.
+- lists are generated by multiple lines beginning with <code>-</code> or <code>+</code> or <code>*</code>
+- emphasis/italics is made by <code>_xxx_</code> or <code>*xxx*</code>.
+- bold is made by <code>__xxx__</code> or <code>**xxx**</code>.
+- in-text code is bracketed by backward apostrophe, e.g. <code>`command`</code> gives <code>command</code> 
+- multiple lines of block code is made by lines starting with a tab (the entire block preceded by a blank line)</p>
+<p>Additional nice features is that it understands latex math formatting and can include links and images.  More details can be found <a href="http://daringfireball.net/projects/markdown/syntax" title="markdown formatting">here</a>.</p>
+<p>Assume that you've now written up a test notebook <code>sample.ipynb</code> and want to get it onto the PyHOGS website.  Make sure it is located in the notebook folder of the PyHOGS repository (<code>pyhogs.github.io/pyhogs-code/notebooks/examples/</code>).</p>
+<h2>Files for the PyHOGS website</h2>
+<p>Though the PyHOGS repository can take notebooks directly, to add a webpage a wrapper file is needed to supply metadata for the post.</p>
+<p>For tutorials in the <a href="http://pyhogs.github.io/category/how-to.html" title="PyHOGS website How To">how-to section</a>, these wrapper files are in <code>pyhogs.github.io/content/How\ to.../</code>.  They are written in markdown (<code>.md</code>) and one example (pyhogs.github.io/content/How\ to.../colormap_bathy.md) looks like this</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Colormap</span> <span class="n">example</span> <span class="k">for</span> <span class="n">bathymetry</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">colormap</span><span class="o">-</span><span class="n">bathymetry</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">04</span> <span class="mi">13</span><span class="o">:</span><span class="mi">12</span> <span class="n">UTC</span><span class="o">-</span><span class="mi">07</span><span class="o">:</span><span class="mi">00</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">ZB</span> <span class="n">Szuts</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">color</span><span class="o">,</span> <span class="n">colormap</span><span class="o">,</span> <span class="n">jet</span><span class="o">,</span> <span class="n">bathymetry</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">An</span> <span class="n">example</span> <span class="n">of</span> <span class="n">making</span> <span class="n">a</span> <span class="n">map</span> <span class="k">with</span> <span class="n">filled</span> <span class="n">bathymetric</span> <span class="n">contours</span> <span class="k">in</span> <span class="n">matplotlib</span><span class="o">.</span>
+
+<span class="err"></span><span class="n">wzxhzdk</span><span class="o">:</span><span class="mi">0</span><span class="err"></span>
+</pre></div>
+
+
+<p>Either copy an existing file or use the <a href="http://pyhogs.github.io/content/pages/template.md" title="Template for markdown wrapper for PyHOGS post">template</a>.  Call it <code>sample.md</code> and put it in <code>pyhogs.github.io/content/How\ to.../</code>. </p>
+<h2>Contributing to the PyHOGS repository</h2>
+<p>Your local changes need to be propagated (pushed) to your personal repository and then to the main repository.  It's important to make sure your distribution and local copy are fully up to date/synced with the main repository before the steps below are followed.  (See companion post "Using GitHub for PyHOGS".)</p>
+<p>The steps are</p>
+<ol>
+<li>add the file(s) to your local repository</li>
+<li>record the change in your local repository</li>
+<li>push the file from the local repository to your online personal repository</li>
+<li>create a pull request to ask the maintainers to add change to the main repository</li>
+</ol>
+<p>The add step needs to be done for all new files.  For this example, that includes the notebook and the wrapper files.</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">-</span><span class="n">code</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">ipynb</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">How</span><span class="err">\</span> <span class="n">to</span><span class="p">...</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Add a notebook and wrapper&quot;</span>
+</pre></div>
+
+
+<p>The <code>-m</code> switch (for <code>--message</code>) with <code>git commit</code> attaches a quick description of the file/changes, which is especially useful for others (e.g. the maintainers).  The commit can cover multiple files, or it can be done after each one.  This message is critical, since it is archived in the repository's history.  It's better practice to add the notebook before the wrapper file, since the notebook is stand-alone but the wrapper requires the notebook.  Thus there won't be the potential for errors if only the first addition makes it through a merge.</p>
+<p>On commit messages, JPaul adds: "While there's lots of rules and conventions on commit messages (just google git commit messages), the only one we really need to follow is this:
+   The first line should always be 50 characters or less. If needed, this summary line is then followed by a blank line and additional, in-depth information.<br />
+This is because the first line is used for git log commands and it truncates it to 50(?) characters. I think longer (up to maybe 80) is just fine, but the idea is to keep it short, sweet, and to the point."</p>
+<p>The third step </p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+
+
+<p>pushes all outstanding changes from your local repository to your personal version on GitHub.</p>
+<p>Now go online to your personal repository.  Click the Pull Request button to ask the maintainers to accept your change.  It's good practice to add a comment that describes the new files or the changes, but this comment is less critical than the one made by <code>git commit</code>.  It's worth noting any peculiarities to the maintainers, such as images whose paths/directories may need to be changed, or etc.  Once your pull request is are accepted, your content will be added to the PyHOGS website!</p>
+<h2>Comments</h2>
+<p>Note that it's not required to submit an iPython Notebok file.  If you don't need any python execution, then you can simply write in markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  I'm sure other web suitable formats could also be used (see companion post on using GitHub).</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>	
 		<footer>
 		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
     Content
