@@ -9,7 +9,9 @@ Summary: An introduction to netCDF and the netCDF4 python module.
 
 NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just wanted to learn the syntax of particular interface. 
 
-Here, I hope to make the intial steps towards learning using netCDF a less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.
+NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understand the basics of using netCDF and just want to learn the syntax of particular interface. 
+
+Here, I hope to make the intial steps towards learning using netCDF a little less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.
 
 
 ## What is netCDF?
@@ -97,8 +99,7 @@ Let's look at what we have done so far[^2],
 
 {% notebook examples/intro-netcdf4-module.ipynb cells[14:16]%}
 
-Note that all the dimensions and variables were defined for `tempgrp`. The root group `f` is currently empty.  It's also worth noting that **netCDF dimensions and variables are indestructible**. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together.
-
+Note that all the dimensions and variables were defined for `tempgrp`. The root group `f` is currently empty.  It's also worth noting that **netCDF dimensions and variables are indestructible**. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together. 
 
 
 #### Passing data into variables
@@ -132,9 +133,11 @@ NetCDF attributes can be used to provide additional information about the datase
 	longitude.units = 'degrees east'
 	latitude.units = 'degrees north'
 	time.units = 'days since Jan 01, 0001'
-	temp.units = 'degrees K'
+	temp.units = 'Kelvin'
 	levels.units = 'meters'
 	temp.warning = 'This data is not real!'
+
+You can add attributes any way you see fit, but you should be aware of the different [attribute conventions](http://www.unidata.ucar.edu/software/netcdf/conventions.html) that already exist. Most notable are the [COARDS](http://ferret.wrc.noaa.gov/noaa_coop/coop_cdf_profile.html) and [Climate Forecast (CF)](http://cfconventions.org/) conventions. Even if you choose not to conform to any existing standard, I highly recommend creating a convenient and consistent naming system for yourself. For example, I ensure that all my variables have `units` and `long_name` attributes.
 
 
 #### Closing the dataset
