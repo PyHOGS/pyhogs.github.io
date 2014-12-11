@@ -10,3 +10,21 @@ and [ghp-import](https://github.com/davisp/ghp-import).
 
 If you'd like to view or edit the source, switch to the `pelican-source` branch
 which hosts the source files that generate the website.
+
+
+## Wrapper file for posting notebooks to the website
+
+For posting ipython notebooks to the website, a file is needed that contains metadata for the post.  This wrapper file is written in markdown (.md) and consists of the following content:
+
+    Title: TEMPLATE
+    Slug: FEW-WORDS-WITH-NO-SPACES
+    Date: 2015-01-01 00:00 UTC-07:00
+    Authors: YOUR_NAME
+    Tags: 
+    Summary: BRIEF DESCRIPTION.
+
+    [INSERT MARKDOWN TEXT, AND/OR LINK TO A IPYTHON NOTEBOOK AS BELOW]
+
+    {% notebook examples/sample_notebook.ipynb%}
+
+Give it a name similar to the name of your notebook with an extension of `.md`.
