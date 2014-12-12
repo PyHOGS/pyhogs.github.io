@@ -1788,7 +1788,7 @@ jQuery(document).ready(function($) {
 </div>
 		<div><h1>How to use GitHub for PyHOGS</h1>
 <p>This is a basic tutorial describing how to setup up PyHOGS on GitHub and perform basic maintenance of your personal repositories.  The general flow of GitHub is shown by this analog-sourced graphic:
-<img alt="Connectivity of PyHOGS repositories" src="pyhogs_github_connectivity2_mod.gif" title="Connectivity of PyHOGS repositories" />, where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).</p>
+<img alt="Connectivity of PyHOGS repositories" src="/images/pyhogs_github_connectivity2_mod.gif" title="Connectivity of PyHOGS repositories" />, where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).</p>
 <p>JPaul and Earle created <a href="https://github.com/PyHOGS/pyhogs.github.io" title="PyHOGS on GitHub">a repository for PyHOGS</a> on GitHub (upper right) as a convenient way to archive and share our discussions.  As the maintainers of this repository, they have the necessary privileges (and expertise) to keep everything working smoothly.  For contributors like me, we proceed by forking this repository to create our own version (top left).  Your personal version of PyHOGS, however, lives on the web.  To copy the files to your computer, you clone your personal version to your computer (bottom left).</p>
 <p>Your local version is where you do all of your work.  Any local changes are then pushed to your personal public repository, from which you create a pull request to ask the maintainers to accept your changes into the main repository.  Since others will contribute to the main repository, you will also need to periodically update or sync your personal repositories with the main.  This is done from the main repository to your local files, which then gets pushed to your personal repository.</p>
 <h2>Setting up PyHOGS on GitHub</h2>
@@ -1860,14 +1860,14 @@ jQuery(document).ready(function($) {
 <p>git help
    man git-remote</p>
 <p>and etc.</p>
-<p>Earle: To undo failed merges, you can use</p>
+<p>To undo failed merges, you can do either </p>
 <p>git reset --hard <previous_commit></p>
-<p>where the last commit ID needed for <code>&lt;previous_commit&gt;</code> can be found with <code>git log --oneline</code>.  JPaul adds that other ways to abort a merge are:</p>
-<div class="highlight"><pre><span class="n">Easier</span><span class="o">:</span> <span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">merge</span> <span class="o">(</span><span class="n">Git</span> <span class="n">version</span> <span class="o">&gt;=</span> <span class="mf">1.6</span><span class="o">.</span><span class="mi">1</span><span class="o">)</span>
-<span class="n">Easiest</span><span class="o">:</span> <span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">abort</span> <span class="o">(</span><span class="n">Git</span> <span class="n">versions</span> <span class="o">&gt;=</span><span class="mf">1.7</span><span class="o">.</span><span class="mi">4</span><span class="o">)</span>
+<p>where the last commit ID needed for <code>&lt;previous_commit&gt;</code> can be found with <code>git log --oneline</code>, or </p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">abort</span>
 </pre></div>
 
 
+<p>(for Git versions 1.7.4 or later).</p>
 <p>To learn more about branches and merging, <a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" title="Git Branching and Merging">here</a> is a good place to start.</p></div>
 		<div>
 			<h2>Comments</h2>
