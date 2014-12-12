@@ -9,7 +9,7 @@ Summary: A tutorial of how to use GitHub for contributing to the PyHOGS reposito
 # How to use GitHub for PyHOGS
 
 This is a basic tutorial describing how to setup up PyHOGS on GitHub and perform basic maintenance of your personal repositories.  The general flow of GitHub is shown by this analog-sourced graphic:
-![Connectivity of PyHOGS repositories](pyhogs_github_connectivity2_mod.gif "Connectivity of PyHOGS repositories"), where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).
+![Connectivity of PyHOGS repositories](/images/pyhogs_github_connectivity2_mod.gif "Connectivity of PyHOGS repositories"), where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).
 
 JPaul and Earle created [a repository for PyHOGS](https://github.com/PyHOGS/pyhogs.github.io "PyHOGS on GitHub") on GitHub (upper right) as a convenient way to archive and share our discussions.  As the maintainers of this repository, they have the necessary privileges (and expertise) to keep everything working smoothly.  For contributors like me, we proceed by forking this repository to create our own version (top left).  Your personal version of PyHOGS, however, lives on the web.  To copy the files to your computer, you clone your personal version to your computer (bottom left).
 
@@ -99,13 +99,14 @@ To obtain info on the various git commands, use
 
 and etc.
 
-Earle: To undo failed merges, you can use
+To undo failed merges, you can do either 
 
    git reset --hard <previous_commit>
 
-where the last commit ID needed for `<previous_commit>` can be found with `git log --oneline`.  JPaul adds that other ways to abort a merge are:
+where the last commit ID needed for `<previous_commit>` can be found with `git log --oneline`, or 
 
-    Easier: git reset --merge (Git version >= 1.6.1)
-    Easiest: git merge --abort (Git versions >=1.7.4)
+    git merge --abort
+
+(for Git versions 1.7.4 or later).
 
 To learn more about branches and merging, [here](http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Git Branching and Merging") is a good place to start.
