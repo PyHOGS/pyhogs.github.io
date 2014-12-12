@@ -8,9 +8,11 @@ Summary: A tutorial of how to post to the PyHOGS website: making an iPython Note
 
 # How to post to PyHOGS
 
-This is a basic tutorial describing how to create iPython Notebooks and uploading them to the PyHOGS GitHub repository for sharing with the group.  There is a recent [Nature Toolbox article](http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261 "Nature Toolbox: interactive notebooks sharing the code") on iPython Notebooks that may be of interest.  See the companion post "Using GitHub for PyHOGS" for more details on setting up and using GitHub.
+This is a basic tutorial describing how to create iPython Notebooks and uploading them to the PyHOGS GitHub repository for sharing with the group.  There is a recent [Nature Toolbox article](http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261 "Nature Toolbox: interactive notebooks sharing the code") on iPython Notebooks that may be of interest.  See the companion post "Using GitHub for PyHOGS" for more details on setting up and using GitHub.  
 
-The easiest way to add content is to email it directly to JPaul or Earle, who maintain the PyHOGS GitHub repository.  They'll still ask you to provide two files (a notebook file and a markdown wrapper).  This is the easiest way to post.
+Posts can also be written in markdown and don't require a python notebook.  This post, for example, is written solely in markdown, since no python output needs to be displayed.  
+
+The easiest way to add content is to email it directly to JPaul or Earle, who maintain the PyHOGS GitHub repository, and can quickly incorporate it into the website..  They'll still ask you to provide two files (a notebook file and a markdown wrapper).  This is the easiest way to post.
 
 Alternatively, if you want to learn new software or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:
 
@@ -56,7 +58,7 @@ For tutorials in the [how-to section](http://pyhogs.github.io/category/how-to.ht
     Tags: color, colormap, jet, bathymetry
     Summary: An example of making a map with filled bathymetric contours in matplotlib.
     
-    {% notebook examples/Colormap_bathy.ipynb%}
+    \{% notebook examples/Colormap_bathy.ipynb%\}
 
 Either copy an existing file or use the [template](http://pyhogs.github.io/content/pages/template.md "Template for markdown wrapper for PyHOGS post").  Call it `sample.md` and put it in `pyhogs.github.io/content/How\ to.../`. 
 
@@ -82,7 +84,7 @@ The add step needs to be done for all new files.  For this example, that include
 
 The `-m` switch (for `--message`) with `git commit` attaches a quick description of the file/changes, which is especially useful for others (e.g. the maintainers).  The commit can cover multiple files, or it can be done after each one.  This message is critical, since it is archived in the repository's history.  It's better practice to add the notebook before the wrapper file, since the notebook is stand-alone but the wrapper requires the notebook.  Thus there won't be the potential for errors if only the first addition makes it through a merge.
 
-On commit messages, JPaul adds: "While there's lots of rules and conventions on commit messages (just google git commit messages), the only one we really need to follow is this:
+On commit messages, JPaul adds: "While there's lots of rules and conventions on commit messages (just google "git commit messages"), the only one we really need to follow is this:
    The first line should always be 50 characters or less. If needed, this summary line is then followed by a blank line and additional, in-depth information.  
 This is because the first line is used for git log commands and it truncates it to 50(?) characters. I think longer (up to maybe 80) is just fine, but the idea is to keep it short, sweet, and to the point."
 
