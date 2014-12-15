@@ -62,7 +62,7 @@ For tutorials in the [how-to section](http://pyhogs.github.io/category/how-to.ht
     
     \{% notebook examples/Colormap_bathy.ipynb%\}
 
-(The last line should be enclosed in curly braces but no back-slashes are needed - the backslashes are escape sequences for special characters in markdown and shouldn't actually appear, but without them the file can't be built into a website.)   Either copy an existing file or use the [template](http://pyhogs.github.io/content/pages/template.md "Template for markdown wrapper for PyHOGS post").  Call it `sample.md` and put it in `pyhogs.github.io/content/How\ to.../`. 
+(The last line should be enclosed in curly braces but no back-slashes are needed - the backslashes are escape sequences for special characters in markdown and shouldn't actually appear, but without them the file can't be built into a website.)   Either copy an existing file or use the [template](http://pyhogs.github.io/imagestemplate.md "Template for markdown wrapper for PyHOGS post").  Call it `sample.md` and put it in `pyhogs.github.io/content/How\ to.../`. 
 
 
 ## Contributing to the PyHOGS repository
