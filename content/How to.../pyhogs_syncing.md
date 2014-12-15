@@ -11,14 +11,15 @@ To summarize, here are steps to get a locally synced copy of the pyhogs repo.
 
 1. Fork the pyhogs repo to make a personal repo.
 
-2. Clone your forked version of the pyhogs repo to your local repository (the link can be copied from the right hand of YOUR repository's page:
+2. Clone your forked version of the pyhogs repo to your local repository (the link can be copied from the right hand of YOUR repository's page):
 
-   	 git clone https://github.com/YOUR_USERNAME/pyhogs.github.io
+        git clone https://github.com/YOUR_USERNAME/pyhogs.github.io
+
     You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.
 
-3. From your local pyhogs.github.io repo, add remote that points upstream to the original repo (the link can also be copied from the the main pyhogs.github.io page):
+3. From your local pyhogs.github.io repo, add a remote link that points to the original repo (the link can also be copied from the the main pyhogs.github.io page) and call it upstream:
 
-   	git remote add upstream https://github.com/PyHOGS/pyhogs.github.io
+        git remote add upstream https://github.com/PyHOGS/pyhogs.github.io
 
     To check that your remotes are configured properly, do `git remote -v`
 
