@@ -69,7 +69,7 @@ The steps are
 
 One of the features of GitHub is branch tracking, which is designed into the software by requiring each user make a personal repository that can push or pull changes to the main.  If you're working from an old version or branch of the repository when you generate a pull request for new files, then the automatic update system needs manual intervention by the admins to determine how to merge divergent branches of the repository.  The merging of divergent branches can get complicated if the same files have changed in the main branch and your branch, and there's the potential for mutually incompatible or antagonistic changes$^1$.   The preferred process of merging branches is called [rebasing](http://rypress.com/tutorials/git/rebasing.html "Rebasing tutorial for GitHub").  It's easier to just avoid this and sync your local and personal repositories before adding files and generating pull requests.  On the other hand, it's probably inevitable that the website will change before you've finished your changes...
 
-[A list of steps for syncing is available](http://pyhogs.github.io/pyhogs_syncing.html "Steps to sync local PyHOGS repo"), which summarizes the tutorial below.
+[A list of steps for syncing is available]({filename}/How to.../pyhogs_syncing.md "Steps to sync local PyHOGS repo"), which summarizes the tutorial below.
 
 To sync your repository, I found [the last comment in this link](http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository "Updating forked repositories") to be very helpful.  Below is how I implemented those changes, with many pointers from JPaul and Earle.
 
