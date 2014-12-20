@@ -64,7 +64,7 @@ DEFAULT_PAGINATION = False
 # by using git branches for a different theme.
 THEME = 'theme'
 # Add README.md to output dir - mainly for Github repo.
-STATIC_PATHS = ['README.md', 'images']
+STATIC_PATHS = ['README.md', 'images', 'static']
 
 # Plugins
 PLUGIN_PATHS = ['pelican-plugins']
@@ -78,5 +78,5 @@ if not os.path.exists('_nb_header.html'):
 else:
     EXTRA_HEADER = open('_nb_header.html').read().decode('utf-8')
 
-PLUGINS += ['liquid_tags.notebook']
+PLUGINS += ['liquid_tags.notebook', 'liquid_tags.literal']
 NOTEBOOK_DIR = '../pyhogs-code/notebooks/'

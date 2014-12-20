@@ -1,24 +1,25 @@
-Title: Syncing PyHOGS with GitHub
-Slug: github_syncing
+Title: Contribute to PyHOGS using Github
+Slug: github-syncing
 Date: 2014-12-08 12:40 UTC-07:00
-Authors: JPaul Rinehimer, ZB Szuts
-Tags: pyhogs, github, sync, update
-Summary: A list of steps for syncing your local PyHOGS repository.
+Authors: ZB Szuts, JPaul Rinehimer
+Tags: pyhogs, github, sync
+Summary: How to setup a local PyHOGS repository and contribute to the website.
 
-# How to sync your local PyHOGS repository with the main repository
+# How to create sync your local PyHOGS repository with the main repository
 
 To summarize, here are steps to get a locally synced copy of the pyhogs repo.
 
 1. Fork the pyhogs repo to make a personal repo.
 
-2. Clone your forked version of the pyhogs repo to your local repository (the link can be copied from the right hand of YOUR repository's page:
+2. Clone your forked version of the pyhogs repo to your local repository (the link can be copied from the right hand of YOUR repository's page):
 
-   	 git clone https://github.com/YOUR_USERNAME/pyhogs.github.io
+        git clone https://github.com/YOUR_USERNAME/pyhogs.github.io
+
     You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.
 
-3. From your local pyhogs.github.io repo, add remote that points upstream to the original repo (the link can also be copied from the the main pyhogs.github.io page):
+3. From your local pyhogs.github.io repo, add a remote link that points to the original repo (the link can also be copied from the the main pyhogs.github.io page) and call it upstream:
 
-   	git remote add upstream https://github.com/PyHOGS/pyhogs.github.io
+        git remote add upstream https://github.com/PyHOGS/pyhogs.github.io
 
     To check that your remotes are configured properly, do `git remote -v`
 
