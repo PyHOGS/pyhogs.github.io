@@ -1723,7 +1723,7 @@ jQuery(document).ready(function($) {
 
 <script>var _gaq=[['_setAccount','UA-53191537-2'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <script type="text/javascript">
-	var disqus_identifier = "github_syncing.html";
+	var disqus_identifier = "pyhogs-posting.html";
 	(function() {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://pyhogs.disqus.com/embed.js';
@@ -1775,56 +1775,95 @@ jQuery(document).ready(function($) {
 	  </div>
 	  <div class="content">
 	<div class='article'>
-		<div class="page-header"><h1>Syncing PyHOGS with GitHub</h1></div>
-		<div class="well small">08 Dec 2014
+		<div class="page-header"><h1>Post to PyHOGS</h1></div>
+		<div class="well small">01 Dec 2014
  / 
-        <a class="url fn" href="http://pyhogs.github.io/author/jpaul-rinehimer.html">JPaul Rinehimer </a>, 
     <a href="http://pyhogs.github.io/author/zb-szuts.html">ZB Szuts</a>
 / <a href="http://pyhogs.github.io/category/how-to.html">How to...</a>
  /
         <a href="http://pyhogs.github.io/tag/pyhogs.html">pyhogs</a>,
-        <a href="http://pyhogs.github.io/tag/github.html">github</a>,
-        <a href="http://pyhogs.github.io/tag/sync.html">sync</a>,
-    <a href="http://pyhogs.github.io/tag/update.html">update</a>
+        <a href="http://pyhogs.github.io/tag/website.html">website</a>,
+        <a href="http://pyhogs.github.io/tag/posting.html">posting</a>,
+        <a href="http://pyhogs.github.io/tag/notebook.html">notebook</a>,
+    <a href="http://pyhogs.github.io/tag/ipython.html">ipython</a>
 </div>
-		<div><h1>How to sync your local PyHOGS repository with the main repository</h1>
-<p>To summarize, here are steps to get a locally synced copy of the pyhogs repo.</p>
+		<div><h1>How to post to PyHOGS</h1>
+<p>This is a basic tutorial describing how to create a post for the PyHOGS website using iPython Notebooks and Markdown. There is a recent <a href="http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261" title="Nature Toolbox: interactive notebooks sharing the code">Nature Toolbox article</a> on iPython Notebooks that may be of interest.  See the companion post <a href="http://pyhogs.github.io/pyhogs-github.html">How to... Use GitHub with PyHOGS</a> for more details on setting up and using GitHub.  </p>
+<p>All posts for the website are written in <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> and can contain an optional <a href="http://ipython.org/notebook.html">iPython notebook</a>.  Markdown is a simplified markup language designed for conversion to other formats such as HTML. iPython Notebooks allow the interactive evaluation of Python code, the display of figures and equations, the integration of Python code and Markdown, and easy publishing of code and results to HTML.</p>
+<p>Most posts (e.g. see  <a href="https://raw.githubusercontent.com/PyHOGS/pyhogs.github.io/pelican-source/content/How%20to.../colormaps.md">here</a> and <a href="https://github.com/PyHOGS/pyhogs.github.io/blob/pelican-source/pyhogs-code/notebooks/examples/Colormap_examples.ipynb">here</a>) are written using an iPython Notebook and a Markdown stub.  This allows Python code to be executed when the webpage is created to show Python examples.  Posts can also be written in Markdown alone and don't require an iPython notebook.  <a href="https://raw.githubusercontent.com/PyHOGS/pyhogs.github.io/pelican-source/content/How%20to.../pyhogs_posting.md">This post</a>, for example, is written solely in Markdown, since no Python output needs to be displayed.  </p>
+<p>The easiest way to add content is to create a iPython notebook or Markdown webpage and email it directly to J. Paul or Earle, who maintain the PyHOGS GitHub repository, and can quickly incorporate it into the website. This method is easy, best for the one-time poster, and doesn't require setting up a Github account and a Git repository.</p>
+<p>Alternatively, if you want to learn new software, or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:</p>
+<ul>
+<li>Write the notebook in iPython Notebook (Only needed if evaulating Python code).</li>
+<li>Generate the post in Markdown.</li>
+<li>Add and commit the notebook and post to your local personal repository.</li>
+<li>Push your local changes to your PyHOGS GitHub repository.</li>
+<li>Create a pull request to the PyHOGS main repository to ask the maintainers to add your additions.</li>
+</ul>
+<h2>Making an iPython Notebook</h2>
+<p>Having installed the Enthought Canopy version of python on my computer (OS 10.8), I simply run</p>
+<div class="highlight"><pre><span class="n">ipython</span> <span class="n">notebook</span> <span class="o">&amp;</span>
+</pre></div>
+
+
+<p>to open the notebook editor in the active browser window.  The directory the command is run from is the base directory for the ipython notebook session.  To add or edit notebooks for the website, run the above command in the <code>pyhogs.github.io/pyhogs-code/notebooks</code> directory where <code>pyhogs.github.io</code> points to the base directory of the Github repository.  Create a new notebook to start editing.</p>
+<p>Notebooks are arranged as cells, where each cell is either a block of Markdown formatted text or a series of input commands for iPython.  You can create new cells (under the menu item Insert), and the pull-down menu lets you change between code or markdown.  By running a cell (the play button, or press shift+enter), the commands are processed: either for markdown formatting or to run the python code and display the output (if any) at the end of the cell.</p>
+<p>To get started with Markdown, here are a few commands:</p>
+<ul>
+<li><code>#</code> generates a header, and using two <code>##</code> (or three, ...) makes subheaders.</li>
+<li>Unordered lists are generated by multiple lines beginning with <code>-</code> or <code>+</code> or <code>*</code>. A blank line is needed before the list.</li>
+<li>Ordered (i.e. numbered) lists are generated by starting lines with <code>1.</code>, <code>2.</code>, etc.  The actual number doesn't matter and the correct ordering will be generated when code is converted to html.  Again, a blank line is needed before the list starts.</li>
+<li>emphasis/italics is made by <code>_xxx_</code> or <code>*xxx*</code>.</li>
+<li>bold is made by <code>__xxx__</code> or <code>**xxx**</code>.</li>
+<li>in-text code is bracketed by backward apostrophe, e.g. <code>`command`</code> gives <code>command</code></li>
+<li>multiple lines of block code is made by lines starting with a tab (the entire block preceded by a blank line)</li>
+</ul>
+<p>Additional nice features are that it understands LaTeX math formatting (through <a href="http://nbviewer.ipython.org/github/ipython/ipython/blob/2.x/examples/Notebook/Typesetting%20Math%20Using%20MathJax.ipynb">an extension</a>) and can include links and images.  The <a href="http://daringfireball.net/projects/markdown/syntax" title="markdown formatting">official Markdown page</a> has information on more syntax and features.</p>
+<p>Assume that you've now written up a test notebook <code>sample.ipynb</code> and want to get it onto the PyHOGS website.  Make sure it is located in the notebook folder of the PyHOGS repository (<code>pyhogs.github.io/pyhogs-code/notebooks/examples/</code>).  If you started <code>ipython notebook</code> in this directory, your notebook will be located there by default.</p>
+<h2>Files for the PyHOGS website</h2>
+<p>Though the PyHOGS repository can take notebooks directly, to add a webpage a wrapper file is needed to supply metadata for the post.</p>
+<p>For tutorials in the <a href="http://pyhogs.github.io/category/how-to.html" title="PyHOGS website How To">how-to section</a>, these wrapper files are in <code>pyhogs.github.io/content/How\ to.../</code>.  They are written in Markdown (<code>.md</code>) and one example <a href="https://github.com/PyHOGS/pyhogs.github.io/blob/pelican-source/content/How%20to.../colormaps.md">pyhogs.github.io/content/How\ to.../colormap_bathy.md</a> looks like this</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Colormap</span> <span class="n">example</span> <span class="k">for</span> <span class="n">bathymetry</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">colormap</span><span class="o">-</span><span class="n">bathymetry</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">04</span> <span class="mi">13</span><span class="o">:</span><span class="mi">12</span> <span class="n">UTC</span><span class="o">-</span><span class="mi">07</span><span class="o">:</span><span class="mi">00</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">ZB</span> <span class="n">Szuts</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">color</span><span class="o">,</span> <span class="n">colormap</span><span class="o">,</span> <span class="n">jet</span><span class="o">,</span> <span class="n">bathymetry</span>
+<span class="n">Summary</span><span class="o">:</span> <span class="n">An</span> <span class="n">example</span> <span class="n">of</span> <span class="n">making</span> <span class="n">a</span> <span class="n">map</span> <span class="k">with</span> <span class="n">filled</span> <span class="n">bathymetric</span> <span class="n">contours</span> <span class="k">in</span> <span class="n">matplotlib</span><span class="o">.</span>
+
+<span class="o">{%</span> <span class="n">notebook</span> <span class="n">examples</span><span class="o">/</span><span class="n">Colormap_bathy</span><span class="o">.</span><span class="na">ipynb</span> <span class="o">%}</span>
+</pre></div>
+
+
+<p>Either copy an existing file or use the <a href="http://pyhogs.github.io/static/post-template.md" title="Template for markdown wrapper for PyHOGS post">template</a>, also located in <code>pyhogs.github.io/content/static/post-template.md</code>.  Call it <code>sample.md</code> (or the name of your post) and put it in <code>pyhogs.github.io/content/How\ to.../</code> Actually, any subdirectory below <code>content</code> works - the subdirectory just specifies the category for the website post.</p>
+<h2>Contributing to the PyHOGS repository</h2>
+<p>Your local changes need to be propagated (<em>pushed</em>) to your personal, public repository and then to the main repository.  It's important to make sure your distribution and local copy are fully up to date/synced with the main repository before the steps below are followed.  (See companion post <a href="http://pyhogs.github.io/pyhogs-github.html">How to... Use GitHub with PyHOGS</a>.)</p>
+<p>The steps are</p>
 <ol>
-<li>
-<p>Fork the pyhogs repo to make a personal repo.</p>
-</li>
-<li>
-<p>Clone your forked version of the pyhogs repo to your local repository (the link can be copied from the right hand of YOUR repository's page:</p>
-<p>git clone https://github.com/YOUR_USERNAME/pyhogs.github.io
-You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.</p>
-</li>
-<li>
-<p>From your local pyhogs.github.io repo, add remote that points upstream to the original repo (the link can also be copied from the the main pyhogs.github.io page):</p>
-<p>git remote add upstream https://github.com/PyHOGS/pyhogs.github.io</p>
-<p>To check that your remotes are configured properly, do <code>git remote -v</code></p>
-</li>
-<li>
-<p>At this point, you will only have the <code>pelican-source</code> branch. To fetch other branches and new commits, do</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
-</pre></div>
-
-
-<p>This should retrieve master branch and any other branch we have created.</p>
-</li>
-<li>
-<p>To merge the fetched changes to your pelican-source branch do</p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">source</span>
-</pre></div>
-
-
-<p>You could probably combine this and the previous steps with a single <code>git pull upstream pelican-source</code> command, but I prefer to do them separately.</p>
-</li>
-<li>
-<p>At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo then create a pull request from your personal repo to the main repo.</p>
-<p>On our end, we would then accept your pull request, pull those changes to our repo, generate the website (locally, to make sure everything is in order) then do <code>make github</code> to make your changes live.</p>
-</li>
+<li>Add the file(s) to your local repository.</li>
+<li>Commit the changes in your local repository.</li>
+<li>Push the file from the local repository to your online (Github) personal repository.</li>
+<li>Create a pull request to ask the maintainers to add the changes to the main repository.</li>
 </ol>
-<p>For a more exhaustive treatment, see <a href="http://pyhogs.github.io/pyhogs_github.html">this tutorial</a>.</p></div>
+<p>The add step needs to be done for all new files.  For this example, that includes the notebook and the wrapper files.</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">-</span><span class="n">code</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">ipynb</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">How</span><span class="err">\</span> <span class="n">to</span><span class="p">...</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Add a notebook and wrapper&quot;</span>
+</pre></div>
+
+
+<p>The <code>-m</code> switch (for <code>--message</code>) with <code>git commit</code> attaches a quick description of the file/changes, which is especially useful for others (e.g. the maintainers).  The commit can cover multiple files, or it can be done after each one.  This message is critical, since it is archived in the repository's history.  It's better practice to add the notebook before the wrapper file, since the notebook is stand-alone but the wrapper requires the notebook.  Thus there won't be the potential for errors if only the first addition makes it through a merge.</p>
+<p>On commit messages, J. Paul adds: "While there's lots of rules and conventions on commit messages (just google "git commit messages" for some of them), the only one we really need to follow is this: The first line should always be 50 characters or less. If needed, this summary line is then followed by a blank line and additional, in-depth information.  This is because the first line is used for <code>git log</code> commands and it truncates it to 50(?) characters. I think longer (up to maybe 80) is just fine, but the idea is to keep it short, sweet, and to the point."</p>
+<p>The third step</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">push</span>
+</pre></div>
+
+
+<p>pushes all committed changes from your local repository to your personal version on GitHub.</p>
+<p>Now go online to your personal repository.  Click the Pull Request button to ask the maintainers to accept your change.  It's good practice to add a comment that describes the new files or the changes, but this comment is less critical than the one made by <code>git commit</code>.  It's worth noting any peculiarities to the maintainers, such as images whose paths/directories may need to be changed, etc.  Once your pull request is accepted, your content will be added to the PyHOGS website!</p>
+<h2>Comments</h2>
+<p>Note that it's not required to submit an iPython Notebook file.  If you don't need any Python execution, then you can simply write in Markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  <a href="http://docutils.sourceforge.net/rst.html">reStructured Text (.rst)</a> is also suitable for submission, but you (currently) cannot include iPython notebook files with .rst files due to limitations in the <a href="http://docs.getpelican.com/en/3.5.0/">website parsing program</a> and its extensions.</p></div>
 		<div>
 			<h2>Comments</h2>
 <div id="disqus_thread"></div>		<div>

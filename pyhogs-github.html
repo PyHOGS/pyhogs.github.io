@@ -1723,7 +1723,7 @@ jQuery(document).ready(function($) {
 
 <script>var _gaq=[['_setAccount','UA-53191537-2'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <script type="text/javascript">
-	var disqus_identifier = "pyhogs_posting.html";
+	var disqus_identifier = "pyhogs-github.html";
 	(function() {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://pyhogs.disqus.com/embed.js';
@@ -1775,7 +1775,7 @@ jQuery(document).ready(function($) {
 	  </div>
 	  <div class="content">
 	<div class='article'>
-		<div class="page-header"><h1>How to post to PyHOGS</h1></div>
+		<div class="page-header"><h1>Use Github with PyHOGS</h1></div>
 		<div class="well small">01 Dec 2014
  / 
     <a href="http://pyhogs.github.io/author/zb-szuts.html">ZB Szuts</a>
@@ -1784,83 +1784,139 @@ jQuery(document).ready(function($) {
         <a href="http://pyhogs.github.io/tag/pyhogs.html">pyhogs</a>,
         <a href="http://pyhogs.github.io/tag/website.html">website</a>,
         <a href="http://pyhogs.github.io/tag/posting.html">posting</a>,
-        <a href="http://pyhogs.github.io/tag/notebook.html">notebook</a>,
-    <a href="http://pyhogs.github.io/tag/ipython.html">ipython</a>
+    <a href="http://pyhogs.github.io/tag/github.html">github</a>
 </div>
-		<div><h1>How to post to PyHOGS</h1>
-<p>This is a basic tutorial describing how to create iPython Notebooks and uploading them to the PyHOGS GitHub repository for sharing with the group.  There is a recent <a href="http://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261" title="Nature Toolbox: interactive notebooks sharing the code">Nature Toolbox article</a> on iPython Notebooks that may be of interest.  See the companion post "Using GitHub for PyHOGS" for more details on setting up and using GitHub.  </p>
-<p>Posts can also be written in markdown and don't require a python notebook.  This post, for example, is written solely in markdown, since no python output needs to be displayed.  </p>
-<p>The easiest way to add content is to email it directly to JPaul or Earle, who maintain the PyHOGS GitHub repository, and can quickly incorporate it into the website..  They'll still ask you to provide two files (a notebook file and a markdown wrapper).  This is the easiest way to post.</p>
-<p>Alternatively, if you want to learn new software or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:</p>
-<ul>
-<li>Write the notebook in iPython Notebook.</li>
-<li>Add the notebook to your local personal repository.</li>
-<li>Push your local changes to your PyHOGS GitHub repository.</li>
-<li>Create a pull request to the PyHOGS main repository to ask the maintainers to add your additions.</li>
-</ul>
-<h2>Making an iPython Notebook</h2>
-<p>Having installed the Enthought Canopy version of python on my computer (OS 10.8), I simply run</p>
-<div class="highlight"><pre><span class="n">ipython</span> <span class="n">notebook</span> <span class="o">&amp;</span>
+		<div><h1>How to use GitHub for PyHOGS</h1>
+<p>This is a basic tutorial describing how to setup up PyHOGS on GitHub and perform basic maintenance of your personal repositories.  The general flow of GitHub is shown by this analog-sourced graphic:
+<img alt="Connectivity of PyHOGS repositories" src="/images/pyhogs_github_connectivity2_mod.gif" title="Connectivity of PyHOGS repositories" />, where double-lined arrows indicate installation steps and single-lined arrows indicate working operations (pushing/pulling).</p>
+<p>JPaul and Earle created <a href="https://github.com/PyHOGS/pyhogs.github.io" title="PyHOGS on GitHub">a repository for PyHOGS</a> on GitHub (upper right) as a convenient way to archive and share our discussions.  As the maintainers of this repository, they have the necessary privileges (and expertise) to keep everything working smoothly.  For contributors like me, we proceed by <strong>forking</strong> this repository to create our own version (top left).  Your personal version of PyHOGS, however, lives on the web.  To copy the files to your computer, you <strong>clone</strong> your personal version to your computer (bottom left).</p>
+<p>Your local version is where you do all of your work.  Any local changes are then <strong>pushed</strong> to your personal, public repository (on Github), from which you create a <strong>Pull Request</strong> to ask the maintainers to accept your changes into the main repository.  Since others will contribute to the main repository, you will also need to periodically update or sync your personal repositories with the main.  To do this you <strong>fetch</strong> upstream changes and then <strong>merge</strong> them into your local files. which then gets <strong>pushed</strong> back to your personal repository on Github.</p>
+<h2>Setting up PyHOGS on GitHub</h2>
+<ol>
+<li>The first step is to <a href="https://github.com/join">make an account on GitHub</a>.</li>
+<li>Once logged-in, navigate to the <a href="https://github.com/PyHOGS/pyhogs.github.io" title="PyHOGS on GitHub">PyHOGS</a> repository (or <em>repo</em> for
+    short).  If you're new to GitHub, explore the site, look at the files in
+    the repo, and check out the Issues Page where you can submit problems or
+    request improvements.</li>
+<li>
+<p>Near the upper-right corner of the <a href="https://github.com/PyHOGS/pyhogs.github.io" title="PyHOGS on GitHub">PyHOGS Project Page</a> there is a
+    link to <em>fork</em> the project. Make a fork of the PyHOGS repo by clicking the <code>Fork</code> button.</p>
+<p>This creates your own personal copy of the  repo in your account. This copy
+lives online and mostly just mirrors the  changes you have made locally on
+your computer.  You can use this copy to  send a <a href="https://help.github.com/articles/using-pull-requests/">Pull
+Request</a> which tells
+the site maintainers that you would like them to incorporate your changes.</p>
+</li>
+<li>
+<p><code>clone</code> (i.e. copy) your personal repository on GitHub to your computer.
+    Copy the <code>HTTPS clone URL</code> on the bottom right of the forked repository
+    page and run <code>git clone [URL]</code> from the command line.  Run the command
+    from the directory you want     to be the parent directory of your
+    repository.  I used <code>~/Documents/</code>.  </p>
+<p>For example:</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/zszuts/pyhogs.github.io.git</span>
+<span class="cp"># Replace the above URL with the one in the box HTTPS clone URL</span>
 </pre></div>
 
 
-<p>to open the notebook editor in the active browser window.  Create a new notebook to start editing.</p>
-<p>Notebooks are arranged as cells, where each cell is either a comment in markdown format or a series of input commands for ipython.  You can create new cells (under the menu item Insert), and the pull-down menu lets you change between code or markdown.  By running a cell (the play button, or press shift+enter), the commands are processed: either for markdown formatting or to run the python code and display the output (if any) at the end of the cell.</p>
-<p>To get started with markdown, here are a few commands:
-- <code>#</code> generates a header, and using two <code>##</code> (or three, ...) makes subheaders.
-- lists are generated by multiple lines beginning with <code>-</code> or <code>+</code> or <code>*</code>
-- emphasis/italics is made by <code>_xxx_</code> or <code>*xxx*</code>.
-- bold is made by <code>__xxx__</code> or <code>**xxx**</code>.
-- in-text code is bracketed by backward apostrophe, e.g. <code>`command`</code> gives <code>command</code> 
-- multiple lines of block code is made by lines starting with a tab (the entire block preceded by a blank line)</p>
-<p>Additional nice features is that it understands latex math formatting and can include links and images.  More details can be found <a href="http://daringfireball.net/projects/markdown/syntax" title="markdown formatting">here</a>.</p>
-<p>Assume that you've now written up a test notebook <code>sample.ipynb</code> and want to get it onto the PyHOGS website.  Make sure it is located in the notebook folder of the PyHOGS repository (<code>pyhogs.github.io/pyhogs-code/notebooks/examples/</code>).</p>
-<h2>Files for the PyHOGS website</h2>
-<p>Though the PyHOGS repository can take notebooks directly, to add a webpage a wrapper file is needed to supply metadata for the post.</p>
-<p>For tutorials in the <a href="http://pyhogs.github.io/category/how-to.html" title="PyHOGS website How To">how-to section</a>, these wrapper files are in <code>pyhogs.github.io/content/How\ to.../</code>.  They are written in markdown (<code>.md</code>) and one example (pyhogs.github.io/content/How\ to.../colormap_bathy.md) looks like this</p>
-<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Colormap</span> <span class="n">example</span> <span class="k">for</span> <span class="n">bathymetry</span>
-<span class="n">Slug</span><span class="o">:</span> <span class="n">colormap</span><span class="o">-</span><span class="n">bathymetry</span>
-<span class="n">Date</span><span class="o">:</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">04</span> <span class="mi">13</span><span class="o">:</span><span class="mi">12</span> <span class="n">UTC</span><span class="o">-</span><span class="mi">07</span><span class="o">:</span><span class="mi">00</span>
-<span class="n">Authors</span><span class="o">:</span> <span class="n">ZB</span> <span class="n">Szuts</span>
-<span class="n">Tags</span><span class="o">:</span> <span class="n">color</span><span class="o">,</span> <span class="n">colormap</span><span class="o">,</span> <span class="n">jet</span><span class="o">,</span> <span class="n">bathymetry</span>
-<span class="n">Summary</span><span class="o">:</span> <span class="n">An</span> <span class="n">example</span> <span class="n">of</span> <span class="n">making</span> <span class="n">a</span> <span class="n">map</span> <span class="k">with</span> <span class="n">filled</span> <span class="n">bathymetric</span> <span class="n">contours</span> <span class="k">in</span> <span class="n">matplotlib</span><span class="o">.</span>
-
-<span class="o">\{%</span> <span class="n">notebook</span> <span class="n">examples</span><span class="o">/</span><span class="n">Colormap_bathy</span><span class="o">.</span><span class="na">ipynb</span><span class="o">%\}</span>
-</pre></div>
-
-
-<p>Either copy an existing file or use the <a href="http://pyhogs.github.io/content/pages/template.md" title="Template for markdown wrapper for PyHOGS post">template</a>.  Call it <code>sample.md</code> and put it in <code>pyhogs.github.io/content/How\ to.../</code>. </p>
-<h2>Contributing to the PyHOGS repository</h2>
-<p>Your local changes need to be propagated (pushed) to your personal repository and then to the main repository.  It's important to make sure your distribution and local copy are fully up to date/synced with the main repository before the steps below are followed.  (See companion post "Using GitHub for PyHOGS".)</p>
+</li>
+</ol>
+<p>There are further installation details given on the <a href="https://github.com/PyHOGS/pyhogs.github.io" title="PyHOGS on GitHub">main page of the PyHOGS repository</a> (at the bottom).</p>
+<h3>Comments</h3>
+<p>I found it confusing at first that the main and personal repositories have very similar webpages, so it's hard to tell where you are.  The url is an easy indicator: if you're on the main it shows <code>https://github.com/PyHOGS/pyhogs.github.io</code>, while if you're on your personal version it includes your user name <code>https://github.com/zszuts/pyhogs.github.io</code> (for me).  Getting to the main is easy, just follow any of the links.  To get to your personal version, click on your user name and then select your personal forked repositories.</p>
+<h2>Add changes to your personal repositories</h2>
+<p>Your local changes need to be propagated (pushed) to your personal repository and then to the main repository, following the flow diagram at top.  It's important to make sure your distribution and local copy are fully up to date/synced with the main repository before the steps below are followed (see below), otherwise you generate more work for yourself and the maintainers. However, if for some reason you run into <em>merge conflicts</em> at this stage, feel free to email the maintainers for help.</p>
 <p>The steps are</p>
 <ol>
-<li>add the file(s) to your local repository</li>
-<li>record the change in your local repository</li>
-<li>push the file from the local repository to your online personal repository</li>
-<li>create a pull request to ask the maintainers to add change to the main repository</li>
+<li>Add the file (or files) to the local repository, <code>git add [FILENAME]</code></li>
+<li>Record the change to the local repository, <code>git commit -m "[DESCRIPTION]"</code></li>
+<li>Push the changes to your GitHub personal repository, <code>git push</code>.</li>
+<li>Generate a pull request from your personal GitHub repository to merge your
+    changes into the main repository</li>
 </ol>
-<p>The add step needs to be done for all new files.  For this example, that includes the notebook and the wrapper files.</p>
-<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">-</span><span class="n">code</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span>
-<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">ipynb</span>
-<span class="n">cd</span> <span class="o">~/</span><span class="n">Documents</span><span class="o">/</span><span class="n">pyhogs</span><span class="o">/</span><span class="n">pyhogs</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">How</span><span class="err">\</span> <span class="n">to</span><span class="p">...</span><span class="o">/</span>
-<span class="n">git</span> <span class="n">add</span> <span class="n">sample</span><span class="p">.</span><span class="n">md</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;Add a notebook and wrapper&quot;</span>
+<h2>Keeping your repositories up to date</h2>
+<p>One of the features of GitHub is branch tracking, which is designed into the software by requiring each user make a personal repository that can push or pull changes to the main.  If you're working from an old version or branch of the repository when you generate a pull request for new files, then the automatic update system needs manual intervention by the admins to determine how to merge divergent branches of the repository.  The merging of divergent branches can get complicated if the same files have changed in the main branch and your branch, and there's the potential for mutually incompatible or antagonistic changes$^1$.   The preferred process of merging branches is called <a href="http://rypress.com/tutorials/git/rebasing.html" title="Rebasing tutorial for GitHub">rebasing</a>.  It's easier to just avoid this and sync your local and personal repositories before adding files and generating pull requests.  On the other hand, it's probably inevitable that the website will change before you've finished your changes...</p>
+<p><a href="http://pyhogs.github.io/pyhogs_syncing.html" title="Steps to sync local PyHOGS repo">A list of steps for syncing is available</a>, which summarizes the tutorial below.</p>
+<p>To sync your repository, I found <a href="http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository" title="Updating forked repositories">the last comment in this link</a> to be very helpful.  Below is how I implemented those changes, with many pointers from JPaul and Earle.</p>
+<p>To update your local repository with changes from the main site:</p>
+<ol>
+<li>
+<p>First, you need to link your local clone with the main repository, which you
+    do by adding the URL of the main repo as a <code>remote</code> of your local repo.  For
+    simplicity, call it <code>upstream</code>.  In the directory of your
+    repository (`~/Documents/pyhogs/pyhogs.github.io/`` for me), enter</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/PyHOGS/pyhogs.github.io</span>
 </pre></div>
 
 
-<p>The <code>-m</code> switch (for <code>--message</code>) with <code>git commit</code> attaches a quick description of the file/changes, which is especially useful for others (e.g. the maintainers).  The commit can cover multiple files, or it can be done after each one.  This message is critical, since it is archived in the repository's history.  It's better practice to add the notebook before the wrapper file, since the notebook is stand-alone but the wrapper requires the notebook.  Thus there won't be the potential for errors if only the first addition makes it through a merge.</p>
-<p>On commit messages, JPaul adds: "While there's lots of rules and conventions on commit messages (just google "git commit messages"), the only one we really need to follow is this:
-   The first line should always be 50 characters or less. If needed, this summary line is then followed by a blank line and additional, in-depth information.<br />
-This is because the first line is used for git log commands and it truncates it to 50(?) characters. I think longer (up to maybe 80) is just fine, but the idea is to keep it short, sweet, and to the point."</p>
-<p>The third step </p>
-<div class="highlight"><pre><span class="n">git</span> <span class="n">push</span>
+</li>
+<li>
+<p>You can verify the remote repos with <code>git remote -v</code>.  If you've set up you
+    personal and local repositories properly, you should see:</p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">origin</span>  <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/zszuts/pyhogs.github.io.git (fetch)</span>
+<span class="n">origin</span>  <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/zszuts/pyhogs.github.io.git (push)</span>
+<span class="n">upstream</span>    <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/PyHOGS/pyhogs.github.io.git (fetch)</span>
+<span class="n">upstream</span>    <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/PyHOGS/pyhogs.github.io.git (push)</span>
 </pre></div>
 
 
-<p>pushes all outstanding changes from your local repository to your personal version on GitHub.</p>
-<p>Now go online to your personal repository.  Click the Pull Request button to ask the maintainers to accept your change.  It's good practice to add a comment that describes the new files or the changes, but this comment is less critical than the one made by <code>git commit</code>.  It's worth noting any peculiarities to the maintainers, such as images whose paths/directories may need to be changed, or etc.  Once your pull request is are accepted, your content will be added to the PyHOGS website!</p>
-<h2>Comments</h2>
-<p>Note that it's not required to submit an iPython Notebok file.  If you don't need any python execution, then you can simply write in markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  I'm sure other web suitable formats could also be used (see companion post on using GitHub).</p></div>
+<p>showing the available targets for <code>push</code>ing or <code>fetch</code>ing.  The <code>upstream</code>
+or main repository can't accept pushes, however, and so it should only be
+used for updating your local files and your cloned GitHub repository. Also
+note the <code>origin</code> remote. This was automatically created when you
+<code>git clone</code>'d the repository and points to the online version on Github.</p>
+</li>
+<li>
+<p>Then you need to download any upstream changes.  The "main" branch of the
+    repo is <code>pelican-source</code>$^2$.  This holds all of the website content and
+    configuration settings to generate the site. It should be the default local
+    and remote branch.  To access the version of this branch on upstream, you
+    use <code>upstream/pelican-source</code>.</p>
+<p>Download the upstream changes and incorporate them with</p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>  <span class="err">#</span><span class="n">Downloads</span> <span class="n">changes</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">status</span>  <span class="err">#</span> <span class="n">Displays</span> <span class="n">status</span><span class="p">.</span>  
+<span class="cp"># At this point you can dig around a bit to see what&#39;s changed before</span>
+<span class="cp"># you actually make the changes to your files</span>
+<span class="err">$</span><span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">source</span> <span class="err">#</span> <span class="n">Merges</span> <span class="n">upstream</span> <span class="n">changes</span> <span class="n">into</span> <span class="n">your</span> <span class="n">version</span><span class="p">.</span>
+</pre></div>
+
+
+<p>Assuming everything is in order, this should happen quickly.  If there are
+any conflicts you will have to change them before committing the merge.</p>
+</li>
+</ol>
+<p>From JPaul: "An alternate to calling <code>git fetch</code> and <code>git merge</code> is to use <code>git pull</code> (namely <code>git pull upstream pelican-source</code> for this example) to do both at once.  When you're updating your repository from a remote you'll usually want to make sure it does a fast-forward merge so that the history doesn't require messy merge commits.  This should usually happen by default . (Although... see this argument for <a href="http://longair.net/blog/2009/04/16/git-fetch-and-merge/">why you should do the fetch and merge separately</a>.)</p>
+<p>Alternatively, you can use a GUI like <a href="http://www.sourcetreeapp.com/">SourceTree</a> to do these operations. It provides a graphical view of changes that you and others have made and provides a relatively simple, yet powerful, interface to <code>git</code>.</p>
+<h2>Additional comments</h2>
+<p>You can check the status of your local repository by typing</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+
+
+<p>This shows how your local repository and your online personal repository align, whether any of them have changes that need to be pushed/pulled/synced with the other.  A list of all changes you have made to your repository (using the <code>git</code> command) is obtainable with</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+
+
+<p>To obtain info on the various git commands, use</p>
+<p>git help
+   man git-remote</p>
+<p>and etc.</p>
+<p>To undo failed merges, you can do either</p>
+<p>git reset --hard <previous_commit></p>
+<p>where the last commit ID needed for <code>&lt;previous_commit&gt;</code> can be found with <code>git log --oneline</code>, or</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">abort</span>
+</pre></div>
+
+
+<p>(for Git versions 1.7.4 or later).</p>
+<p>To learn more about branches and merging, <a href="http://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" title="Git Branching and Merging">here</a> is a good place to start.</p>
+<h4>Footnotes</h4>
+<p>$^1$ iPython notebooks can be a real problem due to a SHA1 hash string at the beginning of the file that changes every time the notebook is executed.  Thus, pushing a revised notebook file will run into problems because the file in the main repository will have conflicting changes with the revised file.  In general, just use the latest version of the notebook, but browse through it to make sure no other
+changes have been made.</p>
+<p>$^2$ Why do you only use <code>upstream/pelican-source</code>?  From JPaul:  "The 'main' branch for pyhogs.github.io is <code>pelican-source</code> and not the usual <code>master</code>.  This is because of the way github-pages works - the actual website content has to be on the master branch for an organization's website.  No one needs to directly interact with the master branch - it's automatically generated via <code>make github</code> and <code>ghp-import</code>.  If you fork and clone from the website, the default branch should be properly set to <code>pelican-source</code>."</p></div>
 		<div>
 			<h2>Comments</h2>
 <div id="disqus_thread"></div>		<div>
