@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/zb-szuts.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-08T12:40:00+07:00</updated><entry><title>Contribute to PyHOGS using Github</title><link href="http://pyhogs.github.io/github-syncing.html" rel="alternate"></link><updated>2014-12-08T12:40:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-12-08:github-syncing.html</id><summary type="html">&lt;h1&gt;How to create sync your local PyHOGS repository with the main repository&lt;/h1&gt;
-&lt;p&gt;To summarize, here are steps to get a locally synced copy of the pyhogs repo.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/zb-szuts.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-08T12:40:00+07:00</updated><entry><title>Summary: Working with PyHOGS Github Repositories</title><link href="http://pyhogs.github.io/github-syncing.html" rel="alternate"></link><updated>2014-12-08T12:40:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-12-08:github-syncing.html</id><summary type="html">&lt;h1&gt;How to create and sync your local PyHOGS repository with the main repository&lt;/h1&gt;
+&lt;p&gt;To summarize, here are the steps to get a locally synced copy of the pyhogs repo.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Fork the pyhogs repo to make a personal repo.&lt;/p&gt;
@@ -11,7 +11,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.&lt;/p&gt;
+&lt;p&gt;For syncing, you should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;From your local pyhogs.github.io repo, add a remote link that points to the original repo (the link can also be copied from the the main pyhogs.github.io page) and call it upstream:&lt;/p&gt;
@@ -35,11 +35,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You could probably combine this and the previous steps with a single &lt;code&gt;git pull upstream pelican-source&lt;/code&gt; command, but I prefer to do them separately.&lt;/p&gt;
+&lt;p&gt;Though you can combine this and the previous steps with a single &lt;code&gt;git pull upstream pelican-source&lt;/code&gt; command, I prefer to do them separately.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo then create a pull request from your personal repo to the main repo.&lt;/p&gt;
-&lt;p&gt;On our end, we would then accept your pull request, pull those changes to our repo, generate the website (locally, to make sure everything is in order) then do &lt;code&gt;make github&lt;/code&gt; to make your changes live.&lt;/p&gt;
+&lt;p&gt;At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo, then create a pull request from your personal repo to the main repo.&lt;/p&gt;
+&lt;p&gt;The maintainers (J. Paul and Earle) would then accept your pull request, pull those changes to their repo, locally generate the website for confirming that your changes build correctly, then do &lt;code&gt;make github&lt;/code&gt; to make your changes live.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;For a more exhaustive treatment, see &lt;a href="http://pyhogs.github.io/pyhogs_github.html"&gt;this tutorial&lt;/a&gt;.&lt;/p&gt;</summary><category term="pyhogs"></category><category term="github"></category><category term="sync"></category></entry><entry><title>Use Github with PyHOGS</title><link href="http://pyhogs.github.io/pyhogs-github.html" rel="alternate"></link><updated>2014-12-01T12:25:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-12-01:pyhogs-github.html</id><summary type="html">&lt;h1&gt;How to use GitHub for PyHOGS&lt;/h1&gt;
@@ -179,7 +179,7 @@ changes have been made.&lt;/p&gt;
 &lt;p&gt;The easiest way to add content is to create a iPython notebook or Markdown webpage and email it directly to J. Paul or Earle, who maintain the PyHOGS GitHub repository, and can quickly incorporate it into the website. This method is easy, best for the one-time poster, and doesn't require setting up a Github account and a Git repository.&lt;/p&gt;
 &lt;p&gt;Alternatively, if you want to learn new software, or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Write the notebook in iPython Notebook (Only needed if evaulating Python code).&lt;/li&gt;
+&lt;li&gt;Write the notebook in iPython Notebook (Only needed if evaulating Python code).&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;Generate the post in Markdown.&lt;/li&gt;
 &lt;li&gt;Add and commit the notebook and post to your local personal repository.&lt;/li&gt;
 &lt;li&gt;Push your local changes to your PyHOGS GitHub repository.&lt;/li&gt;
@@ -247,8 +247,14 @@ changes have been made.&lt;/p&gt;
 
 &lt;p&gt;pushes all committed changes from your local repository to your personal version on GitHub.&lt;/p&gt;
 &lt;p&gt;Now go online to your personal repository.  Click the Pull Request button to ask the maintainers to accept your change.  It's good practice to add a comment that describes the new files or the changes, but this comment is less critical than the one made by &lt;code&gt;git commit&lt;/code&gt;.  It's worth noting any peculiarities to the maintainers, such as images whose paths/directories may need to be changed, etc.  Once your pull request is accepted, your content will be added to the PyHOGS website!&lt;/p&gt;
-&lt;h2&gt;Comments&lt;/h2&gt;
-&lt;p&gt;Note that it's not required to submit an iPython Notebook file.  If you don't need any Python execution, then you can simply write in Markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructured Text (.rst)&lt;/a&gt; is also suitable for submission, but you (currently) cannot include iPython notebook files with .rst files due to limitations in the &lt;a href="http://docs.getpelican.com/en/3.5.0/"&gt;website parsing program&lt;/a&gt; and its extensions.&lt;/p&gt;</summary><category term="pyhogs"></category><category term="website"></category><category term="posting"></category><category term="notebook"></category><category term="ipython"></category></entry><entry><title>Colormap example for bathymetry</title><link href="http://pyhogs.github.io/colormap-bathymetry.html" rel="alternate"></link><updated>2014-11-04T13:12:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-11-04:colormap-bathymetry.html</id><summary type="html">&lt;h1&gt;Manipulating colormaps for bathymetric data&lt;/h1&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;If you don't need any Python execution, then you can simply write in Markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  &lt;a href="http://docutils.sourceforge.net/rst.html"&gt;reStructured Text (.rst)&lt;/a&gt; is also suitable for submission, but you (currently) cannot include iPython notebook files with .rst files due to limitations in the &lt;a href="http://docs.getpelican.com/en/3.5.0/"&gt;website parsing program&lt;/a&gt; and its extensions.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="pyhogs"></category><category term="website"></category><category term="posting"></category><category term="notebook"></category><category term="ipython"></category></entry><entry><title>Colormap example for bathymetry</title><link href="http://pyhogs.github.io/colormap-bathymetry.html" rel="alternate"></link><updated>2014-11-04T13:12:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-11-04:colormap-bathymetry.html</id><summary type="html">&lt;h1&gt;Manipulating colormaps for bathymetric data&lt;/h1&gt;
 &lt;p&gt;The following notebook gives one example of how to make a decent looking chart with filled bathymetric contours using matplotlib - decent being in the eye of the beholder.  This builds on discussion from the 27 Oct 2014 PyHOGS meeting, earlier meetings on colormaps with matplotlib, and on the 10 Nov 2014 PyHOGS meeting.&lt;/p&gt;
 &lt;h2&gt;Aim&lt;/h2&gt;
 &lt;p&gt;Using Matlab it's hard to directly align desired contour intervals with the desired color, and this becomes very tricky if your contour intervals are not evenly spaced.  It turns out there are easy ways to do this with matplotlib.&lt;/p&gt;

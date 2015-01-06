@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/jpaul-rinehimer.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-08T12:40:00+07:00</updated><entry><title>Contribute to PyHOGS using Github</title><link href="http://pyhogs.github.io/github-syncing.html" rel="alternate"></link><updated>2014-12-08T12:40:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-12-08:github-syncing.html</id><summary type="html">&lt;h1&gt;How to create sync your local PyHOGS repository with the main repository&lt;/h1&gt;
-&lt;p&gt;To summarize, here are steps to get a locally synced copy of the pyhogs repo.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>PyHOGS</title><link href="http://pyhogs.github.io/" rel="alternate"></link><link href="http://pyhogs.github.io/feeds/jpaul-rinehimer.atom.xml" rel="self"></link><id>http://pyhogs.github.io/</id><updated>2014-12-08T12:40:00+07:00</updated><entry><title>Summary: Working with PyHOGS Github Repositories</title><link href="http://pyhogs.github.io/github-syncing.html" rel="alternate"></link><updated>2014-12-08T12:40:00+07:00</updated><author><name>ZB Szuts</name></author><id>tag:pyhogs.github.io,2014-12-08:github-syncing.html</id><summary type="html">&lt;h1&gt;How to create and sync your local PyHOGS repository with the main repository&lt;/h1&gt;
+&lt;p&gt;To summarize, here are the steps to get a locally synced copy of the pyhogs repo.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Fork the pyhogs repo to make a personal repo.&lt;/p&gt;
@@ -11,7 +11,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.&lt;/p&gt;
+&lt;p&gt;For syncing, you should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;From your local pyhogs.github.io repo, add a remote link that points to the original repo (the link can also be copied from the the main pyhogs.github.io page) and call it upstream:&lt;/p&gt;
@@ -35,11 +35,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You could probably combine this and the previous steps with a single &lt;code&gt;git pull upstream pelican-source&lt;/code&gt; command, but I prefer to do them separately.&lt;/p&gt;
+&lt;p&gt;Though you can combine this and the previous steps with a single &lt;code&gt;git pull upstream pelican-source&lt;/code&gt; command, I prefer to do them separately.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo then create a pull request from your personal repo to the main repo.&lt;/p&gt;
-&lt;p&gt;On our end, we would then accept your pull request, pull those changes to our repo, generate the website (locally, to make sure everything is in order) then do &lt;code&gt;make github&lt;/code&gt; to make your changes live.&lt;/p&gt;
+&lt;p&gt;At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo, then create a pull request from your personal repo to the main repo.&lt;/p&gt;
+&lt;p&gt;The maintainers (J. Paul and Earle) would then accept your pull request, pull those changes to their repo, locally generate the website for confirming that your changes build correctly, then do &lt;code&gt;make github&lt;/code&gt; to make your changes live.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;For a more exhaustive treatment, see &lt;a href="http://pyhogs.github.io/pyhogs_github.html"&gt;this tutorial&lt;/a&gt;.&lt;/p&gt;</summary><category term="pyhogs"></category><category term="github"></category><category term="sync"></category></entry><entry><title>Python Hour - 20 October 2014</title><link href="http://pyhogs.github.io/python-hour-2014-10-20.html" rel="alternate"></link><updated>2014-10-20T11:00:00+07:00</updated><author><name>J.Paul Rinehimer</name></author><id>tag:pyhogs.github.io,2014-10-20:python-hour-2014-10-20.html</id><summary type="html">&lt;h2&gt;Meeting Summary&lt;/h2&gt;

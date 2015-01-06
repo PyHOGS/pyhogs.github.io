@@ -1775,7 +1775,7 @@ jQuery(document).ready(function($) {
 	  </div>
 	  <div class="content">
 	<div class='article'>
-		<div class="page-header"><h1>Contribute to PyHOGS using Github</h1></div>
+		<div class="page-header"><h1>Summary: Working with PyHOGS Github Repositories</h1></div>
 		<div class="well small">08 Dec 2014
  / 
         <a class="url fn" href="http://pyhogs.github.io/author/zb-szuts.html">ZB Szuts </a>, 
@@ -1786,8 +1786,8 @@ jQuery(document).ready(function($) {
         <a href="http://pyhogs.github.io/tag/github.html">github</a>,
     <a href="http://pyhogs.github.io/tag/sync.html">sync</a>
 </div>
-		<div><h1>How to create sync your local PyHOGS repository with the main repository</h1>
-<p>To summarize, here are steps to get a locally synced copy of the pyhogs repo.</p>
+		<div><h1>How to create and sync your local PyHOGS repository with the main repository</h1>
+<p>To summarize, here are the steps to get a locally synced copy of the pyhogs repo.</p>
 <ol>
 <li>
 <p>Fork the pyhogs repo to make a personal repo.</p>
@@ -1798,7 +1798,7 @@ jQuery(document).ready(function($) {
 </pre></div>
 
 
-<p>You should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.</p>
+<p>For syncing, you should already have done these steps earlier, otherwise there wouldn't be any changes that need to be updated.</p>
 </li>
 <li>
 <p>From your local pyhogs.github.io repo, add a remote link that points to the original repo (the link can also be copied from the the main pyhogs.github.io page) and call it upstream:</p>
@@ -1822,11 +1822,11 @@ jQuery(document).ready(function($) {
 </pre></div>
 
 
-<p>You could probably combine this and the previous steps with a single <code>git pull upstream pelican-source</code> command, but I prefer to do them separately.</p>
+<p>Though you can combine this and the previous steps with a single <code>git pull upstream pelican-source</code> command, I prefer to do them separately.</p>
 </li>
 <li>
-<p>At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo then create a pull request from your personal repo to the main repo.</p>
-<p>On our end, we would then accept your pull request, pull those changes to our repo, generate the website (locally, to make sure everything is in order) then do <code>make github</code> to make your changes live.</p>
+<p>At this point you should be all set. If you made changes to repo that you want to relay upstream, first do a fetch/merge (steps 4 and 5) to make sure you're up to date. If there are any conflicts, try to resolve them on your end. When you are ready, push your changes to YOUR github repo, then create a pull request from your personal repo to the main repo.</p>
+<p>The maintainers (J. Paul and Earle) would then accept your pull request, pull those changes to their repo, locally generate the website for confirming that your changes build correctly, then do <code>make github</code> to make your changes live.</p>
 </li>
 </ol>
 <p>For a more exhaustive treatment, see <a href="http://pyhogs.github.io/pyhogs_github.html">this tutorial</a>.</p></div>
