@@ -28,7 +28,5 @@ Meetings will be 10am every Monday in OSB 310 (410 if room 310 is unavailable). 
 See [Meeting Ideas](http://pyhogs.github.io/pages/meeting-ideas.html) tab on website for more ideas.
 
 ========================================================================
-
 *To edit this file. First create a GitHub account. Next, fork the `PyHOGS/pyhogs.github.io` repository and edit your forked verision of the `ideas-schedule.md` file. You can make edits to this file on GitHub. Finally, submit a pull-request and we'll update our version of the file.*
-
 
