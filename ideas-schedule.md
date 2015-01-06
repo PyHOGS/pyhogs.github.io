@@ -1,6 +1,6 @@
 ##Schedule
 
-Meetings will be 10am every Monday in OSB 310 (410 if room 310 is unavailable). If no one volunteers to present on a given day, we'll just use the hour to have an open discussion. **Please replace one the "TBDs" with your name.**
+Meetings will be 10am every Monday in OSB 310 (410 if room 310 is unavailable). If no one volunteers to present on a given day, we'll just use the hour to have an open discussion. **Please replace one the "TBDs" with your name.** Presentations need not be long or well-structured. Our discussions tend to take on a life of their own pretty quickly.
 
 * January 12th: Intro to Python data types (Earle W.)
 * January 19th: No meeting (MLK Day)
