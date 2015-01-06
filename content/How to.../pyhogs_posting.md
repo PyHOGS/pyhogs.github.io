@@ -18,7 +18,7 @@ The easiest way to add content is to create a iPython notebook or Markdown webpa
 
 Alternatively, if you want to learn new software, or want to contribute more regularly, you can learn how to work with GitHub.  This is the pathway I describe here.  The steps involved are:
 
-* Write the notebook in iPython Notebook (Only needed if evaulating Python code).
+* Write the notebook in iPython Notebook (Only needed if evaulating Python code).[^1]
 * Generate the post in Markdown.
 * Add and commit the notebook and post to your local personal repository.
 * Push your local changes to your PyHOGS GitHub repository.
@@ -98,6 +98,4 @@ pushes all committed changes from your local repository to your personal version
 Now go online to your personal repository.  Click the Pull Request button to ask the maintainers to accept your change.  It's good practice to add a comment that describes the new files or the changes, but this comment is less critical than the one made by `git commit`.  It's worth noting any peculiarities to the maintainers, such as images whose paths/directories may need to be changed, etc.  Once your pull request is accepted, your content will be added to the PyHOGS website!
 
 
-## Comments
-
-Note that it's not required to submit an iPython Notebook file.  If you don't need any Python execution, then you can simply write in Markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  [reStructured Text (.rst)](http://docutils.sourceforge.net/rst.html) is also suitable for submission, but you (currently) cannot include iPython notebook files with .rst files due to limitations in the [website parsing program](http://docs.getpelican.com/en/3.5.0/) and its extensions.
+[^1]: If you don't need any Python execution, then you can simply write in Markdown (as done for this post).  This is in fact preferable, since it makes for cleaner code and avoids some difficulties with using notebook files.  [reStructured Text (.rst)](http://docutils.sourceforge.net/rst.html) is also suitable for submission, but you (currently) cannot include iPython notebook files with .rst files due to limitations in the [website parsing program](http://docs.getpelican.com/en/3.5.0/) and its extensions.
