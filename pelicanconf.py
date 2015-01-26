@@ -31,11 +31,11 @@ LINKS = (('Python.org', 'http://python.org/'),
          ("EarthPy", "http://earthpy.org/"),
          ('pyAOS', 'http://pyaos.johnny-lin.com/'),
          ('Ocean Python', 'http://oceanpython.org/'),
-         ('SEAPY', 'https://code.google.com/p/sea-py/wiki/SEAPY'),
+         ('SEAPY', 'http://ocefpaf.github.io/seapy/'),
          ('Astropython', 'http://astropython.blogspot.com/'))
 
 # Social widget
-SOCIAL = (('Github', 'https://github.com/PyHOGS/pyhogs-code'),)
+SOCIAL = (('Github', 'https://github.com/PyHOGS/pyhogs.github.io'),)
 FEEDS = True
 GITHUB_URL = "https://github.com/PyHOGS"
 
