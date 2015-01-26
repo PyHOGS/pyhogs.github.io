@@ -2,7 +2,7 @@ Title: Python Hour - 1 December 2014
 Slug: python-hour-2014-12-01
 Date: 2014-12-01 12:00 UTC-07:00
 Tags: 2-D interpolation, command line
-Summary: Bilinear interpolation and parsing command-line arguments
+Summary: Bilinear interpolation and parsing command-line arguments.
 Author: JP Rinehimer
 
 ## Bilinear interpolation
