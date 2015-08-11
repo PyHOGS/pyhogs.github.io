@@ -5,38 +5,29 @@ Authors: Earle Wilson
 Tags: netCDF, netCDF4
 Summary: An introduction to netCDF and the netCDF4 python module. 
 
-## Motivation
-
-NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just wanted to learn the syntax of particular interface. 
-
-NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using *dimensions*, *attributes* and *variables* to construct a *dataset* to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understand the basics of using netCDF and just want to learn the syntax of particular interface. 
-
-Here, I hope to make the intial steps towards learning using netCDF a little less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.
-
-
 ## What is netCDF?
 
 [NetCDF](http://www.unidata.ucar.edu/software/netcdf/) is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"[^0].The software is maintained by developers at [Unidata](http://www.unidata.ucar.edu/software/netcdf/), which is a subsidary of [UCAR](http://www2.ucar.edu/). 
 
-**One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data**. Moreover, it is well suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. 
+One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data. It is well suited to handle large numerical datasets as it allows users to access portions of a dataset without loading its entirety into memory. 
 
 ## Versions of netCDF 
 
-There are several versions of NetCDF currently in use: *netCDF3_classic*, *netCDF3_64-bit* and *netCDF4_classic* and *netCDF4*. NetCDF3_classic uses the original format and is probably still the most commonly used version. Its main limitation is that it can only store up 2GB of data. NetCDF3_64-bit is basically netCDF3_classic without the 2GB storage limitation. NetCDF4 is the most recent version. It is built on top of the [HDF5](http://docs.h5py.org/en/2.3/) data model, and introduces new features such as groups and zlib data compression. You can learn more about each version [here](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html).  
+There are several [versions](https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html) of NetCDF currently in use: *netCDF3_classic*, *netCDF3_64-bit* and *netCDF4_classic* and *netCDF4*. NetCDF3_classic uses the original netCDF binary format and has been in use for the past 20 years. It is probably still the most common NetCDF version despite being superseded by more recent versions. Its main limitation is that it can only store up 2GB of data. This limitation was lifted with the release of NetCDF3_64-bit. NetCDF4 is the most recent version and represents a departure for the the classic netCDF format. It is built on top of the [HDF5](http://docs.h5py.org/en/2.3/) data structure, which allows for the creation of groups that give users more freedom to organize their data. Like its predecesor, NetCDF4 can also handle files that take up more than 2GB of disc space.
 
 ## Using netCDF in Python
-The traditional python interface for netCDF is the [scipy.io.netcdf](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.netcdf.netcdf_file.html) module. This module is able to read and create netCDF files, but it is not equipped to handle the newer netCDF4 format. The [netCDF4 python module](http://netcdf4-python.googlecode.com/svn/trunk/docs/netCDF4-module.html) can handle all current netCDF versions and its user interface is similar to that of the `scipy.io.netcdf` library. For these reasons, I only will focus on the `netCDF4` module for the remainder of the post.
+The traditional python interface for netCDF is the [scipy.io.netcdf](http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.netcdf.netcdf_file.html) module. This module is able to read and create netCDF files, but does not support the newer netCDF4 format. The [netCDF4 python module](http://netcdf4-python.googlecode.com/svn/trunk/docs/netCDF4-module.html) supports all current netCDF versions and will be the focus of this post.
 
 The netCDF4 module is available from the [Python Package Index (PyPi)](https://pypi.python.org/pypi). You can install it by typing `pip install netCDF4` from a terminal shell. If you are using Python distribution such as Anaconda or Canopy, you may already have netCDF4 installed. 
 
 
 ## Storing data in a netCDF dataset
 
-To create and store data in a netCDF file, you need to do the follow steps:
+Here is how you would normally create and store data in a netCDF file:
 
 1. Open/create a netCDF dataset.
 2. Define the dimensions of the data.
-3. Construct netCDF variable objects using the defined dimensions.
+3. Construct netCDF variables using the defined dimensions.
 4. Pass data into the netCDF variables.
 5. Add attributes to the variables and dataset (optional but recommended).
 6. Close the netCDF dataset.
@@ -99,12 +90,12 @@ Let's look at what we have done so far[^2],
 
 {% notebook examples/intro-netcdf4-module.ipynb cells[14:16]%}
 
-Note that all the dimensions and variables were defined for `tempgrp`. The root group `f` is currently empty.  It's also worth noting that **netCDF dimensions and variables are indestructible**. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together. 
+Note that all the dimensions and variables were defined for `tempgrp`. The root group `f` has no variables.  It's also worth noting that **netCDF dimensions and variables are indestructible**. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together. 
 
 
 #### Passing data into variables
 
-This step is easy:
+Here, you simply pass your data into the variables you just created:
 
 	:::python
 	longitude[:] = lon #The "[:]" at the end of the variable instance is necessary
