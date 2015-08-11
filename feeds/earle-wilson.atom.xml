@@ -28,24 +28,20 @@
 &lt;/li&gt;
 &lt;/ul&gt;</summary><category term="git"></category><category term="coursera"></category><category term="GridSpec"></category></entry><entry><title>Python Hour - 12 January 2015</title><link href="http://pyhogs.github.io/python-hour-2015-01-12.html" rel="alternate"></link><updated>2015-01-12T12:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2015-01-12:python-hour-2015-01-12.html</id><summary type="html">&lt;h2&gt;Meeting summary&lt;/h2&gt;
 &lt;p&gt;Earle gave a short review of the Python data types that he found to be most useful. The discussion covered the standard/built-in data types and the important NumPy data types. The review was presented as an ipython notebook, which can be viewed and downloaded &lt;a href="http://nbviewer.ipython.org/github/PyHOGS/pyhogs.github.io/blob/pelican-source/pyhogs-code/notebooks/tutorials/data_types_intro.ipynb"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary><category term="Data types"></category></entry><entry><title>Python Hour - 5 January 2015</title><link href="http://pyhogs.github.io/python-hour-2015-01-05.html" rel="alternate"></link><updated>2015-01-05T12:00:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2015-01-05:python-hour-2015-01-05.html</id><summary type="html">&lt;h2&gt;Meeting summary&lt;/h2&gt;
-&lt;p&gt;This was the first meeting of Winter quarter 2015. There were several graduate students in attendance for the first time - a few of them from &lt;a href="http://fish.washington.edu/"&gt;SAFS&lt;/a&gt;. After the group did a round of introductions, Earle gave a quick overview of PyHOGs, and the group's website and github account. Afterwards, we opened the floor to general questions and solicited suggestions for future meeting topics. We also settled on a meeting time/place for this quarter: &lt;strong&gt;Mondays at 10am in OSB 310.&lt;/strong&gt;&lt;/p&gt;</summary></entry><entry><title>Create and read netCDF files</title><link href="http://pyhogs.github.io/intro_netcdf4.html" rel="alternate"></link><updated>2014-12-04T12:25:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2014-12-04:intro_netcdf4.html</id><summary type="html">&lt;h2&gt;Motivation&lt;/h2&gt;
-&lt;p&gt;NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using &lt;em&gt;dimensions&lt;/em&gt;, &lt;em&gt;attributes&lt;/em&gt; and &lt;em&gt;variables&lt;/em&gt; to construct a &lt;em&gt;dataset&lt;/em&gt; to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understood the basics of using netCDF and just wanted to learn the syntax of particular interface. &lt;/p&gt;
-&lt;p&gt;NetCDF has become my go-to method for saving data to disk. In my opinion, when it comes to handling large numerical arrays, NetCDF is far superior to other data formats such as ascii, .mat and even pickle. However, my experience with netCDF wasn't always smooth. I didn't find the process of using &lt;em&gt;dimensions&lt;/em&gt;, &lt;em&gt;attributes&lt;/em&gt; and &lt;em&gt;variables&lt;/em&gt; to construct a &lt;em&gt;dataset&lt;/em&gt; to be very intuitive. I kept asking myself, why go through all that trouble when I can save my data as a mat-file using one line of code? As a beginner, the netCDF documentation didn't offer much help either. They all seem to assume that readers understand the basics of using netCDF and just want to learn the syntax of particular interface. &lt;/p&gt;
-&lt;p&gt;Here, I hope to make the intial steps towards learning using netCDF a little less daunting. I demonstrate how to create, read and explore a netCDF file. I also make mention of some advanced features that I've found useful.&lt;/p&gt;
-&lt;h2&gt;What is netCDF?&lt;/h2&gt;
+&lt;p&gt;This was the first meeting of Winter quarter 2015. There were several graduate students in attendance for the first time - a few of them from &lt;a href="http://fish.washington.edu/"&gt;SAFS&lt;/a&gt;. After the group did a round of introductions, Earle gave a quick overview of PyHOGs, and the group's website and github account. Afterwards, we opened the floor to general questions and solicited suggestions for future meeting topics. We also settled on a meeting time/place for this quarter: &lt;strong&gt;Mondays at 10am in OSB 310.&lt;/strong&gt;&lt;/p&gt;</summary></entry><entry><title>Create and read netCDF files</title><link href="http://pyhogs.github.io/intro_netcdf4.html" rel="alternate"></link><updated>2014-12-04T12:25:00+07:00</updated><author><name>Earle Wilson</name></author><id>tag:pyhogs.github.io,2014-12-04:intro_netcdf4.html</id><summary type="html">&lt;h2&gt;What is netCDF?&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;NetCDF&lt;/a&gt; is a data storage format commonly used within the geoscience community. The acronym stands for Network Common Data Format and it refers to a "set of software libraries and self-describing, machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data"&lt;sup id="fnref:0"&gt;&lt;a class="footnote-ref" href="#fn:0" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;.The software is maintained by developers at &lt;a href="http://www.unidata.ucar.edu/software/netcdf/"&gt;Unidata&lt;/a&gt;, which is a subsidary of &lt;a href="http://www2.ucar.edu/"&gt;UCAR&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data&lt;/strong&gt;. Moreover, it is well suited to handle large numerical datasets as it allows users to access all or just a portion of a dataset without loading its entirety into memory. &lt;/p&gt;
+&lt;p&gt;One of the main advantages of using NetCDF is that it has a built-in hierarchical structure that facilitates better organization and documentation of data. It is well suited to handle large numerical datasets as it allows users to access portions of a dataset without loading its entirety into memory. &lt;/p&gt;
 &lt;h2&gt;Versions of netCDF&lt;/h2&gt;
-&lt;p&gt;There are several versions of NetCDF currently in use: &lt;em&gt;netCDF3_classic&lt;/em&gt;, &lt;em&gt;netCDF3_64-bit&lt;/em&gt; and &lt;em&gt;netCDF4_classic&lt;/em&gt; and &lt;em&gt;netCDF4&lt;/em&gt;. NetCDF3_classic uses the original format and is probably still the most commonly used version. Its main limitation is that it can only store up 2GB of data. NetCDF3_64-bit is basically netCDF3_classic without the 2GB storage limitation. NetCDF4 is the most recent version. It is built on top of the &lt;a href="http://docs.h5py.org/en/2.3/"&gt;HDF5&lt;/a&gt; data model, and introduces new features such as groups and zlib data compression. You can learn more about each version &lt;a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html"&gt;here&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;There are several &lt;a href="https://www.unidata.ucar.edu/software/netcdf/docs/netcdf-tutorial/Versions.html"&gt;versions&lt;/a&gt; of NetCDF currently in use: &lt;em&gt;netCDF3_classic&lt;/em&gt;, &lt;em&gt;netCDF3_64-bit&lt;/em&gt; and &lt;em&gt;netCDF4_classic&lt;/em&gt; and &lt;em&gt;netCDF4&lt;/em&gt;. NetCDF3_classic uses the original netCDF binary format and has been in use for the past 20 years. It is probably still the most common NetCDF version despite being superseded by more recent versions. Its main limitation is that it can only store up 2GB of data. This limitation was lifted with the release of NetCDF3_64-bit. NetCDF4 is the most recent version and represents a departure for the the classic netCDF format. It is built on top of the &lt;a href="http://docs.h5py.org/en/2.3/"&gt;HDF5&lt;/a&gt; data structure, which allows for the creation of groups that give users more freedom to organize their data. Like its predecesor, NetCDF4 can also handle files that take up more than 2GB of disc space.&lt;/p&gt;
 &lt;h2&gt;Using netCDF in Python&lt;/h2&gt;
-&lt;p&gt;The traditional python interface for netCDF is the &lt;a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.netcdf.netcdf_file.html"&gt;scipy.io.netcdf&lt;/a&gt; module. This module is able to read and create netCDF files, but it is not equipped to handle the newer netCDF4 format. The &lt;a href="http://netcdf4-python.googlecode.com/svn/trunk/docs/netCDF4-module.html"&gt;netCDF4 python module&lt;/a&gt; can handle all current netCDF versions and its user interface is similar to that of the &lt;code&gt;scipy.io.netcdf&lt;/code&gt; library. For these reasons, I only will focus on the &lt;code&gt;netCDF4&lt;/code&gt; module for the remainder of the post.&lt;/p&gt;
+&lt;p&gt;The traditional python interface for netCDF is the &lt;a href="http://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.io.netcdf.netcdf_file.html"&gt;scipy.io.netcdf&lt;/a&gt; module. This module is able to read and create netCDF files, but does not support the newer netCDF4 format. The &lt;a href="http://netcdf4-python.googlecode.com/svn/trunk/docs/netCDF4-module.html"&gt;netCDF4 python module&lt;/a&gt; supports all current netCDF versions and will be the focus of this post.&lt;/p&gt;
 &lt;p&gt;The netCDF4 module is available from the &lt;a href="https://pypi.python.org/pypi"&gt;Python Package Index (PyPi)&lt;/a&gt;. You can install it by typing &lt;code&gt;pip install netCDF4&lt;/code&gt; from a terminal shell. If you are using Python distribution such as Anaconda or Canopy, you may already have netCDF4 installed. &lt;/p&gt;
 &lt;h2&gt;Storing data in a netCDF dataset&lt;/h2&gt;
-&lt;p&gt;To create and store data in a netCDF file, you need to do the follow steps:&lt;/p&gt;
+&lt;p&gt;Here is how you would normally create and store data in a netCDF file:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Open/create a netCDF dataset.&lt;/li&gt;
 &lt;li&gt;Define the dimensions of the data.&lt;/li&gt;
-&lt;li&gt;Construct netCDF variable objects using the defined dimensions.&lt;/li&gt;
+&lt;li&gt;Construct netCDF variables using the defined dimensions.&lt;/li&gt;
 &lt;li&gt;Pass data into the netCDF variables.&lt;/li&gt;
 &lt;li&gt;Add attributes to the variables and dataset (optional but recommended).&lt;/li&gt;
 &lt;li&gt;Close the netCDF dataset.&lt;/li&gt;
@@ -101,9 +97,7 @@
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[8]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -137,9 +131,7 @@ root group (NETCDF4 data model, file format UNDEFINED):
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[9]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;groups&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Temp_data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c"&gt;#same as print(tempgrp)&lt;/span&gt;
@@ -171,9 +163,9 @@ group /Temp_data:
 &lt;/div&gt;
 
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;Note that all the dimensions and variables were defined for &lt;code&gt;tempgrp&lt;/code&gt;. The root group &lt;code&gt;f&lt;/code&gt; is currently empty.  It's also worth noting that &lt;strong&gt;netCDF dimensions and variables are indestructible&lt;/strong&gt;. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together. &lt;/p&gt;
+&lt;p&gt;Note that all the dimensions and variables were defined for &lt;code&gt;tempgrp&lt;/code&gt;. The root group &lt;code&gt;f&lt;/code&gt; has no variables.  It's also worth noting that &lt;strong&gt;netCDF dimensions and variables are indestructible&lt;/strong&gt;. That is, there is no method to delete a variable or dimension once they are created; you may modify the contents of a variable but you can't get rid off the variable all together. &lt;/p&gt;
 &lt;h4&gt;Passing data into variables&lt;/h4&gt;
-&lt;p&gt;This step is easy:&lt;/p&gt;
+&lt;p&gt;Here, you simply pass your data into the variables you just created:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;longitude&lt;/span&gt;&lt;span class="p"&gt;[:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lon&lt;/span&gt; &lt;span class="c"&gt;#The &amp;quot;[:]&amp;quot; at the end of the variable instance is necessary&lt;/span&gt;
 &lt;span class="n"&gt;latitude&lt;/span&gt;&lt;span class="p"&gt;[:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lat&lt;/span&gt;
 &lt;span class="n"&gt;levels&lt;/span&gt;&lt;span class="p"&gt;[:]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;
@@ -222,9 +214,7 @@ group /Temp_data:
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[16]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[16]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;meta data for the dataset:&amp;quot;&lt;/span&gt;
@@ -285,9 +275,7 @@ filling on, default _FillValue of 9.96920996839e+36 used
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[22]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[22]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -301,8 +289,7 @@ In&amp;nbsp;[22]:
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;
-    Out[22]:&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[22]:&lt;/div&gt;
 
 
 &lt;div class="output_text output_subarea output_pyout"&gt;
@@ -321,9 +308,7 @@ In&amp;nbsp;[22]:
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[24]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[24]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;time_vble&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Time&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -357,9 +342,7 @@ days since Jan 01, 0001
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[29]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[29]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="n"&gt;temp_vble&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tempgrp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Temperature&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -411,9 +394,7 @@ warning: This data is not real!
 &lt;p&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;
-In&amp;nbsp;[27]:
-&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[27]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class="highlight-ipynb"&gt;&lt;pre class="ipynb"&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%.20f&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;temp_0z&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
