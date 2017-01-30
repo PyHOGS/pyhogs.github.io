@@ -10,7 +10,7 @@ PyHOGs stands for Python Hour for Oceanographers and Geoscientists. As the name 
 
 
 ###How to join
-For updates and meeting notices, please join our [mailing list](https://mailman1.u.washington.edu/mailman/listinfo/pyhogs). We currently meet every Monday at 10am in OSB (Ocean Science Building) room 310 but that's subject to change.
+For updates and meeting notices, please join our [mailing list](https://mailman1.u.washington.edu/mailman/listinfo/pyhogs). 
 
 ###Using this site
 On this site, you can find [summaries of past Python Hour](../category/python-hour) meetings and a few [how to demos](../category/how-to). If you are new to Python, please see the [Getting Started Page](pages/getting-started). All notebooks posted on this website are available on our [Github repository](https://github.com/PyHOGS/pyhogs-code). Pull requests are certainly welcomed.
